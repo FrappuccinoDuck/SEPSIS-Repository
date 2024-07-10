@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_mag_release",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_mag_release",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

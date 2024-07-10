@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"developer_watermark",
+  "name":"developer_watermark",
+  "parent":{
+    "name":"Misc.",
+    "path":"folders/Notes/Misc..yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

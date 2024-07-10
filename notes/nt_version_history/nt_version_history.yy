@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"nt_version_history",
+  "name":"nt_version_history",
+  "parent":{
+    "name":"Misc.",
+    "path":"folders/Notes/Misc..yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

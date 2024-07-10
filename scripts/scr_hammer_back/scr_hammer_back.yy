@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_hammer_back",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_hammer_back",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

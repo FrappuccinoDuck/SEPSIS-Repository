@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_equip_laser",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_equip_laser",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

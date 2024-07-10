@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_equip_suppressor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_equip_suppressor",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

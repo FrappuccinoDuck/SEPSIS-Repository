@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_find_color",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_find_color",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

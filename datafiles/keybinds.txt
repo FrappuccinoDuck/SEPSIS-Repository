@@ -1,0 +1,22 @@
+[KEYBINDS]
+
+toggle_inventory = vk_tab
+
+pickup_lefthand = ord("Q")
+pickup_righthand = ord("E")
+
+page_navigation_left = ord("D")
+page_navigation_right = ord("F")
+
+switch_active_hand = vk_space
+
+item_function_wheel = ord("X")
+health_function_wheel = ord("B")
+
+bash_key = ord("V")
+
+inspect_overworld_object = ord("C")
+
+[MOUSEBINDS]
+
+close_inspect_item = mb_right

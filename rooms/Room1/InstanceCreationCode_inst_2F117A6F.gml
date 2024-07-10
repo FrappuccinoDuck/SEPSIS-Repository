@@ -1,0 +1,1 @@
+global.death_type = "Yikes, didn't think it would be that easy did you... dumbass"

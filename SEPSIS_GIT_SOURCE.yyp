@@ -599,7 +599,6 @@
     {"id":{"name":"spr_zenith","path":"sprites/spr_zenith/spr_zenith.yy",},},
     {"id":{"name":"sprChromatic1","path":"sprites/sprChromatic1/sprChromatic1.yy",},},
     {"id":{"name":"sprChromatic2","path":"sprites/sprChromatic2/sprChromatic2.yy",},},
-    {"id":{"name":"SPRITE_TEST","path":"sprites/SPRITE_TEST/SPRITE_TEST.yy",},},
     {"id":{"name":"sprMask1","path":"sprites/sprMask1/sprMask1.yy",},},
     {"id":{"name":"sprMaskWide1","path":"sprites/sprMaskWide1/sprMaskWide1.yy",},},
     {"id":{"name":"sprNoise1","path":"sprites/sprNoise1/sprNoise1.yy",},},

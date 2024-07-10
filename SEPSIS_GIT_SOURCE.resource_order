@@ -498,7 +498,6 @@
     {"name":"spr_zenith","order":1,"path":"sprites/spr_zenith/spr_zenith.yy",},
     {"name":"sprChromatic1","order":1,"path":"sprites/sprChromatic1/sprChromatic1.yy",},
     {"name":"sprChromatic2","order":2,"path":"sprites/sprChromatic2/sprChromatic2.yy",},
-    {"name":"SPRITE_TEST","order":64,"path":"sprites/SPRITE_TEST/SPRITE_TEST.yy",},
     {"name":"sprMask1","order":3,"path":"sprites/sprMask1/sprMask1.yy",},
     {"name":"sprMaskWide1","order":4,"path":"sprites/sprMaskWide1/sprMaskWide1.yy",},
     {"name":"sprNoise1","order":5,"path":"sprites/sprNoise1/sprNoise1.yy",},

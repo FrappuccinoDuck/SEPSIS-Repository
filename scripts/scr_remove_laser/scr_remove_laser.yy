@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_remove_laser",
   "isCompatibility":false,
   "isDnD":false,

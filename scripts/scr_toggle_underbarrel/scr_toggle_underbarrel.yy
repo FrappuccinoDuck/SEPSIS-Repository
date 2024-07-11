@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_toggle_underbarrel",
   "isCompatibility":false,
   "isDnD":false,

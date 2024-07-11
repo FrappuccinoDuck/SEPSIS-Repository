@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_weapon_degradation",
   "isCompatibility":false,
   "isDnD":false,

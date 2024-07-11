@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_mag_release",
   "isCompatibility":false,
   "isDnD":false,

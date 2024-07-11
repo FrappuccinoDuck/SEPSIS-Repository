@@ -507,5 +507,6 @@
     {"name":"sprScanline2","order":9,"path":"sprites/sprScanline2/sprScanline2.yy",},
     {"name":"sprScanline3","order":10,"path":"sprites/sprScanline3/sprScanline3.yy",},
     {"name":"sprStatic1","order":11,"path":"sprites/sprStatic1/sprStatic1.yy",},
+    {"name":"TEST_SPRITE","order":64,"path":"sprites/TEST_SPRITE/TEST_SPRITE.yy",},
   ],
 }

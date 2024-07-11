@@ -608,6 +608,7 @@
     {"id":{"name":"sprScanline2","path":"sprites/sprScanline2/sprScanline2.yy",},},
     {"id":{"name":"sprScanline3","path":"sprites/sprScanline3/sprScanline3.yy",},},
     {"id":{"name":"sprStatic1","path":"sprites/sprStatic1/sprStatic1.yy",},},
+    {"id":{"name":"TEST_SPRITE","path":"sprites/TEST_SPRITE/TEST_SPRITE.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

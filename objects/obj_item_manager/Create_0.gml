@@ -558,6 +558,58 @@ global.specs_list =
 		noone,
 		noone,
 	),
+	ACP380_exp_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".380",
+		"EXP",
+		noone,
+		noone,
+	),
+	ACP380_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".380",
+		"FMJ",
+		noone,
+		noone,
+	),
+	ACP380_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".380",
+		"DU",
+		noone,
+		noone,
+	),
+	ACP380_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".380",
+		"AP",
+		noone,
+		noone,
+	),
 	ACP32_specs : new create_specs(
 		1,
 		1,
@@ -581,6 +633,45 @@ global.specs_list =
 		false,
 		".32",
 		"EXP",
+		noone,
+		noone,
+	),
+	ACP32_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".32",
+		"FMJ",
+		noone,
+		noone,
+	),
+	ACP32_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".32",
+		"DU",
+		noone,
+		noone,
+	),
+	ACP32_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		".32",
+		"AP",
 		noone,
 		noone,
 	),
@@ -610,6 +701,45 @@ global.specs_list =
 		noone,
 		noone,
 	),
+	single_762x25_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"7.62x25",
+		"FMJ",
+		noone,
+		noone,
+	),
+	single_762x25_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"7.62x25",
+		"DU",
+		noone,
+		noone,
+	),
+	single_762x25_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"7.62x25",
+		"AP",
+		noone,
+		noone,
+	),
 	magnum44_specs : new create_specs(
 		1,
 		1,
@@ -620,6 +750,214 @@ global.specs_list =
 		false,
 		"44M",
 		"HP",
+		noone,
+		noone,
+	),
+	magnum44_exp_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"44M",
+		"EXP",
+		noone,
+		noone,
+	),
+	magnum44_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"44M",
+		"FMJ",
+		noone,
+		noone,
+	),
+	magnum44_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"44M",
+		"DU",
+		noone,
+		noone,
+	),
+	magnum44_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,
+		false,
+		"44M",
+		"AP",
+		noone,
+		noone,
+	),
+	single_762x39_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x39",
+		"HP",
+		noone,
+		noone,
+	),
+	single_762x39_exp_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x39",
+		"EXP",
+		noone,
+		noone,
+	),
+	single_762x39_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x39",
+		"FMJ",
+		noone,
+		noone,
+	),
+	single_762x39_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x39",
+		"DU",
+		noone,
+		noone,
+	),
+	single_762x39_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x39",
+		"AP",
+		noone,
+		noone,
+	),
+	single_762x45_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x45",
+		"HP",
+		noone,
+		noone,
+	),
+	single_762x45_exp_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x45",
+		"EXP",
+		noone,
+		noone,
+	),
+	single_762x45_fmj_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x45",
+		"FMJ",
+		noone,
+		noone,
+	),
+	single_762x45_du_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x45",
+		"DU",
+		noone,
+		noone,
+	),
+	single_762x45_ap_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"7.62x45",
+		"AP",
+		noone,
+		noone,
+	),
+	single_12gauge_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"12G",
+		"BIRDSHOT",
+		noone,
+		noone,
+	),
+	single_12gauge_exp_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"12G",
+		"EXP",
 		noone,
 		noone,
 	),
@@ -1062,84 +1400,6 @@ global.specs_list =
 		false,
 		"Claw",
 		noone,
-		noone,
-		noone,
-	),
-	single_762x39_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"7.62x39",
-		"HP",
-		noone,
-		noone,
-	),
-	single_762x39_exp_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"7.62x39",
-		"EXP",
-		noone,
-		noone,
-	),
-	single_762x45_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"7.62x45",
-		"HP",
-		noone,
-		noone,
-	),
-	single_762x45_exp_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"7.62x45",
-		"EXP",
-		noone,
-		noone,
-	),
-	single_12gauge_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"12G",
-		"SLUG",
-		noone,
-		noone,
-	),
-	single_12gauge_exp_specs : new create_specs(
-		1,
-		1,
-		0.1,
-		"Ammunition",
-		false,
-		10,	
-		false,
-		"12G",
-		"EXP",
 		noone,
 		noone,
 	),
@@ -1932,6 +2192,150 @@ global.effect_list =
 		"NA",
 		"NA",
 	),
+	ACP380_exp_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP380_exp, ".380")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP380_fmj_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP380_fmj, ".380")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP380_du_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP380_du, ".380")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP380_ap_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP380_ap, ".380")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
 	
 	ACP32_single_effect : new create_effect(
 	function()
@@ -1973,6 +2377,114 @@ global.effect_list =
 	function()
 	{
 		load_bullet(global.item_list.ACP32_exp, ".32")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP32_fmj_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP32_fmj, ".32")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP32_du_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP32_du, ".32")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	ACP32_ap_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.ACP32_ap, ".32")
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2078,6 +2590,114 @@ global.effect_list =
 		"NA",
 		"NA",
 	),
+	single_762x25_fmj_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x25_fmj, "7.62x25")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_762x25_du_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x25_du, "7.62x25")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_762x25_ap_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x25_ap, "7.62x25")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
 	single_762x45_effect : new create_effect(
 	function()
 	{
@@ -2118,6 +2738,114 @@ global.effect_list =
 	function()
 	{
 		load_bullet(global.item_list.single_762x45_exp, "7.62x45")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_762x45_fmj_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x45_fmj, "7.62x45")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_762x45_du_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x45_du, "7.62x45")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_762x45_ap_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_762x45_ap, "7.62x45")
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2226,6 +2954,150 @@ global.effect_list =
 	function()
 	{
 		load_bullet(global.item_list.magnum44, "44M")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	magnum44_exp_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.magnum44_exp, "44M")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	magnum44_fmj_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.magnum44_fmj, "44M")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	magnum44_du_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.magnum44_du, "44M")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	magnum44_ap_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.magnum44_ap, "44M")
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3624,6 +4496,114 @@ global.effect_list =
 	single_762x39_exp_effect : new create_effect(
 		function(){
 			load_bullet(global.item_list.single_762x39_exp, "7.62x39")
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Load Mag",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
+	single_762x39_ap_effect : new create_effect(
+		function(){
+			load_bullet(global.item_list.single_762x39_ap, "7.62x39")
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Load Mag",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
+	single_762x39_du_effect : new create_effect(
+		function(){
+			load_bullet(global.item_list.single_762x39_du, "7.62x39")
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Load Mag",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
+	single_762x39_fmj_effect : new create_effect(
+		function(){
+			load_bullet(global.item_list.single_762x39_fmj, "7.62x39")
 		},
 		function(){
 			show_debug_message("right click")
@@ -5076,8 +6056,8 @@ global.item_list =
 	
 	// AMMO -----------------------------------------------------------------------------------------------
 	ACP380_single : new create_item(
-		".380 ACP (9x17mm)",
-		"This is a .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
+		".380 ACP (HP)",
+		"This is a Hollow Point .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
 		spr_ACP380_single,
 		obj_ACP380_single,
 		global.specs_list.ACP380_single_specs,
@@ -5093,13 +6073,139 @@ global.item_list =
 		noone,
 		0.9,
 	),
+	ACP380_exp : new create_item(
+		".380 ACP (EXP)",
+		"This is an explosive .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP380_exp,
+		obj_ACP380_exp,
+		global.specs_list.ACP380_exp_specs,
+		global.effect_list.ACP380_exp_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP380_fmj : new create_item(
+		".380 ACP (FMJ)",
+		"This is a Full Metal Jacket .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP380_fmj,
+		obj_ACP380_fmj,
+		global.specs_list.ACP380_fmj_specs,
+		global.effect_list.ACP380_fmj_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP380_du : new create_item(
+		".380 ACP (DU)",
+		"This is a Depleted Uranium .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP380_du,
+		obj_ACP380_du,
+		global.specs_list.ACP380_du_specs,
+		global.effect_list.ACP380_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP380_ap : new create_item(
+		".380 ACP (AP)",
+		"This is an Armor Piercing .380 ACP (9x17mm) bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP380_ap,
+		obj_ACP380_ap,
+		global.specs_list.ACP380_ap_specs,
+		global.effect_list.ACP380_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
 	ACP32 : new create_item(
-		".32 ACP",
-		"This is a .32 ACP bullet used as ammunition for a variety of ranged weapons",
+		".32 ACP (HP)",
+		"This is a Hollow Point .32 ACP bullet used as ammunition for a variety of ranged weapons",
 		spr_ACP32,
 		obj_ACP32,
 		global.specs_list.ACP32_specs,
 		global.effect_list.ACP32_single_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP32_ap : new create_item(
+		".32 ACP (AP)",
+		"This is an Armor Piercing .32 ACP bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP32_ap,
+		obj_ACP32_ap,
+		global.specs_list.ACP32_ap_specs,
+		global.effect_list.ACP32_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP32_du : new create_item(
+		".32 ACP (DU)",
+		"This is a Depleted Uranium .32 ACP bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP32_du,
+		obj_ACP32_du,
+		global.specs_list.ACP32_du_specs,
+		global.effect_list.ACP32_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	ACP32_fmj : new create_item(
+		".32 ACP (FMJ)",
+		"This is a Full Metal Jacket .32 ACP bullet used as ammunition for a variety of ranged weapons",
+		spr_ACP32_fmj,
+		obj_ACP32_fmj,
+		global.specs_list.ACP32_fmj_specs,
+		global.effect_list.ACP32_fmj_effect,
 		0,
 		32,
 		noone,
@@ -5130,12 +6236,66 @@ global.item_list =
 		0.9,
 	),
 	single_762x39 : new create_item(
-		"7.62x39 Round",
-		"This is a 7.62x39 bullet used as ammunition for a variety of high-power firearms",
+		"7.62x39 Round (HP)",
+		"This is a Hollow Point 7.62x39 bullet used as ammunition for a variety of high-power firearms",
 		spr_762x39_single,
 		obj_762x39_single,
 		global.specs_list.single_762x39_specs,
 		global.effect_list.single_762x39_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x39_ap : new create_item(
+		"7.62x39 Round (AP)",
+		"This is a Armor Piercing 7.62x39 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x39_ap,
+		obj_762x39_ap,
+		global.specs_list.single_762x39_ap_specs,
+		global.effect_list.single_762x39_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x39_du : new create_item(
+		"7.62x39 Round (DU)",
+		"This is a Depleted Uranium 7.62x39 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x39_du,
+		obj_762x39_du,
+		global.specs_list.single_762x39_du_specs,
+		global.effect_list.single_762x39_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x39_fmj : new create_item(
+		"7.62x39 Round (FMJ)",
+		"This is a Full Metal Jacket 7.62x39 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x39_fmj,
+		obj_762x39_fmj,
+		global.specs_list.single_762x39_fmj_specs,
+		global.effect_list.single_762x39_fmj_effect,
 		0,
 		32,
 		noone,
@@ -5166,12 +6326,66 @@ global.item_list =
 		0.9,
 	),
 	single_762x45 : new create_item(
-		"7.62x45 Round",
-		"This is a 7.62x45 bullet used as ammunition for a variety of high-power firearms",
+		"7.62x45 Round (HP)",
+		"This is a Hollow Point 7.62x45 bullet used as ammunition for a variety of high-power firearms",
 		spr_762x45_single,
 		obj_762x45_single,
 		global.specs_list.single_762x45_specs,
 		global.effect_list.single_762x45_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x45_ap : new create_item(
+		"7.62x45 Round (AP)",
+		"This is an Armor Piercing 7.62x45 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x45_ap,
+		obj_762x45_ap,
+		global.specs_list.single_762x45_ap_specs,
+		global.effect_list.single_762x45_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x45_du : new create_item(
+		"7.62x45 Round (DU)",
+		"This is a Depleted Uranium 7.62x45 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x45_du,
+		obj_762x45_du,
+		global.specs_list.single_762x45_du_specs,
+		global.effect_list.single_762x45_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_762x45_fmj : new create_item(
+		"7.62x45 Round (FMJ)",
+		"This is a Full Metal Jacket 7.62x45 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x45_fmj,
+		obj_762x45_fmj,
+		global.specs_list.single_762x45_fmj_specs,
+		global.effect_list.single_762x45_fmj_effect,
 		0,
 		32,
 		noone,
@@ -5202,12 +6416,66 @@ global.item_list =
 		0.9,
 	),
 	single_762x25 : new create_item(
-		"7.62x25 Round",
-		"This is a 7.62x25 bullet used as ammunition for a variety of high-power firearms",
+		"7.62x25 Round (HP)",
+		"This is a Hollow Point 7.62x25 bullet used as ammunition for a variety of high-power firearms",
 		spr_762x25,
 		obj_762x25,
 		global.specs_list.single_762x25_specs,
 		global.effect_list.single_762x25_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	single_762x25_ap : new create_item(
+		"7.62x25 Round (AP)",
+		"This is an Armor Piercing 7.62x25 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x25_ap,
+		obj_762x25_ap,
+		global.specs_list.single_762x25_ap_specs,
+		global.effect_list.single_762x25_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	single_762x25_du : new create_item(
+		"7.62x25 Round (DU)",
+		"This is a Depleted Uranium 7.62x25 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x25_du,
+		obj_762x25_du,
+		global.specs_list.single_762x25_du_specs,
+		global.effect_list.single_762x25_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	single_762x25_fmj : new create_item(
+		"7.62x25 Round (FMJ)",
+		"This is a Full Metal Jacket 7.62x25 bullet used as ammunition for a variety of high-power firearms",
+		spr_762x25_fmj,
+		obj_762x25_fmj,
+		global.specs_list.single_762x25_fmj_specs,
+		global.effect_list.single_762x25_fmj_effect,
 		0,
 		32,
 		noone,
@@ -5238,12 +6506,84 @@ global.item_list =
 		0.9,
 	),
 	magnum44 : new create_item(
-		"44 Magnum Round",
-		"This is a 44 Magnum bullet used as ammunition for a variety of high-power handguns",
+		"44 Magnum Round (HP)",
+		"This is a Hollow Point 44 Magnum bullet used as ammunition for a variety of high-power handguns",
 		spr_44magnum,
 		obj_44magnum,
 		global.specs_list.magnum44_specs,
 		global.effect_list.magnum44_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	magnum44_exp : new create_item(
+		"44 Magnum Round (EXP)",
+		"This is an explosive 44 Magnum bullet used as ammunition for a variety of high-power handguns",
+		spr_44magnum_exp,
+		obj_44magnum_exp,
+		global.specs_list.magnum44_exp_specs,
+		global.effect_list.magnum44_exp_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	magnum44_ap : new create_item(
+		"44 Magnum Round (AP)",
+		"This is an Armor Piercing 44 Magnum bullet used as ammunition for a variety of high-power handguns",
+		spr_44magnum_ap,
+		obj_44magnum_ap,
+		global.specs_list.magnum44_ap_specs,
+		global.effect_list.magnum44_ap_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	magnum44_du : new create_item(
+		"44 Magnum Round (DU)",
+		"This is a Depleted Uranium 44 Magnum bullet used as ammunition for a variety of high-power handguns",
+		spr_44magnum_du,
+		obj_44magnum_du,
+		global.specs_list.magnum44_du_specs,
+		global.effect_list.magnum44_du_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		4,
+		noone,
+		0.9,
+	),
+	magnum44_fmj : new create_item(
+		"44 Magnum Round (FMJ)",
+		"This is a Hollow Point 44 Magnum bullet used as ammunition for a variety of high-power handguns",
+		spr_44magnum_fmj,
+		obj_44magnum_fmj,
+		global.specs_list.magnum44_fmj_specs,
+		global.effect_list.magnum44_fmj_effect,
 		0,
 		32,
 		noone,

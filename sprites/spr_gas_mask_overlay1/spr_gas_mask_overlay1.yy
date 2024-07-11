@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_gas_mask_overlay1",
   "bboxMode":0,
-  "bbox_bottom":767,
+  "bbox_bottom":431,
   "bbox_left":0,
-  "bbox_right":1365,
+  "bbox_right":763,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"494b0bd4-acd6-445d-8f5c-e1e183e78745","name":"494b0bd4-acd6-445d-8f5c-e1e183e78745","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"763f7a23-395a-491b-a3f7-ceac08c18d1a","name":"763f7a23-395a-491b-a3f7-ceac08c18d1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":768,
+  "height":432,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"bdf4f776-dafa-457a-a7a3-b21edb4d960d","blendMode":0,"displayName":"default","isLocked":false,"name":"bdf4f776-dafa-457a-a7a3-b21edb4d960d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"24438cab-bcdb-4e10-88a4-0fd78864e70a","blendMode":0,"displayName":"default","isLocked":false,"name":"24438cab-bcdb-4e10-88a4-0fd78864e70a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_gas_mask_overlay1",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"494b0bd4-acd6-445d-8f5c-e1e183e78745","path":"sprites/spr_gas_mask_overlay1/spr_gas_mask_overlay1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"00d393d2-b93c-49f3-80d2-c931b9dc9ad6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"763f7a23-395a-491b-a3f7-ceac08c18d1a","path":"sprites/spr_gas_mask_overlay1/spr_gas_mask_overlay1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"2ee6061a-631a-4f83-89bb-b7d67e57a459","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":1366,
+  "width":764,
 }

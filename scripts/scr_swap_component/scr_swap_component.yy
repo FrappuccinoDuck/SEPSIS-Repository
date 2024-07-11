@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_swap_component",
   "isCompatibility":false,
   "isDnD":false,

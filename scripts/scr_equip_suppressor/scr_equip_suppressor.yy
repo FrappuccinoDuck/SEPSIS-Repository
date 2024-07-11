@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_equip_suppressor",
   "isCompatibility":false,
   "isDnD":false,

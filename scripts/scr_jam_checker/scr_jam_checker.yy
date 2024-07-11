@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_jam_checker",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_firing_mode_name",
   "isCompatibility":false,
   "isDnD":false,

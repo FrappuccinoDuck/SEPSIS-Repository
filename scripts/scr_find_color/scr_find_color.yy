@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_find_color",
   "isCompatibility":false,
   "isDnD":false,

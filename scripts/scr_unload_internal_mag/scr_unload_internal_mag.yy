@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_unload_internal_mag",
   "isCompatibility":false,
   "isDnD":false,

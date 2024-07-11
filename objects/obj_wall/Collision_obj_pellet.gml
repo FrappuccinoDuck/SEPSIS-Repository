@@ -8,9 +8,12 @@ if wall_gain > 1
 }
 audio_play_sound(snd_wood_bullet_collide, 1, false, wall_gain)
 
-if obj_pellet.modifier[28].specs.bullet == "EXP"
+if obj_pellet.modifier[28] != 0
 {
-	instance_create_depth(x, y, -9, obj_explosion_mini)
+	if obj_pellet.modifier[28].specs.bullet == "EXP"
+	{
+		instance_create_depth(x, y, -9, obj_explosion_mini)
+	}
 }
 
 instance_destroy(obj_pellet)

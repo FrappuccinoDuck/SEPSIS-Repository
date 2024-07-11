@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_field_strip",
   "isCompatibility":false,
   "isDnD":false,

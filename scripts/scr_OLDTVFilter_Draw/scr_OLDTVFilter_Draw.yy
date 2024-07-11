@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_OLDTVFilter_Draw",
   "isCompatibility":false,
   "isDnD":false,

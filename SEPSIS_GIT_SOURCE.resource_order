@@ -509,5 +509,6 @@
     {"name":"sprStatic1","order":11,"path":"sprites/sprStatic1/sprStatic1.yy",},
     {"name":"TEST_SPRITE","order":64,"path":"sprites/TEST_SPRITE/TEST_SPRITE.yy",},
     {"name":"TEST_SPRITE2","order":65,"path":"sprites/TEST_SPRITE2/TEST_SPRITE2.yy",},
+    {"name":"TEST_SPRITE3","order":66,"path":"sprites/TEST_SPRITE3/TEST_SPRITE3.yy",},
   ],
 }

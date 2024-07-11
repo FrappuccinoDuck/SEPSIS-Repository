@@ -138,7 +138,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.6.1.160",
   },
   "name":"SEPSIS_GIT_SOURCE",
   "resources":[
@@ -610,6 +610,7 @@
     {"id":{"name":"sprStatic1","path":"sprites/sprStatic1/sprStatic1.yy",},},
     {"id":{"name":"TEST_SPRITE","path":"sprites/TEST_SPRITE/TEST_SPRITE.yy",},},
     {"id":{"name":"TEST_SPRITE2","path":"sprites/TEST_SPRITE2/TEST_SPRITE2.yy",},},
+    {"id":{"name":"TEST_SPRITE3","path":"sprites/TEST_SPRITE3/TEST_SPRITE3.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

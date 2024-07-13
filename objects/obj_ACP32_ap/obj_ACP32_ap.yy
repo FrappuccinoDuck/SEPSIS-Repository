@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ACP32",
-    "path":"sprites/spr_ACP32/spr_ACP32.yy",
+    "name":"spr_ACP32_ap",
+    "path":"sprites/spr_ACP32_ap/spr_ACP32_ap.yy",
   },
   "spriteMaskId":null,
   "visible":true,

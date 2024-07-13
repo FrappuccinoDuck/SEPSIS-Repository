@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_762x39_ap",
-    "path":"sprites/spr_762x39_ap/spr_762x39_ap.yy",
+    "name":"spr_762x39_du",
+    "path":"sprites/spr_762x39_du/spr_762x39_du.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -59,7 +59,9 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					var barrel_value = right_modifiers[7]
 				}
 				
-				if _bullet_type.specs.short_name != "12G"
+				var extracted_bullet = obj_item_manager.left_modifiers[38]
+				
+				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BUCK"
 				{
 					with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_pellet))
 					{
@@ -231,7 +233,9 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				burst_delay = 0
 				hand_ammo[1] -= 1
 				show_debug_message(hand_ammo[1])
-				if _bullet_type.specs.short_name != "12G"
+				var extracted_bullet = obj_item_manager.right_modifiers[38]
+				
+				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BUCK"
 				{
 					with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_pellet))
 					{

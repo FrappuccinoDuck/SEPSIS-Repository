@@ -400,7 +400,7 @@ if scoped == true
 		layer_set_visible("perception_effect", false)
 		obj_mouse.image_xscale = left_modifiers[15].specs.bullet
 		obj_mouse.image_yscale = left_modifiers[15].specs.bullet
-		obj_mouse.layer = layer_get_id("gas_mask_overlay_ui")
+		//obj_mouse.layer = layer_get_id("gas_mask_overlay_ui")
 		obj_mouse.sprite_index = left_modifiers[15].specs.second_sprite
 		obj_viewport.L_mratio = real(left_modifiers[15].specs.short_name) * (view_get_wport(view_camera[0])/window_get_width())
 		obj_player.light[| eLight.Range] = 2818 * real(left_modifiers[15].specs.short_name)
@@ -418,7 +418,7 @@ if scoped == true
 		layer_set_visible("perception_effect", false)
 		obj_mouse.image_xscale = right_modifiers[15].specs.bullet
 		obj_mouse.image_yscale = right_modifiers[15].specs.bullet
-		obj_mouse.layer = layer_get_id("gas_mask_overlay_ui")
+		//obj_mouse.layer = layer_get_id("gas_mask_overlay_ui")
 		obj_mouse.sprite_index = right_modifiers[15].specs.second_sprite
 		obj_viewport.L_mratio = real(right_modifiers[15].specs.short_name) * (view_get_wport(view_camera[0])/window_get_width())
 		obj_player.light[| eLight.Range] = 2818 * real(right_modifiers[15].specs.short_name)

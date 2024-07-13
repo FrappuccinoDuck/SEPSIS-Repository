@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ACP32_du",
+  "%Name":"obj_12gauge_slug",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_ACP32_du",
+  "name":"obj_12gauge_slug",
   "overriddenProperties":[],
   "parent":{
     "name":"Ammo",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ACP32_du",
-    "path":"sprites/spr_ACP32_du/spr_ACP32_du.yy",
+    "name":"spr_12gauge_slug",
+    "path":"sprites/spr_12gauge_slug/spr_12gauge_slug.yy",
   },
   "spriteMaskId":null,
   "visible":true,

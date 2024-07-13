@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ACP380_du",
-    "path":"sprites/spr_ACP380_du/spr_ACP380_du.yy",
+    "name":"spr_ACP380_exp",
+    "path":"sprites/spr_ACP380_exp/spr_ACP380_exp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -6,3 +6,5 @@ destroy_timer += 1
 		show_debug_message("destroyed_ammo")
 		instance_destroy()
 	}
+	
+depth = -9

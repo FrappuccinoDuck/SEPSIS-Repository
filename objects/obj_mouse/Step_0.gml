@@ -43,7 +43,7 @@ if obj_item_manager.throwing == true && obj_item_manager.scoped == false
 if obj_item_manager.scoped == false
 {
 	depth = -infinity
-	
+
 	
 
 

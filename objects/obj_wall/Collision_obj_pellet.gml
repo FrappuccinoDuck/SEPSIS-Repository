@@ -16,5 +16,5 @@ if obj_pellet.modifier[28] != 0
 	}
 }
 
-instance_destroy(obj_pellet)
+instance_destroy(other)
 

@@ -944,7 +944,33 @@ global.specs_list =
 		10,	
 		false,
 		"12G",
-		"BIRDSHOT",
+		"BIRD",
+		noone,
+		noone,
+	),
+	single_12gauge_buck_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"12G",
+		"BUCK",
+		noone,
+		noone,
+	),
+	single_12gauge_slug_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Ammunition",
+		false,
+		10,	
+		false,
+		"12G",
+		"SLUG",
 		noone,
 		noone,
 	),
@@ -2121,7 +2147,7 @@ global.effect_list =
 	
 	zbrojovka_304_effect : new create_effect(
 		function(){
-			shoot(global.item_list.zbrojovka_304, global.item_list.single_12gauge, global.item_list.single_12gauge_shell, 164, false)
+			shoot(global.item_list.zbrojovka_304, global.item_list.single_12gauge, global.item_list.single_12gauge_shell, 64, false)
 		},
 		function(){
 			chamber(global.item_list.zbrojovka_304, global.item_list.single_12gauge_shell)
@@ -2882,6 +2908,78 @@ global.effect_list =
 	function()
 	{
 		load_bullet(global.item_list.single_12gauge, "12G")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_12gauge_buck_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_12gauge_buck, "12G")
+	},
+		function(){
+			show_debug_message("acp380single right click")
+		},
+		function(){
+			show_debug_message("acp380single middle mouse click")
+		},
+		"Put in mag/weapon",
+		"NA",
+		"NA",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	single_12gauge_slug_effect : new create_effect(
+	function()
+	{
+		load_bullet(global.item_list.single_12gauge_slug, "12G")
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -6596,8 +6694,8 @@ global.item_list =
 		0.9,
 	),
 	single_12gauge : new create_item(
-		"12 Gauge Round",
-		"This is a 12 Gauge Shotgun Shell used as ammunition for a variety of firearms",
+		"12 Gauge Round (BIRD)",
+		"This is a 12 Gauge Birdshot Shotgun Shell used as ammunition for a variety of firearms",
 		spr_12gauge,
 		obj_12gauge,
 		global.specs_list.single_12gauge_specs,
@@ -6613,11 +6711,47 @@ global.item_list =
 		noone,
 		0.9,
 	),
+	single_12gauge_buck : new create_item(
+		"12 Gauge Round (BUCK)",
+		"This is a 12 Gauge Buckshot Shotgun Shell used as ammunition for a variety of firearms",
+		spr_12gauge_buck,
+		obj_12gauge_buck,
+		global.specs_list.single_12gauge_buck_specs,
+		global.effect_list.single_12gauge_buck_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
+	single_12gauge_slug : new create_item(
+		"12 Gauge Round (SLUG)",
+		"This is a 12 Gauge Slug Shotgun Shell used as ammunition for a variety of firearms",
+		spr_12gauge_slug,
+		obj_12gauge_slug,
+		global.specs_list.single_12gauge_slug_specs,
+		global.effect_list.single_12gauge_slug_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		0.9,
+	),
 	single_12gauge_exp : new create_item(
 		"12 Gauge Round (EXP.)",
 		"This is an explosive 12 Gauge Shotgun Shell used as ammunition for a variety of firearms that explodes on impact",
-		spr_12gauge,
-		obj_12gauge,
+		spr_12gauge_exp,
+		obj_12gauge_exp,
 		global.specs_list.single_12gauge_exp_specs,
 		global.effect_list.single_12gauge_exp_effect,
 		0,

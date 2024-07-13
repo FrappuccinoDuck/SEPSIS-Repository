@@ -2,6 +2,7 @@ function remove_suppressor(){
 	if global.left_hand_item == noone && global.right_hand_item.specs.item_type == "Firearm" && right_modifiers[32] != 0
 	{
 		suppressor_degradation()
+		left_modifiers = array_create(obj_item_manager.modifier_amount, 0)
 		global.left_hand_item = right_modifiers[32]
 		left_modifiers[9] = right_modifiers[33]
 		
@@ -13,6 +14,7 @@ function remove_suppressor(){
 	if global.right_hand_item == noone && global.left_hand_item.specs.item_type == "Firearm" && left_modifiers[32] != 0
 	{
 		suppressor_degradation()
+		right_modifiers = array_create(obj_item_manager.modifier_amount, 0)
 		global.right_hand_item = left_modifiers[32]
 		right_modifiers[9] = left_modifiers[33]
 		

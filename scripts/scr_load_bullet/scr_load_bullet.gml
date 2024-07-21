@@ -1,6 +1,6 @@
-function load_bullet(_bullet_obj, _bullet_type)
+function load_bullet(_bullet_obj, _bullet_type, _hold_click)
 {
-	if global.left_hand_item == _bullet_obj && global.right_hand_item != noone && global.right_hand_item.specs.bullet == _bullet_type && hand_ammo[1] < right_modifiers[10] && first_click == 1
+	if global.left_hand_item == _bullet_obj && global.right_hand_item != noone && global.right_hand_item.specs.bullet == _bullet_type && hand_ammo[1] < right_modifiers[10] && (global.right_hand_item.specs.item_type == "Box" || (global.right_hand_item.specs.item_type != "Box" && first_click == 1))
 	{
 		if right_modifiers[26] == "Break-Action"
 		{
@@ -36,7 +36,7 @@ function load_bullet(_bullet_obj, _bullet_type)
 			}
 		}
 	}
-	if global.right_hand_item == _bullet_obj && global.left_hand_item != noone && global.left_hand_item.specs.bullet == _bullet_type && hand_ammo[0] < left_modifiers[10] && first_click == 1
+	if global.right_hand_item == _bullet_obj && global.left_hand_item != noone && global.left_hand_item.specs.bullet == _bullet_type && hand_ammo[0] < left_modifiers[10] && (global.left_hand_item.specs.item_type == "Box" || (global.left_hand_item.specs.item_type != "Box" && first_click == 1))
 	{
 		show_debug_message("Test")
 		if left_modifiers[26] == "Break-Action"

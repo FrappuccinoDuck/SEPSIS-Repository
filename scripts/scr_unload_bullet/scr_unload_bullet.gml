@@ -3,10 +3,12 @@ function unload_bullet(_mag, _bullet)
 {
 	
 //show_debug_message("mag right click")
-			if global.left_hand_item == _mag && (global.right_hand_item == noone || global.right_hand_item == _bullet) && hand_ammo[0] > 0
+			if global.left_hand_item == _mag && hand_ammo[0] > 0
 			{
+				
 				var extracted_arr = left_modifiers[38]
-				audio_play_sound(snd_load_bullet, 1, 0)
+				
+				audio_play_sound(snd_unload_bullet, 1, 0)
 				
 				if global.right_hand_item == noone
 				{
@@ -31,10 +33,10 @@ function unload_bullet(_mag, _bullet)
 					selected_mag[1] = 0
 				}
 			}
-			if global.right_hand_item == _mag && (global.left_hand_item == noone || global.left_hand_item == _bullet) && hand_ammo[1] > 0
+			if global.right_hand_item == _mag && hand_ammo[1] > 0
 			{
 				var extracted_arr = right_modifiers[38]
-				audio_play_sound(snd_load_bullet, 1, 0)
+				audio_play_sound(snd_unload_bullet, 1, 0)
 				
 				if global.left_hand_item == noone
 				{

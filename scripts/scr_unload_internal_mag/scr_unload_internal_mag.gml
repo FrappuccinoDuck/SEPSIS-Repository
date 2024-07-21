@@ -8,7 +8,7 @@ function unload_internal_mag(_gun, _bullet)
 				var extracted_arr = left_modifiers[38]
 				if left_modifiers[27] == 1
 				{
-					audio_play_sound(snd_load_bullet, 1, 0)
+					audio_play_sound(snd_unload_bullet, 1, 0)
 					
 					if hand_ammo[0] == 0
 					{
@@ -49,7 +49,7 @@ function unload_internal_mag(_gun, _bullet)
 				var extracted_arr = right_modifiers[38]
 				if right_modifiers[27] == 1
 				{
-					audio_play_sound(snd_load_bullet, 1, 0)
+					audio_play_sound(snd_unload_bullet, 1, 0)
 					
 					if global.left_hand_item == noone
 					{

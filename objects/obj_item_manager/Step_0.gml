@@ -572,6 +572,14 @@ if audio_is_playing(snd_load_bullet)
 		timer_max = 1
 	}
 }
+if audio_is_playing(snd_unload_bullet)
+{
+	with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+	{
+		notification = "Unloading..."
+		timer_max = 1
+	}
+}
 if audio_is_playing(snd_revolver_open)
 {
 	with(instance_create_depth(0, 0, -9, obj_temporary_notification))

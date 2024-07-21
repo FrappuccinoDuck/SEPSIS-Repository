@@ -459,7 +459,7 @@ function create_effect(_leftc_function, _rightc_function, _midm_function, _leftc
 	w8n = _w8n
 	
 }
-function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_max, _beltable, _short_name, _bullet, _second_sprite, _misc_sound) constructor
+function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_max, _beltable, _short_name, _bullet, _second_sprite, _misc_sound, _misc_val) constructor
 {
 	cost = _cost
 	amount = _amount
@@ -472,6 +472,7 @@ function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_ma
 	bullet = _bullet
 	second_sprite = _second_sprite
 	misc_sound = _misc_sound
+	misc_val = _misc_val
 }
 
 function create_surface(_name, _description, _sprite) constructor
@@ -505,6 +506,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0,
 	),
 	orange_specs : new create_specs(
 		10,
@@ -518,6 +520,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0,
 	),
 	pipe_specs : new create_specs(
 		10,
@@ -531,6 +534,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0,
 	),
 	rolex_specs : new create_specs(
 		10,
@@ -544,6 +548,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0,
 	),
 	ACP380_single_specs : new create_specs(
 		1,
@@ -557,6 +562,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0,
 	),
 	ACP380_exp_specs : new create_specs(
 		1,
@@ -570,6 +576,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10,
 	),
 	ACP380_fmj_specs : new create_specs(
 		1,
@@ -583,6 +590,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4,
 	),
 	ACP380_du_specs : new create_specs(
 		1,
@@ -596,6 +604,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8,
 	),
 	ACP380_ap_specs : new create_specs(
 		1,
@@ -609,6 +618,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6,
+		
 	),
 	ACP32_specs : new create_specs(
 		1,
@@ -622,6 +633,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0,
 	),
 	ACP32_exp_specs : new create_specs(
 		1,
@@ -635,6 +647,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10,
 	),
 	ACP32_fmj_specs : new create_specs(
 		1,
@@ -648,6 +661,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4
 	),
 	ACP32_du_specs : new create_specs(
 		1,
@@ -661,6 +675,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8
 	),
 	ACP32_ap_specs : new create_specs(
 		1,
@@ -674,6 +689,7 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6
 	),
 	single_762x25_specs : new create_specs(
 		1,
@@ -687,6 +703,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0
 	),
 	single_762x25_exp_specs : new create_specs(
 		1,
@@ -700,6 +717,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10
 	),
 	single_762x25_fmj_specs : new create_specs(
 		1,
@@ -713,6 +731,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4
 	),
 	single_762x25_du_specs : new create_specs(
 		1,
@@ -726,6 +745,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8
 	),
 	single_762x25_ap_specs : new create_specs(
 		1,
@@ -739,6 +759,7 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6
 	),
 	magnum44_specs : new create_specs(
 		1,
@@ -752,6 +773,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0
 	),
 	magnum44_exp_specs : new create_specs(
 		1,
@@ -765,6 +787,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10
 	),
 	magnum44_fmj_specs : new create_specs(
 		1,
@@ -778,6 +801,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4
 	),
 	magnum44_du_specs : new create_specs(
 		1,
@@ -791,6 +815,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8
 	),
 	magnum44_ap_specs : new create_specs(
 		1,
@@ -804,6 +829,7 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6
 	),
 	single_762x39_specs : new create_specs(
 		1,
@@ -817,6 +843,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0
 	),
 	single_762x39_exp_specs : new create_specs(
 		1,
@@ -830,6 +857,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10
 	),
 	single_762x39_fmj_specs : new create_specs(
 		1,
@@ -843,6 +871,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4
 	),
 	single_762x39_du_specs : new create_specs(
 		1,
@@ -856,6 +885,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8
 	),
 	single_762x39_ap_specs : new create_specs(
 		1,
@@ -869,6 +899,7 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6
 	),
 	single_762x45_specs : new create_specs(
 		1,
@@ -882,6 +913,7 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
+		0
 	),
 	single_762x45_exp_specs : new create_specs(
 		1,
@@ -895,6 +927,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		10
 	),
 	single_762x45_fmj_specs : new create_specs(
 		1,
@@ -908,6 +941,7 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
+		4
 	),
 	single_762x45_du_specs : new create_specs(
 		1,
@@ -921,6 +955,7 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
+		8
 	),
 	single_762x45_ap_specs : new create_specs(
 		1,
@@ -934,6 +969,7 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
+		6
 	),
 	single_12gauge_specs : new create_specs(
 		1,
@@ -947,6 +983,7 @@ global.specs_list =
 		"BIRD",
 		noone,
 		noone,
+		0
 	),
 	single_12gauge_buck_specs : new create_specs(
 		1,
@@ -960,6 +997,7 @@ global.specs_list =
 		"BUCK",
 		noone,
 		noone,
+		3
 	),
 	single_12gauge_slug_specs : new create_specs(
 		1,
@@ -973,6 +1011,7 @@ global.specs_list =
 		"SLUG",
 		noone,
 		noone,
+		3
 	),
 	single_12gauge_exp_specs : new create_specs(
 		1,
@@ -986,6 +1025,7 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
+		3
 	),
 	pistole_vz24_specs : new create_specs(
 		30,
@@ -999,6 +1039,7 @@ global.specs_list =
 		noone,
 		spr_pistol_sights,
 		snd_suppressed,
+		0
 	),
 	sa23_specs : new create_specs(
 		30,
@@ -1012,6 +1053,7 @@ global.specs_list =
 		noone,
 		spr_rifle_sights1,
 		snd_suppressed,
+		0
 	),
 	skorpion_specs : new create_specs(
 		30,
@@ -1025,6 +1067,7 @@ global.specs_list =
 		noone,
 		spr_rifle_sights1,
 		snd_suppressed,
+		0
 	),
 	sw_model29_specs : new create_specs(
 		30,
@@ -1038,6 +1081,7 @@ global.specs_list =
 		"44M",
 		spr_pistol_sights,
 		noone,
+		0
 	),
 	pistole_vz24_mag_specs : new create_specs(
 		1,
@@ -1051,6 +1095,7 @@ global.specs_list =
 		".380",
 		noone,
 		noone,
+		0
 	),
 	sa23_mag_specs : new create_specs(
 		1,
@@ -1064,6 +1109,7 @@ global.specs_list =
 		"7.62x25",
 		noone,
 		noone,
+		0
 	),
 	skorpion_mag_specs : new create_specs(
 		1,
@@ -1077,6 +1123,7 @@ global.specs_list =
 		".32",
 		noone,
 		noone,
+		0
 	),
 	ACP380_shell_specs : new create_specs(
 		1,
@@ -1090,6 +1137,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	ACP32_shell_specs : new create_specs(
 		1,
@@ -1103,6 +1151,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	single_762x25_shell_specs : new create_specs(
 		1,
@@ -1116,6 +1165,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	magnum44_shell_specs : new create_specs(
 		1,
@@ -1129,6 +1179,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	test_key_specs : new create_specs(
 		1,
@@ -1142,6 +1193,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	test_shirt_specs : new create_specs(
 		1,
@@ -1155,6 +1207,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	test_pants_specs : new create_specs(
 		1,
@@ -1168,6 +1221,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	left_pant_specs : new create_specs(
 		1,
@@ -1181,6 +1235,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	right_pant_specs : new create_specs(
 		1,
@@ -1194,6 +1249,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	left_glove_specs : new create_specs(
 		1,
@@ -1207,6 +1263,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	right_glove_specs : new create_specs(
 		1,
@@ -1220,6 +1277,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	gas_mask_specs : new create_specs(
 		1,
@@ -1233,6 +1291,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	military_helmet_specs : new create_specs(
 		1,
@@ -1246,6 +1305,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	right_boot_specs : new create_specs(
 		1,
@@ -1259,6 +1319,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	left_boot_specs : new create_specs(
 		1,
@@ -1272,6 +1333,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	coat_specs : new create_specs(
 		1,
@@ -1285,6 +1347,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	backpack_specs : new create_specs(
 		1,
@@ -1298,6 +1361,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	strapped_stick_specs : new create_specs(
 		1,
@@ -1311,6 +1375,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	copper_band_specs : new create_specs(
 		1,
@@ -1324,6 +1389,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	small_belt_specs : new create_specs(
 		1,
@@ -1337,6 +1403,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	single_action_trigger_specs : new create_specs(
 		1,
@@ -1350,6 +1417,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	double_action_trigger_specs : new create_specs(
 		1,
@@ -1363,6 +1431,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	single_action_hammer_specs : new create_specs(
 		1,
@@ -1376,6 +1445,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	short_barrel_specs : new create_specs(
 		1,
@@ -1389,6 +1459,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	spring_15lbs_specs : new create_specs(
 		1,
@@ -1402,6 +1473,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	spring_25lbs_specs : new create_specs(
 		1,
@@ -1415,6 +1487,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	claw_extractor_specs : new create_specs(
 		1,
@@ -1428,6 +1501,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	medium_barrel_specs : new create_specs(
 		1,
@@ -1441,6 +1515,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	long_barrel_specs : new create_specs(
 		1,
@@ -1454,6 +1529,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	rotating_bolt_specs : new create_specs(
 		1,
@@ -1467,6 +1543,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	turn_bolt_specs : new create_specs(
 		1,
@@ -1480,6 +1557,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	tilt_bolt_specs : new create_specs(
 		1,
@@ -1493,6 +1571,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	spring_pin_specs : new create_specs(
 		1,
@@ -1506,6 +1585,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	enclosed_hammer_specs : new create_specs(
 		1,
@@ -1519,7 +1599,9 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
+	
 	vz58_mag_specs : new create_specs(
 		1,
 		1,
@@ -1532,6 +1614,7 @@ global.specs_list =
 		"7.62x39",
 		noone,
 		noone,
+		0
 	),
 	vz54_mag_specs : new create_specs(
 		1,
@@ -1545,6 +1628,7 @@ global.specs_list =
 		"7.62x45",
 		noone,
 		noone,
+		0
 	),
 	single_762x39_shell_specs : new create_specs(
 		1,
@@ -1558,6 +1642,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	single_762x45_shell_specs : new create_specs(
 		1,
@@ -1571,6 +1656,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	single_12gauge_shell_specs : new create_specs(
 		1,
@@ -1584,6 +1670,7 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
+		0
 	),
 	vz58_specs : new create_specs(
 		1,
@@ -1597,6 +1684,7 @@ global.specs_list =
 		"7.62x39",
 		spr_rifle_sights1,
 		snd_rifle_suppressed,
+		0
 	),
 	vz54_specs : new create_specs(
 		1,
@@ -1610,6 +1698,7 @@ global.specs_list =
 		"7.62x45",
 		spr_rifle_sights2,
 		noone,
+		0
 	),
 	zbrojovka_304_specs : new create_specs(
 		1,
@@ -1623,6 +1712,7 @@ global.specs_list =
 		"12G",
 		spr_shotgun_sights1,
 		snd_shotgun_suppressed,
+		0
 	),
 	scope_2x_specs : new create_specs(
 		1,
@@ -1636,6 +1726,7 @@ global.specs_list =
 		2,
 		spr_scope_overlay_small,
 		noone,
+		0
 	),
 	zenith_optic_specs : new create_specs(
 		1,
@@ -1649,6 +1740,7 @@ global.specs_list =
 		1,
 		spr_zenith_overlay,
 		noone,
+		0
 	),
 	goliath_optic_specs : new create_specs(
 		1,
@@ -1662,6 +1754,7 @@ global.specs_list =
 		1,
 		spr_goliath_red_dot_overlay,
 		noone,
+		0
 	),
 	laser_specs : new create_specs(
 		1,
@@ -1675,6 +1768,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	xmini_specs : new create_specs(
 		1,
@@ -1688,6 +1782,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	zrapid_specs : new create_specs(
 		1,
@@ -1701,6 +1796,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	yheath_specs : new create_specs(
 		1,
@@ -1714,6 +1810,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	sw_model29_speedloader_specs : new create_specs(
 		1,
@@ -1727,6 +1824,7 @@ global.specs_list =
 		"44M",
 		noone,
 		noone,
+		0
 	),
 	frag_grenade_specs : new create_specs(
 		1,
@@ -1740,6 +1838,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	inc_grenade_specs : new create_specs(
 		1,
@@ -1753,6 +1852,7 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
 	),
 	pin_specs : new create_specs(
 		1,
@@ -1766,6 +1866,105 @@ global.specs_list =
 		1,
 		noone,
 		noone,
+		0
+	),
+	box_12gauge_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		"12G",
+		noone,
+		noone,
+		0
+	),
+	box_44magnum_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		"44M",
+		noone,
+		noone,
+		0
+	),
+	box_762x25_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		"7.62x25",
+		noone,
+		noone,
+		0
+	),
+	box_762x39_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		"7.62x39",
+		noone,
+		noone,
+		0
+	),
+	box_762x45_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		"7.62x45",
+		noone,
+		noone,
+		0
+	),
+	box_ACP32_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		".32",
+		noone,
+		noone,
+		0
+	),
+	box_ACP380_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Box",
+		false,
+		1,	
+		false,
+		"Box",
+		".380",
+		noone,
+		noone,
+		0
 	),
 }
 
@@ -2185,7 +2384,7 @@ global.effect_list =
 	ACP380_single_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP380_single, ".380")
+		load_bullet(global.item_list.ACP380_single, ".380", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2221,7 +2420,7 @@ global.effect_list =
 	ACP380_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP380_exp, ".380")
+		load_bullet(global.item_list.ACP380_exp, ".380", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2257,7 +2456,7 @@ global.effect_list =
 	ACP380_fmj_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP380_fmj, ".380")
+		load_bullet(global.item_list.ACP380_fmj, ".380", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2293,7 +2492,7 @@ global.effect_list =
 	ACP380_du_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP380_du, ".380")
+		load_bullet(global.item_list.ACP380_du, ".380", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2329,7 +2528,7 @@ global.effect_list =
 	ACP380_ap_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP380_ap, ".380")
+		load_bullet(global.item_list.ACP380_ap, ".380", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2366,7 +2565,7 @@ global.effect_list =
 	ACP32_single_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP32, ".32")
+		load_bullet(global.item_list.ACP32, ".32", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2402,7 +2601,7 @@ global.effect_list =
 	ACP32_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP32_exp, ".32")
+		load_bullet(global.item_list.ACP32_exp, ".32", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2438,7 +2637,7 @@ global.effect_list =
 	ACP32_fmj_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP32_fmj, ".32")
+		load_bullet(global.item_list.ACP32_fmj, ".32", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2474,7 +2673,7 @@ global.effect_list =
 	ACP32_du_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP32_du, ".32")
+		load_bullet(global.item_list.ACP32_du, ".32", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2510,7 +2709,7 @@ global.effect_list =
 	ACP32_ap_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.ACP32_ap, ".32")
+		load_bullet(global.item_list.ACP32_ap, ".32", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2547,7 +2746,7 @@ global.effect_list =
 	single_762x25_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x25, "7.62x25")
+		load_bullet(global.item_list.single_762x25, "7.62x25", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2583,7 +2782,7 @@ global.effect_list =
 	single_762x25_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x25_exp, "7.62x25")
+		load_bullet(global.item_list.single_762x25_exp, "7.62x25", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2619,7 +2818,7 @@ global.effect_list =
 	single_762x25_fmj_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x25_fmj, "7.62x25")
+		load_bullet(global.item_list.single_762x25_fmj, "7.62x25", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2655,7 +2854,7 @@ global.effect_list =
 	single_762x25_du_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x25_du, "7.62x25")
+		load_bullet(global.item_list.single_762x25_du, "7.62x25", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2691,7 +2890,7 @@ global.effect_list =
 	single_762x25_ap_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x25_ap, "7.62x25")
+		load_bullet(global.item_list.single_762x25_ap, "7.62x25", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2727,7 +2926,7 @@ global.effect_list =
 	single_762x45_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x45, "7.62x45")
+		load_bullet(global.item_list.single_762x45, "7.62x45", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2763,7 +2962,7 @@ global.effect_list =
 	single_762x45_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x45_exp, "7.62x45")
+		load_bullet(global.item_list.single_762x45_exp, "7.62x45", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2799,7 +2998,7 @@ global.effect_list =
 	single_762x45_fmj_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x45_fmj, "7.62x45")
+		load_bullet(global.item_list.single_762x45_fmj, "7.62x45", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2835,7 +3034,7 @@ global.effect_list =
 	single_762x45_du_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x45_du, "7.62x45")
+		load_bullet(global.item_list.single_762x45_du, "7.62x45", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2871,7 +3070,7 @@ global.effect_list =
 	single_762x45_ap_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_762x45_ap, "7.62x45")
+		load_bullet(global.item_list.single_762x45_ap, "7.62x45", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2907,7 +3106,7 @@ global.effect_list =
 	single_12gauge_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_12gauge, "12G")
+		load_bullet(global.item_list.single_12gauge, "12G", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2943,7 +3142,7 @@ global.effect_list =
 	single_12gauge_buck_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_12gauge_buck, "12G")
+		load_bullet(global.item_list.single_12gauge_buck, "12G", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -2979,7 +3178,7 @@ global.effect_list =
 	single_12gauge_slug_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_12gauge_slug, "12G")
+		load_bullet(global.item_list.single_12gauge_slug, "12G", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3015,7 +3214,7 @@ global.effect_list =
 	single_12gauge_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.single_12gauge_exp, "12G")
+		load_bullet(global.item_list.single_12gauge_exp, "12G", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3051,7 +3250,7 @@ global.effect_list =
 	magnum44_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.magnum44, "44M")
+		load_bullet(global.item_list.magnum44, "44M", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3087,7 +3286,7 @@ global.effect_list =
 	magnum44_exp_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.magnum44_exp, "44M")
+		load_bullet(global.item_list.magnum44_exp, "44M", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3123,7 +3322,7 @@ global.effect_list =
 	magnum44_fmj_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.magnum44_fmj, "44M")
+		load_bullet(global.item_list.magnum44_fmj, "44M", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3159,7 +3358,7 @@ global.effect_list =
 	magnum44_du_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.magnum44_du, "44M")
+		load_bullet(global.item_list.magnum44_du, "44M", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -3195,7 +3394,7 @@ global.effect_list =
 	magnum44_ap_effect : new create_effect(
 	function()
 	{
-		load_bullet(global.item_list.magnum44_ap, "44M")
+		load_bullet(global.item_list.magnum44_ap, "44M", false)
 	},
 		function(){
 			show_debug_message("acp380single right click")
@@ -4557,7 +4756,7 @@ global.effect_list =
 	),
 	single_762x39_effect : new create_effect(
 		function(){
-			load_bullet(global.item_list.single_762x39, "7.62x39")
+			load_bullet(global.item_list.single_762x39, "7.62x39", false)
 		},
 		function(){
 			show_debug_message("right click")
@@ -4593,7 +4792,7 @@ global.effect_list =
 	),
 	single_762x39_exp_effect : new create_effect(
 		function(){
-			load_bullet(global.item_list.single_762x39_exp, "7.62x39")
+			load_bullet(global.item_list.single_762x39_exp, "7.62x39", false)
 		},
 		function(){
 			show_debug_message("right click")
@@ -4629,7 +4828,7 @@ global.effect_list =
 	),
 	single_762x39_ap_effect : new create_effect(
 		function(){
-			load_bullet(global.item_list.single_762x39_ap, "7.62x39")
+			load_bullet(global.item_list.single_762x39_ap, "7.62x39", false)
 		},
 		function(){
 			show_debug_message("right click")
@@ -4665,7 +4864,7 @@ global.effect_list =
 	),
 	single_762x39_du_effect : new create_effect(
 		function(){
-			load_bullet(global.item_list.single_762x39_du, "7.62x39")
+			load_bullet(global.item_list.single_762x39_du, "7.62x39", false)
 		},
 		function(){
 			show_debug_message("right click")
@@ -4701,7 +4900,7 @@ global.effect_list =
 	),
 	single_762x39_fmj_effect : new create_effect(
 		function(){
-			load_bullet(global.item_list.single_762x39_fmj, "7.62x39")
+			load_bullet(global.item_list.single_762x39_fmj, "7.62x39", false)
 		},
 		function(){
 			show_debug_message("right click")
@@ -5582,6 +5781,258 @@ global.effect_list =
 		"NA",
 		"NA",
 		
+	),
+	box_12gauge_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_12gauge, global.item_list.single_12gauge)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_44mag_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_44magnum, global.item_list.magnum44)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_762x25_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_762x25, global.item_list.single_762x25)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_762x39_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_762x39, global.item_list.single_762x39)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_762x45_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_762x45, global.item_list.single_762x45)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_ACP32_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_ACP32, global.item_list.ACP32)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
+	box_ACP380_effect : new create_effect(
+	function(){
+			unload_bullet(global.item_list.box_ACP380, global.item_list.ACP380_single)
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Unload",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
 	),
 }
 
@@ -7858,6 +8309,132 @@ global.item_list =
 		obj_pin,
 		global.specs_list.pin_specs,
 		global.effect_list.pin_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_12gauge : new create_item(
+		"12 Gauge Ammo",
+		"This is a box of 12 Gauge Ammo",
+		spr_12gauge_box,
+		obj_12gauge_box,
+		global.specs_list.box_12gauge_specs,
+		global.effect_list.box_12gauge_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_44magnum : new create_item(
+		"44 Magnum Ammo",
+		"This is a box of 44 Magnum Ammo",
+		spr_44mag_box,
+		obj_44magnum_box,
+		global.specs_list.box_44magnum_specs,
+		global.effect_list.box_44mag_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_762x25 : new create_item(
+		"7.62x25 Ammo",
+		"This is a box of 7.62x25 Ammo",
+		spr_762x25_box,
+		obj_762x25_box,
+		global.specs_list.box_762x25_specs,
+		global.effect_list.box_762x25_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_762x39 : new create_item(
+		"7.62x39 Ammo",
+		"This is a box of 7.62x39 Ammo",
+		spr_762x39_box,
+		obj_762x39_box,
+		global.specs_list.box_762x39_specs,
+		global.effect_list.box_762x39_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_762x45 : new create_item(
+		"7.62x45 Ammo",
+		"This is a box of 7.62x45 Ammo",
+		spr_762x45_box,
+		obj_762x45_box,
+		global.specs_list.box_762x45_specs,
+		global.effect_list.box_762x45_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_ACP32 : new create_item(
+		".32 ACP Ammo",
+		"This is a box of .32 ACP Ammo",
+		spr_ACP32_box,
+		obj_ACP32_box,
+		global.specs_list.box_ACP32_specs,
+		global.effect_list.box_ACP32_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
+		noone,
+		30,
+	),
+	box_ACP380 : new create_item(
+		".380 ACP Ammo",
+		"This is a box of .380 ACP Ammo",
+		spr_ACP380_box,
+		obj_ACP380_box,
+		global.specs_list.box_ACP380_specs,
+		global.effect_list.box_ACP380_effect,
 		0,
 		64,
 		noone,

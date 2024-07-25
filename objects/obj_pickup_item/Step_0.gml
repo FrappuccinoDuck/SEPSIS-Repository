@@ -73,6 +73,7 @@ if type == "Item" && obj_item_manager.debug_menu == false && global.hold_pickup 
 	}
 } */
 
+/*
 if keyboard_check(obj_game_initializers.left_hand_hold)
 {
 	global.drop_hold_timer_l += 1
@@ -100,7 +101,7 @@ if keyboard_check_released(obj_game_initializers.right_hand_hold)
 	global.drop_hold_timer_r = 0
 	global.hold_drop_r = false
 }
-
+*/
 
 if type == "Item" && obj_item_manager.debug_menu == false
 {
@@ -179,7 +180,7 @@ if type == "Item" && obj_item_manager.debug_menu == false
 	
 		if (keyboard_check_pressed(obj_game_initializers.left_hand_hold) || global.hold_drop_l == true) && global.left_hand_item != noone && obj_item_manager.stats_open == false && global.left_hand_item != global.item_list.two_hand_item && ((global.left_hand_item != global.hover_item && global.hold_drop_l == false) || global.hold_drop_l == true) && !keyboard_check_direct(vk_control)
 		{
-			with(instance_create_layer(mouse_x, mouse_y, "Instances", global.left_hand_item.obj))
+			with(instance_create_layer(global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y, "Instances", global.left_hand_item.obj))
 			{
 				ammo_arr = obj_item_manager.selected_ammo[0]
 				chambered = obj_item_manager.selected_chamber[0]
@@ -222,7 +223,7 @@ if type == "Item" && obj_item_manager.debug_menu == false
 
 		} if (keyboard_check_pressed(obj_game_initializers.right_hand_hold) || global.hold_drop_r == true) && global.right_hand_item != noone && obj_item_manager.stats_open == false && global.right_hand_item != global.item_list.two_hand_item && ((global.right_hand_item != global.hover_item && global.hold_drop_r == false) || global.hold_drop_r == true)  && !keyboard_check_direct(vk_control)
 		{
-			with(instance_create_layer(mouse_x, mouse_y, "Instances", global.right_hand_item.obj))
+			with(instance_create_layer(global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y, "Instances", global.right_hand_item.obj))
 			{
 				ammo_arr = obj_item_manager.selected_ammo[1]
 				chambered = obj_item_manager.right_chamber_arr

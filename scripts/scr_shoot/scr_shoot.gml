@@ -61,7 +61,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				
 				var extracted_bullet = obj_item_manager.left_modifiers[38]
 				
-				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BUCK"
+				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)].specs.bullet != "BUCK"
 				{
 					with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_pellet))
 					{
@@ -381,15 +381,18 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 		}
 	} else
 	{
+		
 		if !audio_is_playing(_gun.weapon.chamber_sound)
 		{
 			if (global.left_hand_item == _gun && left_modifiers[9] > 1 && selected_chamber[0] == true) || (global.right_hand_item == _gun && right_modifiers[9] > global.degredation_value && selected_chamber[1] == true)
 			{
 				if global.left_hand_item == _gun
 				{
+					var extracted_bullet = obj_item_manager.left_modifiers[38]
 					var barrel_value = left_modifiers[7]
 				} else
 				{
+					var extracted_bullet = obj_item_manager.right_modifiers[38]
 					var barrel_value = right_modifiers[7]
 				}
 				

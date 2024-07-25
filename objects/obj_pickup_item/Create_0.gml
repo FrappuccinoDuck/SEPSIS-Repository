@@ -4,6 +4,8 @@ outline_init()
 global.selected_obj = noone
 global.selected_surface = noone
 
+
+
 global.drop_hold_timer_l = 0
 global.hold_drop_l = false
 global.drop_hold_timer_r = 0

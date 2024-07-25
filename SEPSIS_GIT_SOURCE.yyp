@@ -585,6 +585,7 @@
     {"id":{"name":"spr_military_helmet","path":"sprites/spr_military_helmet/spr_military_helmet.yy",},},
     {"id":{"name":"spr_mouse_main","path":"sprites/spr_mouse_main/spr_mouse_main.yy",},},
     {"id":{"name":"spr_mouse_no","path":"sprites/spr_mouse_no/spr_mouse_no.yy",},},
+    {"id":{"name":"spr_mouse_second","path":"sprites/spr_mouse_second/spr_mouse_second.yy",},},
     {"id":{"name":"spr_mouse_throw","path":"sprites/spr_mouse_throw/spr_mouse_throw.yy",},},
     {"id":{"name":"spr_mouse","path":"sprites/spr_mouse/spr_mouse.yy",},},
     {"id":{"name":"spr_null","path":"sprites/spr_null/spr_null.yy",},},

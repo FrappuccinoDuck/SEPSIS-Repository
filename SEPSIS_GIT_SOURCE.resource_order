@@ -492,6 +492,7 @@
     {"name":"spr_military_helmet","order":7,"path":"sprites/spr_military_helmet/spr_military_helmet.yy",},
     {"name":"spr_mouse_main","order":1,"path":"sprites/spr_mouse_main/spr_mouse_main.yy",},
     {"name":"spr_mouse_no","order":3,"path":"sprites/spr_mouse_no/spr_mouse_no.yy",},
+    {"name":"spr_mouse_second","order":5,"path":"sprites/spr_mouse_second/spr_mouse_second.yy",},
     {"name":"spr_mouse_throw","order":4,"path":"sprites/spr_mouse_throw/spr_mouse_throw.yy",},
     {"name":"spr_null","order":39,"path":"sprites/spr_null/spr_null.yy",},
     {"name":"spr_orange","order":1,"path":"sprites/spr_orange/spr_orange.yy",},

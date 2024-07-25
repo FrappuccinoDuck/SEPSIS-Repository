@@ -3,6 +3,14 @@ y = mouse_y
 _xx = camera_get_view_x(view_camera[0]) 
 _yy = camera_get_view_y(view_camera[0])
 
+if distance_to_object(obj_player) < distance_val
+{
+	global.distance_from_player = distance_to_object(obj_player)
+} else
+{
+	global.distance_from_player = distance_val-1
+}
+global.point_direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y)
 
 if obj_item_manager.throwing == true && obj_item_manager.scoped == false
 {

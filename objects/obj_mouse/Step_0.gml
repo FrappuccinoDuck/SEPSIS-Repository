@@ -9,6 +9,7 @@ if distance_to_object(obj_player) < distance_val
 } else
 {
 	global.distance_from_player = distance_val-1
+	
 }
 global.point_direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y)
 
@@ -38,7 +39,13 @@ if obj_item_manager.throwing == true && obj_item_manager.scoped == false
 			sprite_index = spr_mouse_main
 		} else
 		{
-			sprite_index = spr_mouse
+			if distance_to_object(obj_player) >= distance_val
+			{
+				sprite_index = spr_mouse_no_drop
+			} else
+			{
+				sprite_index = spr_mouse
+			}
 		}
 	
 		if place_meeting(x, y, obj_solid)

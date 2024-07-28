@@ -26,7 +26,7 @@ if prague == true
 	}
 }
 
-if stats_open == true && global.settings_open == false
+if (stats_open == true || obj_health_manager.health_open == true) && global.settings_open == false
 {
 	throwing = false
 	if sound_init == false
@@ -35,32 +35,39 @@ if stats_open == true && global.settings_open == false
 		audio_play_sound(snd_menu2, 1, 0)
 	}
 	scoped = false
-	if init_prev == false
+	
+	if stats_open == true 
 	{
-		prev_x = obj_player.x
-		prev_y = obj_player.y
+		layer_x("inventory_ui", camera_get_view_x(view_camera[0]))
+		layer_y("inventory_ui", camera_get_view_y(view_camera[0]))
 	
-		obj_player.x = 0
-		obj_player.y = 0
-		
-		init_prev = true
+		layer_set_visible(layer_get_id("inventory_ui"), true)
+	} else
+	{
+		//layer_x("inventory_ui", camera_get_view_x(view_camera[0]))
+		//layer_y("inventory_ui", camera_get_view_y(view_camera[0]))
+		layer_set_visible(layer_get_id("inventory_ui"), false)
 	}
-	layer_x("inventory_ui", camera_get_view_x(view_camera[0]))
-	layer_y("inventory_ui", camera_get_view_y(view_camera[0]))
-	
-	layer_set_visible(layer_get_id("inventory_ui"), true)
 	
 	
 	// 8 PIXEL OFFSET
 	
-	draw_sprite(spr_dot_counter, nutrition_page, _xx+1243, _yy+404)
- 
+	if stats_open == true
+	{
+		draw_sprite(spr_dot_counter, nutrition_page, _xx+1243, _yy+404)
+	}
 	
 	
 	if close_inspect == false
 	{
 		
-	draw_text(_xx+36, _yy+68, string($"Inventory & Armor                         [{obj_player.present_weight}/{global.max_carry_weight} lbs.]"))
+	if stats_open == true
+	{
+		draw_text(_xx+36, _yy+68, string($"Inventory & Armor                         [{obj_player.present_weight}/{global.max_carry_weight} lbs.]"))
+	} else
+	{
+		//draw_text(_xx+36, _yy+68, string($"Health Management"))
+	}
 	
 	
 	/*if nutrition_page == 0
@@ -214,12 +221,13 @@ if stats_open == true && global.settings_open == false
 	}
 	}
 
+	
 	if inspection_item == noone
 	{
 		draw_sprite_ext(spr_main_character_model, model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
 	}
 
-	if global.mouse_item != noone
+	if global.mouse_item != noone && stats_open == true
 	{
 		if mouse_x >= _xx+320 && mouse_x <= _xx+384 && mouse_y >= _yy+256 && mouse_y <= _yy+320 && (global.mouse_item.specs.item_type == "Armor" || global.mouse_item.specs.item_type == "Firearm") && global.mouse_item.armor != noone && global.mouse_item.armor.location == "Shoulder" && global.lshoulder == noone
 			{
@@ -877,7 +885,7 @@ if stats_open == true && global.settings_open == false
 		inspection_item = global.selected_item
 	
 	
-	if inspection_item != noone
+	if inspection_item != noone && obj_health_manager.health_open == false
 	{
 		_xx = camera_get_view_x(view_camera[0]) 
 		_yy = camera_get_view_y(view_camera[0])
@@ -1029,12 +1037,12 @@ if stats_open == true && global.settings_open == false
 		layer_set_visible(layer_get_id("close_item_inspect_ui"), false)
 	}
 	
-	if global.mouse_item == noone || (global.mouse_item != noone && global.mouse_item.armor == noone)
+	if (global.mouse_item == noone || (global.mouse_item != noone && global.mouse_item.armor == noone)) && stats_open == true
 	{
 		model_index = 0
 	}
 	
-	if global.mouse_item != noone && global.mouse_item.armor != noone && global.selected_item == noone
+	if global.mouse_item != noone && global.mouse_item.armor != noone && global.selected_item == noone && stats_open == true
 	{
 		if global.mouse_item.armor.location == "Torso"
 		{
@@ -1208,7 +1216,7 @@ if stats_open == true && global.settings_open == false
 		}
 	}
 	
-	if global.selected_item == noone && global.mouse_item == noone
+	if global.selected_item == noone && global.mouse_item == noone && stats_open == true
 	{
 		
 		if global.backpack != noone
@@ -1779,12 +1787,7 @@ if stats_open == true && global.settings_open == false
 	sound_init = false
 	layer_set_visible(layer_get_id("close_item_inspect_ui"), false)
 	layer_set_visible(layer_get_id("inventory_ui"), false)
-	if init_prev == true
-	{
-	obj_player.x = prev_x
-	obj_player.y = prev_y
-	init_prev = false
-	}
+	
 	if keyboard_check_pressed(obj_game_initializers.alt_function_key) && stats_open == false && function_wheel_strip == false && function_wheel_health == false 
 	{
 		function_wheel = !function_wheel
@@ -2252,7 +2255,7 @@ if stats_open == false && obj_health_manager.health_open == false && close_inspe
 		draw_text_transformed(_xx+420, _yy+580, "Control Q/E: hand to belt", 1, 1, 0)
 	}
 }
-if close_inspect == false && obj_health_manager.health_open == false 
+if close_inspect == false
 {
 		if using_hand == false && global.left_hand_item != noone &&  obj_health_manager.health_open == false && stats_open == false && global.left_hand_item != global.item_list.two_hand_item && global.ui_show == true
 		{
@@ -2828,6 +2831,6 @@ if mouse_x >= _xx + 224 && mouse_x <= _xx + 381 && mouse_y >= _yy + 606 && mouse
 		
 	}
 	
-
+	
 	
 }

@@ -1,5 +1,5 @@
 
-if obj_item_manager.stats_open == false && obj_player.dead == false && global.settings_open == false
+if obj_item_manager.stats_open == false && obj_player.dead == false && global.settings_open == false && obj_health_manager.health_open == false
 {
 	var S_smooth
 	S_smooth = round(point_distance(window_get_width()/2, window_get_height()/2, window_mouse_get_x(), window_mouse_get_y()))

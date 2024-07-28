@@ -171,3 +171,28 @@ if no_move == true
 		notification = string($"Too Heavy to Move [{obj_player.present_weight}/{global.max_carry_weight} lbs.]")
 	}
 }
+
+if obj_item_manager.stats_open == true
+{
+	if init == false
+	{
+		prev_x = x
+		prev_y = y
+		init = true
+	}
+		show_debug_message(prev_x)
+		
+		x = 0
+		y = 0
+		obj_viewport.x = 0
+		obj_viewport.y = 0
+} else
+{
+	if init == true
+	{
+		x = prev_x
+		y = prev_y
+		init = false
+		show_debug_message("test")
+	}
+}

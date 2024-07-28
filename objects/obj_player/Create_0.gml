@@ -1,5 +1,9 @@
 global.door_touch = false
 
+init = false
+prev_x = 0
+prev_y = 0
+
 global.death_type = 0
 
 global.wall_gain = 0

@@ -9,12 +9,14 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && i
 	global.selected_part = index
 
 }
-
 */
+depth = obj_mouse.depth + 1
+
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index > 9 && index <= 19 && obj_health_manager.health_tab == 2
 {
 	global.selected_part = index
 	
 }
+
 
 heart_val += heartbeat/100

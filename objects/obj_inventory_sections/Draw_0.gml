@@ -3,14 +3,14 @@ function draw_modifiers(_mod_arr, _item)
 	show_debug_message(_mod_arr)
 	var extracted_arr = _mod_arr
 	show_debug_message(extracted_arr[0])
-	if extracted_arr[0] != 0
+	if extracted_arr[0] != 0 && obj_health_manager.health_open == false
 	{
 		draw_text(_xx+36, _yy+166, "Clothing Size")
 		draw_text(_xx+230, _yy+166, extracted_arr[0])
 		
 	}
 	
-	if _item.specs.item_type == "Firearm"
+	if _item.specs.item_type == "Firearm" && obj_health_manager.health_open == false
 	{
 		if extracted_arr[1] != 0
 		{
@@ -99,7 +99,7 @@ function draw_modifiers(_mod_arr, _item)
 		}
 	}		
 	
-		if extracted_arr[9] != 0
+		if extracted_arr[9] != 0 && obj_health_manager.health_open == false
 		{
 			draw_text(_xx+36, _yy+133, "Overall Condition")
 			draw_text_color(_xx+230, _yy+133, string($"{extracted_arr[9]}%"), find_color(extracted_arr[9]), find_color(extracted_arr[9]), find_color(extracted_arr[9]),find_color(extracted_arr[9]), 1)
@@ -118,20 +118,22 @@ function draw_modifiers(_mod_arr, _item)
 
 _xx = camera_get_view_x(view_camera[0])
 _yy = camera_get_view_y(view_camera[0])
-if obj_item_manager.stats_open == true && obj_item_manager.close_inspect == false
+if (obj_item_manager.stats_open == true || obj_health_manager.health_open == true) && obj_item_manager.close_inspect == false
 {
-	if global.selected_item != noone
+	if global.selected_item != noone && obj_health_manager.health_open == false
 		{
 			
 			
 			draw_sprite_ext(spr_ui_no_grid_opaque_noline, 0, x-416+32, y-32+128-32, 5.5, 6.5, 0, c_white, 1)
 			//draw_sprite_ext(global.selected_item.spr, 2, x-416+33, y-33+128, 2.2*global.selected_item.hold_size, 2.2*global.selected_item.hold_size, 0, c_white, 1)
-			for(var i = 0; i < 12; i++)
-			{
+			
+				for(var i = 0; i < 12; i++)
+				{
 				
 				draw_sprite_ext(spr_ui_no_grid, 0, _xx+32, _yy+128+32*i, 2.5, 0.5, 0, c_white, 1)
 				draw_sprite_ext(spr_ui_no_grid, 0, _xx+224, _yy+128+32*i, 2.5, 0.5, 0, c_white, 1)
-			}
+				}
+			
 			
 		} 
 	if global.selected_clothing != noone

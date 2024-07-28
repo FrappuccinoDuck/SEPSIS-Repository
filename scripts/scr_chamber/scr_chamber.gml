@@ -13,10 +13,13 @@ function chamber(_gun, _shell)
 							show_debug_message("Open")
 							left_modifiers[25] = "Not"
 							
-							for(var i = 0; i < left_modifiers[31]; i++)
+							if _shell != noone
 							{
-								instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", _shell.obj)
-								show_debug_message(_shell)
+								for(var i = 0; i < left_modifiers[31]; i++)
+								{
+									instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", _shell.obj)
+									show_debug_message(_shell)
+								}
 							}
 							audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
 						} else if left_modifiers[27] == 1
@@ -53,9 +56,12 @@ function chamber(_gun, _shell)
 							audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
 							right_modifiers[25] = "Not"
 							
-							for(var i = 0; i < right_modifiers[31]; i++)
+							if _shell != noone
 							{
-								instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", _shell.obj)
+								for(var i = 0; i < right_modifiers[31]; i++)
+								{
+									instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", _shell.obj)
+								}
 							}
 							audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
 						} else if right_modifiers[27] == 1

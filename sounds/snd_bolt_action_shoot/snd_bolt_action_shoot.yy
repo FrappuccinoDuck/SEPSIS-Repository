@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":3.552,
+  "duration":0.0,
   "name":"snd_bolt_action_shoot",
   "parent":{
     "name":"Sounds",

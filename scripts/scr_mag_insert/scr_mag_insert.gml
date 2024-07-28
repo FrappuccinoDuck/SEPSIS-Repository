@@ -7,14 +7,14 @@ function mag_insert(_gun, _mag)
 		{
 			if right_modifiers[27] == 1
 			{
-				right_modifiers[38] = array_create(0, 0)
+				//right_modifiers[38] = array_create(0, 0)
 				for(var k = 0; k < array_length(left_modifiers[38]); k++)
 				{
 					var extracted = left_modifiers[38]
 					array_push(right_modifiers[38], extracted[k])
 				}
 				left_modifiers[38] = 0
-				
+				right_modifiers[36] = _mag
 				audio_play_sound(snd_small_mag_insert, 1, 0)
 				hand_ammo[1] += hand_ammo[0]
 				global.left_hand_item = noone
@@ -32,7 +32,7 @@ function mag_insert(_gun, _mag)
 			}
 		} else
 		{
-			right_modifiers[38] = array_create(0, 0)
+			//right_modifiers[38] = array_create(0, 0)
 			for(var k = 0; k < array_length(left_modifiers[38]); k++)
 			{
 				var extracted = left_modifiers[38]
@@ -57,7 +57,7 @@ function mag_insert(_gun, _mag)
 		{
 			if left_modifiers[27] == 1
 			{
-				left_modifiers[38] = array_create(0, 0)
+				//left_modifiers[38] = array_create(0, 0)
 				for(var k = 0; k < array_length(right_modifiers[38]); k++)
 				{
 					var extracted = right_modifiers[38]
@@ -67,6 +67,7 @@ function mag_insert(_gun, _mag)
 				
 				audio_play_sound(snd_small_mag_insert, 1, 0)
 				hand_ammo[0] += hand_ammo[1]
+				right_modifiers[36] = _mag
 				global.right_hand_item = noone
 				hand_ammo[1] = 0
 				selected_mag[0] = _mag.obj
@@ -82,7 +83,7 @@ function mag_insert(_gun, _mag)
 			}
 		} else
 		{
-			left_modifiers[38] = array_create(0, 0)
+			//left_modifiers[38] = array_create(0, 0)
 			for(var k = 0; k < array_length(right_modifiers[38]); k++)
 			{
 				var extracted = right_modifiers[38]

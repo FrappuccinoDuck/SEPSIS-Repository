@@ -2410,7 +2410,7 @@ if global.hover_item != noone
 		{
 			if array_length(global.hover_modifiers[38]) > 0
 			{
-				draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x+8+string_length(global.hover_item.name)*15, mouse_y, 1, 0.5, 0, c_white, 1)	
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x+8+string_length(global.hover_item.name)*15, mouse_y, 1.1, 0.5, 0, c_white, 1)	
 				var extracted = global.hover_modifiers[38]
 				draw_text(mouse_x+16+string_length(global.hover_item.name)*15, mouse_y+8, extracted[array_length(extracted)-1].specs.bullet)
 			}

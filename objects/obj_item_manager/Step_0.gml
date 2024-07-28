@@ -143,6 +143,12 @@ global.parts_list.skorpion_parts.recoil_spring = global.item_list.spring_25lbs
 global.parts_list.skorpion_parts.extractor = global.item_list.claw_extractor
 global.parts_list.skorpion_parts.bolt_slide = global.item_list.tilt_bolt
 
+global.item_list.disintegration_pistol.ammo = global.item_list.ACP380_single
+
+global.parts_list.dis_pistol_parts.trigger = global.item_list.super_conductor_circuit
+global.parts_list.dis_pistol_parts.hammer = global.item_list.overcharge_modulator
+global.parts_list.dis_pistol_parts.barrel = global.item_list.electromagnetic_lenses
+
 
 if keyboard_check_pressed(obj_game_initializers.switch_hands)
 {

@@ -1083,6 +1083,20 @@ global.specs_list =
 		noone,
 		0
 	),
+	dis_pistol_specs : new create_specs(
+		30,
+		1,
+		3,
+		"Firearm",
+		false,
+		1,
+		true,
+		"Disintegration Pistol",
+		"Capacitor",
+		spr_pistol_sights,
+		noone,
+		0
+	),
 	pistole_vz24_mag_specs : new create_specs(
 		1,
 		1,
@@ -1121,6 +1135,34 @@ global.specs_list =
 		true,
 		"Skorpion Mag",
 		".32",
+		noone,
+		noone,
+		0
+	),
+	capacitor_specs : new create_specs(
+		1,
+		1,
+		0.5,
+		"Magazine",
+		false,
+		1,
+		true,
+		"Capacitor",
+		"Energy",
+		noone,
+		noone,
+		0
+	),
+	energy_specs : new create_specs(
+		1,
+		1,
+		0.5,
+		"Ammunition",
+		false,
+		1,
+		true,
+		"Energy",
+		"Energy",
 		noone,
 		noone,
 		0
@@ -1433,6 +1475,20 @@ global.specs_list =
 		noone,
 		0
 	),
+	super_conductor_circuit_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Trigger",
+		false,
+		1,	
+		false,
+		"SC-Circuit",
+		noone,
+		noone,
+		noone,
+		0
+	),
 	single_action_hammer_specs : new create_specs(
 		1,
 		1,
@@ -1447,6 +1503,20 @@ global.specs_list =
 		noone,
 		0
 	),
+	overcharge_modulator_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Hammer",
+		false,
+		1,	
+		false,
+		"O-Modulator",
+		noone,
+		noone,
+		noone,
+		0
+	),
 	short_barrel_specs : new create_specs(
 		1,
 		1,
@@ -1456,6 +1526,20 @@ global.specs_list =
 		1,	
 		false,
 		"Short",
+		noone,
+		noone,
+		noone,
+		0
+	),
+	electromagnetic_lenses_specs : new create_specs(
+		1,
+		1,
+		0.1,
+		"Barrel",
+		false,
+		1,	
+		false,
+		"E-Lenses",
 		noone,
 		noone,
 		noone,
@@ -2375,6 +2459,42 @@ global.effect_list =
 		},
 		"Remove Optic",
 		"Remove Suppressor",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
+	dis_pistol_effect : new create_effect(
+		function(){
+			shoot(global.item_list.disintegration_pistol, global.item_list.disintegration_pistol, noone, 64, false)
+		},
+		function(){
+			chamber(global.item_list.disintegration_pistol, noone)
+		},
+		function(){
+			mag_release(global.item_list.disintegration_pistol, global.item_list.capacitor)
+		},
+		"Shoot",
+		"Charge",
+		"Remove Capacitor",
+		
+		function(){
+			remove_optic()
+		},
+		function(){
+			toggle_underbarrel()
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"Remove Optic",
+		"Toggle Laser",
 		"NA",
 		"NA",
 		"NA",
@@ -3573,6 +3693,41 @@ global.effect_list =
 		"NA",
 		"NA",
 	),
+	capacitor_effect : new create_effect(
+	function(){
+			mag_insert(global.item_list.disintegration_pistol, global.item_list.capacitor)
+		},
+		function(){
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"Attach to Gun",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
 	sw_model29_speedloader_effect : new create_effect(
 	function(){
 			speedload(global.item_list.sw_model29, global.item_list.sw_model29_speedloader)
@@ -4496,6 +4651,49 @@ global.effect_list =
 		"NA",
 		
 	),
+	super_conductor_circuit_effect : new create_effect(
+		function(){
+			if global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.super_conductor_circuit, 1, 5, global.right_hand_item.weapon.parts.trigger, noone)
+			}
+			if global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.super_conductor_circuit, 1, 5, noone, global.left_hand_item.weapon.parts.trigger)
+			}
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Replace",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
 	single_action_hammer_effect : new create_effect(
 		function(){
 			if global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm"
@@ -4539,6 +4737,49 @@ global.effect_list =
 		"NA",
 		
 	),
+	overcharge_modulator_effect : new create_effect(
+		function(){
+			if global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.overcharge_modulator, 2, 6, global.right_hand_item.weapon.parts.hammer, noone)
+			}
+			if global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.overcharge_modulator, 2, 6, noone, global.left_hand_item.weapon.parts.hammer)
+			}
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Replace",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
 	short_barrel_effect : new create_effect(
 		function(){
 			if global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm"
@@ -4548,6 +4789,49 @@ global.effect_list =
 			if global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm"
 			{
 				swap_component(global.item_list.short_barrel, 3, 7, noone, global.left_hand_item.weapon.parts.barrel)
+			}
+		},
+		function(){
+			show_debug_message("right click")
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Replace",
+		"N/A",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
+	electromagnetic_lenses_effect : new create_effect(
+		function(){
+			if global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.electromagnetic_lenses, 3, 7, global.right_hand_item.weapon.parts.barrel, noone)
+			}
+			if global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm"
+			{
+				swap_component(global.item_list.electromagnetic_lenses, 3, 7, noone, global.left_hand_item.weapon.parts.barrel)
 			}
 		},
 		function(){
@@ -6181,6 +6465,17 @@ global.parts_list =
 		noone,
 		
 	),
+	
+	dis_pistol_parts : new create_parts(
+		obj_super_conductor_circuit,
+		obj_overcharge_modulator,
+		obj_electromagnetic_lenses,
+		noone,
+		noone,
+		noone,
+		noone,
+		
+	),
 }
 
 burst_delay = 0
@@ -6348,6 +6643,24 @@ global.weapon_list =
 		false,
 		false,
 		0,
+		false,
+	),
+	dis_pistol_weapon : new create_weapon(
+		10,
+		6,
+		1, 
+		global.parts_list.dis_pistol_parts,
+		true,
+		false,
+		true,
+		4,
+		snd_charge,
+		snd_laser_shoot,
+		snd_laser_shoot,
+		true,
+		false,
+		false,
+		5,
 		false,
 	),
 }
@@ -7362,6 +7675,24 @@ global.item_list =
 		noone, 
 		533.7,
 	),
+	disintegration_pistol: new create_item(
+		"Disintegration Pistol",
+		"This is a disintegration pistol",
+		spr_disintegration_pistol,
+		obj_disintegration_pistol,
+		global.specs_list.dis_pistol_specs,
+		global.effect_list.dis_pistol_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		global.weapon_list.dis_pistol_weapon,
+		"Capacitor",
+		1,
+		noone, 
+		533.7,
+	),
 	// MAGS-----------------------------------------------------------------
 	pistole_vz24_mag : new create_item(
 		"ACP .380 Mag.",
@@ -7460,6 +7791,24 @@ global.item_list =
 		obj_skorpion_mag,
 		global.specs_list.skorpion_mag_specs,
 		global.effect_list.skorpion_mag_effect,
+		0,
+		32,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		1.5,
+		noone,
+		10,
+	),
+	capacitor : new create_item(
+		"Capacitor",
+		"This capacitor is primarily for the disintegration pistol",
+		spr_capacitor,
+		obj_capacitor,
+		global.specs_list.capacitor_specs,
+		global.effect_list.capacitor_effect,
 		0,
 		32,
 		noone,
@@ -7887,6 +8236,24 @@ global.item_list =
 		noone,
 		30,
 	),
+	super_conductor_circuit : new create_item(
+		"Super-Conductive Circuit",
+		"This is a super-conductive circuit trigger mechanism",
+		spr_super_conductor_circuit,
+		obj_super_conductor_circuit,
+		global.specs_list.super_conductor_circuit_specs,
+		global.effect_list.super_conductor_circuit_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		1.5,
+		noone,
+		30,
+	),
 	double_action_trigger : new create_item(
 		"Double Action Trigger",
 		"This is a double action trigger",
@@ -7923,6 +8290,24 @@ global.item_list =
 		noone,
 		30,
 	),
+	overcharge_modulator : new create_item(
+		"Overcharging Modulator",
+		"This is an overcharging modulator mechanism",
+		spr_overcharge_modulator,
+		obj_overcharge_modulator,
+		global.specs_list.overcharge_modulator_specs,
+		global.effect_list.overcharge_modulator_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		1.5,
+		noone,
+		30,
+	),
 	enclosed_hammer : new create_item(
 		"Enclosed Hammer",
 		"This is an enclosed hammer",
@@ -7948,6 +8333,24 @@ global.item_list =
 		obj_short_barrel,
 		global.specs_list.short_barrel_specs,
 		global.effect_list.short_barrel_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		1.5,
+		noone,
+		30,
+	),
+	electromagnetic_lenses : new create_item(
+		"Electromagnetic-Lensed Barrel",
+		"This is an electromagnetic-lensed barrel",
+		spr_electromagnetic_lenses,
+		obj_electromagnetic_lenses,
+		global.specs_list.electromagnetic_lenses_specs,
+		global.effect_list.electromagnetic_lenses_effect,
 		0,
 		64,
 		noone,
@@ -8435,6 +8838,24 @@ global.item_list =
 		obj_ACP380_box,
 		global.specs_list.box_ACP380_specs,
 		global.effect_list.box_ACP380_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		1.5,
+		noone,
+		30,
+	),
+	energy : new create_item(
+		"energy",
+		"energy",
+		noone,
+		noone,
+		global.specs_list.energy_specs,
+		noone,
 		0,
 		64,
 		noone,

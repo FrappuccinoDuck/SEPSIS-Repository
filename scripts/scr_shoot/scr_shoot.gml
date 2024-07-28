@@ -61,7 +61,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				
 				var extracted_bullet = obj_item_manager.left_modifiers[38]
 				
-				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)].specs.bullet != "BUCK"
+				if extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BIRD" && extracted_bullet[array_length(extracted_bullet)-1].specs.bullet != "BUCK"
 				{
 					with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_pellet))
 					{
@@ -179,7 +179,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						audio_play_sound(_gun.weapon.shoot_sound2, 1, 0)
 					}
 				}
-				audio_play_sound(snd_shell_drop, 1, 0)
+				if _shell != noone
+				{
+					audio_play_sound(snd_shell_drop, 1, 0)
+				}
 				with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_light_ball))
 				{
 					if obj_item_manager.scoped == false
@@ -194,9 +197,12 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				}
 				if left_modifiers[26] != "Break-Action"
 				{
-					with(instance_create_depth(obj_player.x+irandom_range(-30, 30), obj_player.y+irandom_range(-30, 30), -9, _shell.obj))
+					if _shell != noone
 					{
-						//physics_apply_impulse(x, y, -500, -8)
+						with(instance_create_depth(obj_player.x+irandom_range(-30, 30), obj_player.y+irandom_range(-30, 30), -9, _shell.obj))
+						{
+							//physics_apply_impulse(x, y, -500, -8)
+						}
 					}
 					//instance_create_depth(obj_player.x, obj_player.y+50, -9, obj_bullet_collider)
 				} else
@@ -350,7 +356,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						audio_play_sound(_gun.weapon.shoot_sound2, 1, 0)
 					}
 				}
-				audio_play_sound(snd_shell_drop, 1, 0)
+				if _shell != noone
+				{
+					audio_play_sound(snd_shell_drop, 1, 0)
+				}
 				with(instance_create_depth(obj_player.x, obj_player.y, -9, obj_light_ball))
 				{
 					
@@ -366,8 +375,11 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				}
 				if right_modifiers[26] != "Break-Action" 
 				{
-					instance_create_depth(obj_player.x+irandom_range(-30, 30), obj_player.y+irandom_range(-30, 30), -9, _shell.obj)
-					//instance_create_depth(obj_player.x, obj_player.y+50, -9, obj_bullet_collider)
+					if _shell != noone
+					{
+						instance_create_depth(obj_player.x+irandom_range(-30, 30), obj_player.y+irandom_range(-30, 30), -9, _shell.obj)
+						//instance_create_depth(obj_player.x, obj_player.y+50, -9, obj_bullet_collider)
+					}
 				} else
 				{
 					right_modifiers[31] += 1

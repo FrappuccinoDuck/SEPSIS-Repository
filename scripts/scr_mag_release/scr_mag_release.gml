@@ -38,7 +38,7 @@ function mag_release(_gun, _mag)
 				selected_mod[1] = array_create(modifier_amount, 0)
 				right_modifiers = array_create(modifier_amount, 0)
 				var copied_arr = left_modifiers[38]
-				array_delete(copied_arr, array_length(copied_arr)-1, 1)
+				array_delete(copied_arr, array_length(copied_arr), 1)
 				right_modifiers[38] = copied_arr
 				var extracted_arr = left_modifiers[38]
 				left_modifiers[38] = array_create(1, extracted_arr[array_length(left_modifiers[38])-1])

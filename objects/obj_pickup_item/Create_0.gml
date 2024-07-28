@@ -30,9 +30,9 @@ p_y = y
 
 // 0 = clothing size
 
-// 1 = trigger assembly
-// 2 = hammer
-// 3 = barrel
+// 1 = trigger assembly / circuit
+// 2 = hammer / modulator
+// 3 = barrel / concentrator
 // 4 = recoil spring
 
 // 5 = trigger assembly condition

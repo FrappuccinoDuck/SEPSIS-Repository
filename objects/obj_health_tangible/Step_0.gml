@@ -10,9 +10,9 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && i
 
 }
 */
-depth = obj_mouse.depth + 1
+depth = obj_mouse.depth+100
 
-if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index > 9 && index <= 19 && obj_health_manager.health_tab == 2
+if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index > 9 && index <= 20 && obj_health_manager.health_tab == 2
 {
 	global.selected_part = index
 	

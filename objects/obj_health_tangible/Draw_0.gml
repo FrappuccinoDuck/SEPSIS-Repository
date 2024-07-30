@@ -1,9 +1,12 @@
 _xx = camera_get_view_x(view_camera[0])
 _yy = camera_get_view_y(view_camera[0])
 
-if (index > 9 && index <= 19 && obj_health_manager.health_tab == 2) && obj_health_manager.health_open == true
+if (index > 9 && index <= 20 && obj_health_manager.health_tab == 2) && obj_health_manager.health_open == true
 {
-	draw_self()
+	if place_meeting(x, y, obj_mouse)
+	{
+		draw_self()
+	}
 }
 /*
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index == 11 && obj_health_manager.health_tab == 2

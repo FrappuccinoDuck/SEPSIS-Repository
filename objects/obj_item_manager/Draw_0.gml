@@ -224,7 +224,20 @@ if (stats_open == true || obj_health_manager.health_open == true) && global.sett
 	
 	if inspection_item == noone
 	{
-		draw_sprite_ext(spr_main_character_model, model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+		if stats_open == true
+		{
+			draw_sprite_ext(spr_main_character_model, model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+		} 
+		if obj_health_manager.health_open == true
+		{
+			if obj_health_manager.health_tab == 2
+			{
+				draw_sprite_ext(spr_main_character_model, 9, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			} else
+			{
+				draw_sprite_ext(spr_main_character_model, model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			}
+		}
 	}
 
 	if global.mouse_item != noone && stats_open == true

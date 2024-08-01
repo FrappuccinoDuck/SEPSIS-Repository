@@ -1,7 +1,7 @@
 stats_open = false
 backpack = false
 
-
+player_stats = false
 
 scoped = false
 
@@ -243,32 +243,32 @@ global.salt_m = 6
 
 // VITAMINS
 
-global.vit_a = 900
-global.vit_a_m = 900
+global.vit_a = 2000 // milligrams
+global.vit_a_m = 2000 // milligrams
 
-global.thiamin = 1
-global.thiamin_m = 1
+global.thiamin = 50 // milligrams
+global.thiamin_m = 50 // milligrams
 
-global.rivoflavin = 1.3
-global.rivo_m = 1.3
+global.rivoflavin = 25 // milligrams
+global.rivo_m = 25 // milligrams
 
-global.niacin = 17
-global.niacin_m = 17
+global.niacin = 150 // milligrams
+global.niacin_m = 150
 
-global.vit_e = 15
+global.vit_e = 15 // milligrams
 global.vit_e_m = 15
 
-global.folate = 200
-global.folate_m = 200
+global.folate = 8 // milligrams
+global.folate_m = 8 
 
-global.vit_k = 120
-global.vit_k_m = 120
+global.vit_k = 2 // milligrams
+global.vit_k_m = 2
 
-global.vit_c = 90
-global.vit_c_m = 90
+global.vit_c = 90 // milligrams
+global.vit_c_m = 90 // milligrams
 
-global.vit_d = 18
-global.vit_d_m = 18
+global.vit_d = 60
+global.vit_d_m = 60 //micrograms
 
 global.calcium = 1150
 global.calc_m = 1150
@@ -282,14 +282,14 @@ global.magnesium_m = 300
 global.potass = 3500
 global.potass_m = 3500
 
-global.iron = 9
-global.iron_m = 9
+global.iron = 4000
+global.iron_m = 4000
 
-global.zinc = 11
-global.zinc_m = 11
+global.zinc = 11 // milligrams
+global.zinc_m = 11 // milligrams
 
-global.copper = 1.2
-global.copper_m = 1.2
+global.copper = 100 // milligrams
+global.copper_m = 100 // milligrams
 
 global.body_temp = 98
 global.body_temp_m = 106
@@ -459,7 +459,7 @@ function create_effect(_leftc_function, _rightc_function, _midm_function, _leftc
 	w8n = _w8n
 	
 }
-function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_max, _beltable, _short_name, _bullet, _second_sprite, _misc_sound, _misc_val) constructor
+function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_max, _beltable, _short_name, _bullet, _second_sprite, _misc_sound, _misc_val, _medical) constructor
 {
 	cost = _cost
 	amount = _amount
@@ -473,6 +473,14 @@ function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_ma
 	second_sprite = _second_sprite
 	misc_sound = _misc_sound
 	misc_val = _misc_val
+	medical = _medical
+}
+
+function create_medical(_bleeding, _broken, _bleed_remedy) constructor
+{
+	bleeding = _bleeding
+	broken = _broken
+	bleed_remedy = _bleed_remedy
 }
 
 function create_surface(_name, _description, _sprite) constructor
@@ -507,6 +515,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	orange_specs : new create_specs(
 		10,
@@ -521,6 +530,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	pipe_specs : new create_specs(
 		10,
@@ -535,6 +545,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	rolex_specs : new create_specs(
 		10,
@@ -549,6 +560,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	ACP380_single_specs : new create_specs(
 		1,
@@ -563,6 +575,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	ACP380_exp_specs : new create_specs(
 		1,
@@ -577,6 +590,7 @@ global.specs_list =
 		noone,
 		noone,
 		10,
+		noone,
 	),
 	ACP380_fmj_specs : new create_specs(
 		1,
@@ -591,6 +605,7 @@ global.specs_list =
 		noone,
 		noone,
 		4,
+		noone,
 	),
 	ACP380_du_specs : new create_specs(
 		1,
@@ -605,6 +620,7 @@ global.specs_list =
 		noone,
 		noone,
 		8,
+		noone,
 	),
 	ACP380_ap_specs : new create_specs(
 		1,
@@ -619,6 +635,7 @@ global.specs_list =
 		noone,
 		noone,
 		6,
+		noone,
 		
 	),
 	ACP32_specs : new create_specs(
@@ -634,6 +651,7 @@ global.specs_list =
 		noone,
 		noone,
 		0,
+		noone,
 	),
 	ACP32_exp_specs : new create_specs(
 		1,
@@ -648,6 +666,7 @@ global.specs_list =
 		noone,
 		noone,
 		10,
+		noone,
 	),
 	ACP32_fmj_specs : new create_specs(
 		1,
@@ -661,7 +680,8 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
-		4
+		4,
+		noone,
 	),
 	ACP32_du_specs : new create_specs(
 		1,
@@ -675,7 +695,8 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
-		8
+		8,
+		noone,
 	),
 	ACP32_ap_specs : new create_specs(
 		1,
@@ -689,7 +710,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
-		6
+		6,
+		noone,
 	),
 	single_762x25_specs : new create_specs(
 		1,
@@ -703,7 +725,8 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x25_exp_specs : new create_specs(
 		1,
@@ -717,7 +740,8 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
-		10
+		10,
+		noone,
 	),
 	single_762x25_fmj_specs : new create_specs(
 		1,
@@ -731,7 +755,8 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
-		4
+		4,
+		noone,
 	),
 	single_762x25_du_specs : new create_specs(
 		1,
@@ -745,7 +770,8 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
-		8
+		8,
+		noone,
 	),
 	single_762x25_ap_specs : new create_specs(
 		1,
@@ -759,7 +785,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
-		6
+		6,
+		noone,
 	),
 	magnum44_specs : new create_specs(
 		1,
@@ -773,7 +800,8 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	magnum44_exp_specs : new create_specs(
 		1,
@@ -787,7 +815,8 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
-		10
+		10,
+		noone,
 	),
 	magnum44_fmj_specs : new create_specs(
 		1,
@@ -801,7 +830,8 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
-		4
+		4,
+		noone,
 	),
 	magnum44_du_specs : new create_specs(
 		1,
@@ -815,7 +845,8 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
-		8
+		8,
+		noone,
 	),
 	magnum44_ap_specs : new create_specs(
 		1,
@@ -829,7 +860,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
-		6
+		6,
+		noone,
 	),
 	single_762x39_specs : new create_specs(
 		1,
@@ -843,7 +875,8 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x39_exp_specs : new create_specs(
 		1,
@@ -857,7 +890,8 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
-		10
+		10,
+		noone,
 	),
 	single_762x39_fmj_specs : new create_specs(
 		1,
@@ -871,7 +905,8 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
-		4
+		4,
+		noone,
 	),
 	single_762x39_du_specs : new create_specs(
 		1,
@@ -885,7 +920,8 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
-		8
+		8,
+		noone,
 	),
 	single_762x39_ap_specs : new create_specs(
 		1,
@@ -899,7 +935,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
-		6
+		6,
+		noone,
 	),
 	single_762x45_specs : new create_specs(
 		1,
@@ -913,7 +950,8 @@ global.specs_list =
 		"HP",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x45_exp_specs : new create_specs(
 		1,
@@ -927,7 +965,8 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
-		10
+		10,
+		noone,
 	),
 	single_762x45_fmj_specs : new create_specs(
 		1,
@@ -941,7 +980,8 @@ global.specs_list =
 		"FMJ",
 		noone,
 		noone,
-		4
+		4,
+		noone,
 	),
 	single_762x45_du_specs : new create_specs(
 		1,
@@ -955,7 +995,8 @@ global.specs_list =
 		"DU",
 		noone,
 		noone,
-		8
+		8,
+		noone,
 	),
 	single_762x45_ap_specs : new create_specs(
 		1,
@@ -969,7 +1010,8 @@ global.specs_list =
 		"AP",
 		noone,
 		noone,
-		6
+		6,
+		noone,
 	),
 	single_12gauge_specs : new create_specs(
 		1,
@@ -983,7 +1025,8 @@ global.specs_list =
 		"BIRD",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_12gauge_buck_specs : new create_specs(
 		1,
@@ -997,7 +1040,8 @@ global.specs_list =
 		"BUCK",
 		noone,
 		noone,
-		3
+		3,
+		noone,
 	),
 	single_12gauge_slug_specs : new create_specs(
 		1,
@@ -1011,7 +1055,8 @@ global.specs_list =
 		"SLUG",
 		noone,
 		noone,
-		3
+		3,
+		noone,
 	),
 	single_12gauge_exp_specs : new create_specs(
 		1,
@@ -1025,7 +1070,8 @@ global.specs_list =
 		"EXP",
 		noone,
 		noone,
-		3
+		3,
+		noone,
 	),
 	pistole_vz24_specs : new create_specs(
 		30,
@@ -1039,7 +1085,8 @@ global.specs_list =
 		noone,
 		spr_pistol_sights,
 		snd_suppressed,
-		0
+		0,
+		noone,
 	),
 	sa23_specs : new create_specs(
 		30,
@@ -1053,7 +1100,8 @@ global.specs_list =
 		noone,
 		spr_rifle_sights1,
 		snd_suppressed,
-		0
+		0,
+		noone,
 	),
 	skorpion_specs : new create_specs(
 		30,
@@ -1067,7 +1115,8 @@ global.specs_list =
 		noone,
 		spr_rifle_sights1,
 		snd_suppressed,
-		0
+		0,
+		noone,
 	),
 	sw_model29_specs : new create_specs(
 		30,
@@ -1081,7 +1130,8 @@ global.specs_list =
 		"44M",
 		spr_pistol_sights,
 		noone,
-		0
+		0,
+		noone,
 	),
 	dis_pistol_specs : new create_specs(
 		30,
@@ -1095,7 +1145,8 @@ global.specs_list =
 		"Capacitor",
 		spr_pistol_sights,
 		noone,
-		0
+		0,
+		noone,
 	),
 	pistole_vz24_mag_specs : new create_specs(
 		1,
@@ -1109,7 +1160,8 @@ global.specs_list =
 		".380",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	sa23_mag_specs : new create_specs(
 		1,
@@ -1123,7 +1175,8 @@ global.specs_list =
 		"7.62x25",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	skorpion_mag_specs : new create_specs(
 		1,
@@ -1137,7 +1190,8 @@ global.specs_list =
 		".32",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	capacitor_specs : new create_specs(
 		1,
@@ -1151,7 +1205,8 @@ global.specs_list =
 		"Energy",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	energy_specs : new create_specs(
 		1,
@@ -1165,7 +1220,8 @@ global.specs_list =
 		"Energy",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	ACP380_shell_specs : new create_specs(
 		1,
@@ -1179,7 +1235,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	ACP32_shell_specs : new create_specs(
 		1,
@@ -1193,7 +1250,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x25_shell_specs : new create_specs(
 		1,
@@ -1207,7 +1265,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	magnum44_shell_specs : new create_specs(
 		1,
@@ -1221,7 +1280,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	test_key_specs : new create_specs(
 		1,
@@ -1235,7 +1295,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	test_shirt_specs : new create_specs(
 		1,
@@ -1249,7 +1310,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	test_pants_specs : new create_specs(
 		1,
@@ -1263,7 +1325,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	left_pant_specs : new create_specs(
 		1,
@@ -1277,7 +1340,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	right_pant_specs : new create_specs(
 		1,
@@ -1291,7 +1355,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	left_glove_specs : new create_specs(
 		1,
@@ -1305,7 +1370,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	right_glove_specs : new create_specs(
 		1,
@@ -1319,7 +1385,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	gas_mask_specs : new create_specs(
 		1,
@@ -1333,7 +1400,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	military_helmet_specs : new create_specs(
 		1,
@@ -1347,7 +1415,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	right_boot_specs : new create_specs(
 		1,
@@ -1361,7 +1430,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	left_boot_specs : new create_specs(
 		1,
@@ -1375,7 +1445,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	coat_specs : new create_specs(
 		1,
@@ -1389,7 +1460,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	backpack_specs : new create_specs(
 		1,
@@ -1403,7 +1475,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	strapped_stick_specs : new create_specs(
 		1,
@@ -1417,7 +1490,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	copper_band_specs : new create_specs(
 		1,
@@ -1431,7 +1505,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	small_belt_specs : new create_specs(
 		1,
@@ -1445,7 +1520,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_action_trigger_specs : new create_specs(
 		1,
@@ -1459,7 +1535,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	double_action_trigger_specs : new create_specs(
 		1,
@@ -1473,7 +1550,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	super_conductor_circuit_specs : new create_specs(
 		1,
@@ -1487,7 +1565,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_action_hammer_specs : new create_specs(
 		1,
@@ -1501,7 +1580,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	overcharge_modulator_specs : new create_specs(
 		1,
@@ -1515,7 +1595,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	short_barrel_specs : new create_specs(
 		1,
@@ -1529,7 +1610,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	electromagnetic_lenses_specs : new create_specs(
 		1,
@@ -1543,7 +1625,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	spring_15lbs_specs : new create_specs(
 		1,
@@ -1557,7 +1640,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	spring_25lbs_specs : new create_specs(
 		1,
@@ -1571,7 +1655,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	claw_extractor_specs : new create_specs(
 		1,
@@ -1585,7 +1670,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	medium_barrel_specs : new create_specs(
 		1,
@@ -1599,7 +1685,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	long_barrel_specs : new create_specs(
 		1,
@@ -1613,7 +1700,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	rotating_bolt_specs : new create_specs(
 		1,
@@ -1627,7 +1715,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	turn_bolt_specs : new create_specs(
 		1,
@@ -1641,7 +1730,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	tilt_bolt_specs : new create_specs(
 		1,
@@ -1655,7 +1745,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	spring_pin_specs : new create_specs(
 		1,
@@ -1669,7 +1760,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	enclosed_hammer_specs : new create_specs(
 		1,
@@ -1683,7 +1775,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	
 	vz58_mag_specs : new create_specs(
@@ -1698,7 +1791,8 @@ global.specs_list =
 		"7.62x39",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	vz54_mag_specs : new create_specs(
 		1,
@@ -1712,7 +1806,8 @@ global.specs_list =
 		"7.62x45",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x39_shell_specs : new create_specs(
 		1,
@@ -1726,7 +1821,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_762x45_shell_specs : new create_specs(
 		1,
@@ -1740,7 +1836,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	single_12gauge_shell_specs : new create_specs(
 		1,
@@ -1754,7 +1851,8 @@ global.specs_list =
 		noone,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	vz58_specs : new create_specs(
 		1,
@@ -1768,7 +1866,8 @@ global.specs_list =
 		"7.62x39",
 		spr_rifle_sights1,
 		snd_rifle_suppressed,
-		0
+		0,
+		noone,
 	),
 	vz54_specs : new create_specs(
 		1,
@@ -1782,7 +1881,8 @@ global.specs_list =
 		"7.62x45",
 		spr_rifle_sights2,
 		noone,
-		0
+		0,
+		noone,
 	),
 	zbrojovka_304_specs : new create_specs(
 		1,
@@ -1796,7 +1896,8 @@ global.specs_list =
 		"12G",
 		spr_shotgun_sights1,
 		snd_shotgun_suppressed,
-		0
+		0,
+		noone,
 	),
 	scope_2x_specs : new create_specs(
 		1,
@@ -1810,7 +1911,8 @@ global.specs_list =
 		2,
 		spr_scope_overlay_small,
 		noone,
-		0
+		0,
+		noone,
 	),
 	zenith_optic_specs : new create_specs(
 		1,
@@ -1824,7 +1926,8 @@ global.specs_list =
 		1,
 		spr_zenith_overlay,
 		noone,
-		0
+		0,
+		noone,
 	),
 	goliath_optic_specs : new create_specs(
 		1,
@@ -1838,7 +1941,8 @@ global.specs_list =
 		1,
 		spr_goliath_red_dot_overlay,
 		noone,
-		0
+		0,
+		noone,
 	),
 	laser_specs : new create_specs(
 		1,
@@ -1852,7 +1956,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	xmini_specs : new create_specs(
 		1,
@@ -1866,7 +1971,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	zrapid_specs : new create_specs(
 		1,
@@ -1880,7 +1986,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	yheath_specs : new create_specs(
 		1,
@@ -1894,7 +2001,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	sw_model29_speedloader_specs : new create_specs(
 		1,
@@ -1908,7 +2016,8 @@ global.specs_list =
 		"44M",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	frag_grenade_specs : new create_specs(
 		1,
@@ -1922,7 +2031,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	inc_grenade_specs : new create_specs(
 		1,
@@ -1936,7 +2046,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	pin_specs : new create_specs(
 		1,
@@ -1950,7 +2061,8 @@ global.specs_list =
 		1,
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_12gauge_specs : new create_specs(
 		1,
@@ -1964,7 +2076,8 @@ global.specs_list =
 		"12G",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_44magnum_specs : new create_specs(
 		1,
@@ -1978,7 +2091,8 @@ global.specs_list =
 		"44M",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_762x25_specs : new create_specs(
 		1,
@@ -1992,7 +2106,8 @@ global.specs_list =
 		"7.62x25",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_762x39_specs : new create_specs(
 		1,
@@ -2006,7 +2121,8 @@ global.specs_list =
 		"7.62x39",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_762x45_specs : new create_specs(
 		1,
@@ -2020,7 +2136,8 @@ global.specs_list =
 		"7.62x45",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_ACP32_specs : new create_specs(
 		1,
@@ -2034,7 +2151,8 @@ global.specs_list =
 		".32",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 	box_ACP380_specs : new create_specs(
 		1,
@@ -2048,7 +2166,8 @@ global.specs_list =
 		".380",
 		noone,
 		noone,
-		0
+		0,
+		noone,
 	),
 }
 

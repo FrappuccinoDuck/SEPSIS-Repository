@@ -22,16 +22,20 @@ if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && obj_item_
 {
 	obj_health_manager.health_open = false
 }
+if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && obj_item_manager.debug_menu == false && player_stats == true
+{
+	player_stats = false
+}
 //x = obj_player.x
 //y = obj_player.y
 
-if keyboard_check_pressed(ord("W"))
+if keyboard_check_pressed(ord("W")) && menu_switch > 0
 {
-	menu_switch = 0
+	menu_switch -= 1
 }
-if keyboard_check_pressed(ord("S"))
+if keyboard_check_pressed(ord("S")) && menu_switch < 2
 {
-	menu_switch = 1
+	menu_switch += 1
 }
 
 
@@ -45,6 +49,16 @@ if obj_health_manager.health_open == true && menu_switch == 0
 {
 	obj_health_manager.health_open = false
 	stats_open = true
+}
+if obj_health_manager.health_open == true && menu_switch == 2
+{
+	obj_health_manager.health_open = false
+	player_stats = true
+}
+if player_stats == true && menu_switch == 1
+{
+	player_stats = false
+	obj_health_manager.health_open = true
 }
 
 if global.left_hand_item == global.item_list.two_hand_item && global.right_hand_item == noone && using_hand == false

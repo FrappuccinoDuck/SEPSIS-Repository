@@ -1,7 +1,22 @@
 index = 0
 global.selected_part = noone
 
+applied_item = noone
+applied_mods = 0
 
+bleed_timer = 0
+bleeding = false
+bleed_amount = 0
+broken = false
+
+blood_loss_arr = array_create(0, 0)
+array_push(blood_loss_arr, 10)
+array_push(blood_loss_arr, 50)
+array_push(blood_loss_arr, 200)
+array_push(blood_loss_arr, 500)
+array_push(blood_loss_arr, 1000)
+
+timer = 0
 
 heartbeat = 60
 heart_val = 0
@@ -43,15 +58,15 @@ array_push(global.parts_desc, "This is your Right Hand")
 array_push(global.parts_desc, "This is your Right Leg")
 array_push(global.parts_desc, "This is your Right Foot")
 
-array_push(global.parts_desc, "This is your heart")
-array_push(global.parts_desc, "These are your lungs")
-array_push(global.parts_desc, "This is your brain")
-array_push(global.parts_desc, "This is your stomach")
-array_push(global.parts_desc, "This is your liver")
-array_push(global.parts_desc, "These are your kidneys")
-array_push(global.parts_desc, "These are your small intestines")
-array_push(global.parts_desc, "This is your pancreas")
-array_push(global.parts_desc, "This is your bladder")
-array_push(global.parts_desc, "These are your large intestines")
-array_push(global.parts_desc, "This is your thyroid")
+array_push(global.parts_desc, "The heart is your most vital organ, responsible for pumping blood throughout your body, delivering essential oxygen and nutrients to keep you alive. In the harsh conditions of the wild, your heart's health is paramount. Injuries, dehydration, and high stress levels can significantly impact its performance, reducing your stamina and ability to endure. Protect your heart by staying hydrated, managing stress, and avoiding severe injuries to ensure your survival and maintain peak physical condition. Your heart is the core of your resilience in the fight for survival.")
+array_push(global.parts_desc, "The lungs are crucial for breathing, enabling oxygen to enter your bloodstream and carbon dioxide to be expelled. Maintaining healthy lungs is essential for stamina and overall vitality. Smoke inhalation, infections, or damage can severely impact your ability to survive. Keep your lungs clear and functioning well to ensure you can endure physical challenges and stay alert in the wild.")
+array_push(global.parts_desc, "The brain is the control center of your body, managing thoughts, emotions, and vital functions. It's essential for making quick decisions and maintaining coordination. Head injuries, dehydration, and stress can impair brain function, reducing your chances of survival. Protect your brain by staying hydrated, well-nourished, and avoiding trauma to ensure sharpness and quick reflexes.")
+array_push(global.parts_desc, "The stomach is vital for digesting food and absorbing nutrients necessary for energy and health. Eating contaminated food or suffering from infections can disrupt its function, leading to weakness and sickness. Keep your stomach healthy by consuming clean water and safe, nutritious food to maintain energy levels and overall well-being.")
+array_push(global.parts_desc, "The liver is essential for detoxifying your body, processing nutrients, and producing vital proteins. Damage from toxins, infections, or poor nutrition can impair its function, compromising your health. Protect your liver by avoiding harmful substances and ensuring a balanced diet to maintain its ability to cleanse your body and support your survival.")
+array_push(global.parts_desc, "The kidneys filter waste from your blood and regulate fluid balance, crucial for overall health. Dehydration, toxins, and infections can harm your kidneys, leading to serious health issues. Keep your kidneys healthy by staying hydrated and avoiding harmful substances to ensure they can effectively filter waste and maintain your body's balance.")
+array_push(global.parts_desc, "The small intestines are key for nutrient absorption, converting digested food into essential energy and nutrients. Infections, poor diet, or injuries can impair their function, leading to malnutrition. Keep your small intestines healthy by eating balanced, clean foods to ensure efficient nutrient absorption and sustained energy.")
+array_push(global.parts_desc, "The pancreas plays a crucial role in digestion and blood sugar regulation. Damage or disease can disrupt these functions, affecting your energy levels and overall health. Protect your pancreas by maintaining a balanced diet and avoiding excessive sugar to ensure stable blood sugar levels and efficient digestion.")
+array_push(global.parts_desc, "The bladder stores urine, allowing for the regulation of fluid waste in your body. Infections or dehydration can affect its function, leading to discomfort and potential health issues. Keep your bladder healthy by staying hydrated and practicing good hygiene to ensure efficient waste management and overall well-being.")
+array_push(global.parts_desc, "The large intestines are responsible for absorbing water and expelling solid waste. Issues like dehydration, infections, or poor diet can disrupt their function, leading to discomfort and health problems. Maintain the health of your large intestines by staying hydrated and consuming fiber-rich foods to ensure smooth waste elimination and overall digestive health.")
+array_push(global.parts_desc, "The thyroid gland regulates your metabolism, influencing energy levels, growth, and overall health. Imbalances due to stress, poor nutrition, or disease can affect your survival abilities. Keep your thyroid healthy by ensuring a diet rich in iodine and managing stress to maintain optimal metabolic function and energy levels.")
 

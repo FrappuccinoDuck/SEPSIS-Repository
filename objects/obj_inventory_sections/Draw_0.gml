@@ -118,7 +118,7 @@ function draw_modifiers(_mod_arr, _item)
 
 _xx = camera_get_view_x(view_camera[0])
 _yy = camera_get_view_y(view_camera[0])
-if (obj_item_manager.stats_open == true || obj_health_manager.health_open == true) && obj_item_manager.close_inspect == false
+if (obj_item_manager.stats_open == true || obj_health_manager.health_open == true) && obj_item_manager.close_inspect == false && obj_item_manager.player_stats == false
 {
 	if global.selected_item != noone && obj_health_manager.health_open == false
 		{

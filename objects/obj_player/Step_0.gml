@@ -28,7 +28,11 @@ if xspd == 0 && yspd == 0
 audio_listener_position(x, y, 0)
 audio_listener_orientation(0, 0, 1, 0, -1, 0);
 
-
+if global.blood_levels <= 0
+{
+	dead = true
+	global.death_type = "Player lost all their blood"
+}
 
 direction = point_direction(x, y, mouse_x, mouse_y)
 image_angle = direction
@@ -41,7 +45,7 @@ if place_meeting(x, y, obj_door)
 	global.door_touch = false
 }
 
-if obj_item_manager.stats_open == false && obj_health_manager.health_open == false && obj_item_manager.debug_menu == false && layer_get_visible("close_inspect_inworld_ui") == false
+if obj_item_manager.stats_open == false && obj_health_manager.health_open == false && obj_item_manager.debug_menu == false && layer_get_visible("close_inspect_inworld_ui") == false && obj_item_manager.player_stats == false
 		
 {
 	if global.wasd_controls == false

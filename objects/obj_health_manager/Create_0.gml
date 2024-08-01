@@ -1,5 +1,11 @@
 health_open = false
 
+regenerating = false
+
+timer = 0
+
+
+
 health_tab = 0
 
 health_sections = array_create(0, 0)

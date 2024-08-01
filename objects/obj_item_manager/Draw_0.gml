@@ -26,7 +26,7 @@ if prague == true
 	}
 }
 
-if (stats_open == true || obj_health_manager.health_open == true) && global.settings_open == false
+if (stats_open == true || obj_health_manager.health_open == true || player_stats == true) && global.settings_open == false
 {
 	throwing = false
 	if sound_init == false
@@ -70,116 +70,118 @@ if (stats_open == true || obj_health_manager.health_open == true) && global.sett
 	}
 	
 	
-	/*if nutrition_page == 0
+	if player_stats == true
 	{
-		draw_text(_xx+872, _yy+72, "Player NUTRITION Stats")
-	
-		draw_text(_xx+872, _yy+136, "(k) Calories")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+192, global.player_energy/global.energy_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+200, string($"{global.player_energy}/{global.energy_m} kcal."))
-	
-		draw_text(_xx+872, _yy+296, "Fat")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+352, global.player_fat/global.fat_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+360, string($"{global.player_fat}/{global.fat_m} grams"))
-	
-		draw_text(_xx+872, _yy+456, "Om-3 Fatty Acids")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+512, global.player_om3/global.om3_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+520, string($"{global.player_om3}/{global.om3_m} grams"))
-	
-		draw_text(_xx+872, _yy+616, "Carbohydrates")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+672, global.player_carbohydrates/global.carbohydrate_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+680, string($"{global.player_carbohydrates}/{global.carbohydrate_m} grams"))
-	
-	
-		draw_text(_xx+1160, _yy+136, "Sugars")
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+192, global.player_free_sugars/global.free_sugars_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+200, string($"{global.player_free_sugars}/{global.free_sugars_m} grams"))
-	
-		draw_text(_xx+1160, _yy+296, "Protein")
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+352, global.player_protein/global.protein_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+360, string($"{global.player_protein}/{global.protein_m} grams"))
-	
-		draw_text(_xx+1160, _yy+456, "Fiber")
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+512, global.player_fiber/global.fiber_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+520, string($"{global.player_fiber}/{global.fiber_m} grams"))
-	
-		draw_text(_xx+1160, _yy+616, "Salt")
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+672, global.player_salt/global.salt_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+680, string($"{global.player_salt}/{global.salt_m} grams"))
-	} 
-	if nutrition_page == 1
-	{
-		draw_text(_xx+872, _yy+72, "Player VITAMIN & MINERAL Stats")
-	
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+128, global.vit_a/global.vit_a_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+136, "Vitamin A")
+		layer_set_visible("stats_ui", true)
 		
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+192, global.thiamin/global.thiamin_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+200, "Thiamin")
+		draw_text(_xx+38, _yy+72, "Player NUTRITION Stats")
 	
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+288, global.rivoflavin/global.rivo_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+296, "Rivoflavin")
-		
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+352, global.niacin/global.niacin_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+360, "Niacin")
+		draw_text(_xx+40, _yy+136, "(k) Calories")
+		draw_sprite_ext(spr_bar, 0, _xx+32, _yy+192, global.player_energy/global.energy_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+40, _yy+200, string($"{global.player_energy}/{global.energy_m} kcal."))
 	
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+448, global.vit_e/global.vit_e_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+456, "Vitamin E")
-		
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+512, global.folate/global.folate_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+520, "Folate")
+		draw_text(_xx+40, _yy+296, "Fat")
+		draw_sprite_ext(spr_bar, 0, _xx+32, _yy+352, global.player_fat/global.fat_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+40, _yy+360, string($"{global.player_fat}/{global.fat_m} grams"))
 	
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+608, global.vit_k/global.vit_k_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+616, "Vitamin K")
+		draw_text(_xx+40, _yy+456, "Om-3 Fatty Acids")
+		draw_sprite_ext(spr_bar, 0, _xx+32, _yy+512, global.player_om3/global.om3_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+40, _yy+520, string($"{global.player_om3}/{global.om3_m} grams"))
+	
+		draw_text(_xx+40, _yy+616, "Carbohydrates")
+		draw_sprite_ext(spr_bar, 0, _xx+32, _yy+672, global.player_carbohydrates/global.carbohydrate_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+40, _yy+680, string($"{global.player_carbohydrates}/{global.carbohydrate_m} grams"))
+	
+	
+		draw_text(_xx+264, _yy+136, "Sugars")
+		draw_sprite_ext(spr_bar, 0, _xx+256, _yy+192, global.player_free_sugars/global.free_sugars_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+264, _yy+200, string($"{global.player_free_sugars}/{global.free_sugars_m} grams"))
+	
+		draw_text(_xx+264, _yy+296, "Protein")
+		draw_sprite_ext(spr_bar, 0, _xx+256, _yy+352, global.player_protein/global.protein_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+264, _yy+360, string($"{global.player_protein}/{global.protein_m} grams"))
+	
+		draw_text(_xx+264, _yy+456, "Fiber")
+		draw_sprite_ext(spr_bar, 0, _xx+256, _yy+512, global.player_fiber/global.fiber_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+264, _yy+520, string($"{global.player_fiber}/{global.fiber_m} grams"))
+	
+		draw_text(_xx+264, _yy+616, "Salt")
+		draw_sprite_ext(spr_bar, 0, _xx+256, _yy+672, global.player_salt/global.salt_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+264, _yy+680, string($"{global.player_salt}/{global.salt_m} grams"))
+
+
+
+		draw_text(_xx+488, _yy+72, "Player VITAMIN & MINERAL Stats")
+	
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+128, global.vit_a/global.vit_a_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+136, "Vitamin A")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+672, global.vit_c/global.vit_c_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+680, "Vitamin C")
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+192, global.thiamin/global.thiamin_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+200, "Thiamin")
+	
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+288, global.rivoflavin/global.rivo_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+296, "Rivoflavin")
+		
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+352, global.niacin/global.niacin_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+360, "Niacin")
+	
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+448, global.vit_e/global.vit_e_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+456, "Vitamin E")
+		
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+512, global.folate/global.folate_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+520, "Folate")
+	
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+608, global.vit_k/global.vit_k_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+616, "Vitamin K")
+		
+		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+672, global.vit_c/global.vit_c_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+488, _yy+680, "Vitamin C")
 	
 		// RIGHT SECTION 
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+128, global.vit_d/global.vit_d_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+136, "Vitamin D")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+128, global.vit_d/global.vit_d_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+136, "Vitamin D")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+192, global.calcium/global.calc_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+200, "Calcium")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+192, global.calcium/global.calc_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+200, "Calcium")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+288, global.phosph/global.phosph_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+296, "Phosphorous")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+288, global.phosph/global.phosph_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+296, "Phosphorous")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+352, global.magnesium/global.magnesium_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+360, "Magnesium")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+352, global.magnesium/global.magnesium_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+360, "Magnesium")
 	
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+448, global.potass/global.potass_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+456, "Potassium")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+448, global.potass/global.potass_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+456, "Potassium")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+512, global.iron/global.iron_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+520, "Iron")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+512, global.iron/global.iron_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+520, "Iron")
 	
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+608, global.zinc/global.zinc_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+616, "Zinc")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+608, global.zinc/global.zinc_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+616, "Zinc")
 		
-		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+672, global.copper/global.copper_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+680, "Copper")
-	}
-	if nutrition_page == 2
-	{
-		draw_text(_xx+872, _yy+72, "Player HEALTH Stats")
+		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+672, global.copper/global.copper_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+712, _yy+680, "Copper")
 	
-		draw_text(_xx+872, _yy+136, "Blood Levels")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+192, global.blood_levels/global.blood_levels_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+200, string($"{global.blood_levels}/{global.blood_levels_m} mL"))
 	
-		draw_text(_xx+872, _yy+296, "Conciousness")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+352, global.consioucness/global.consioucness_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+360, string($"{global.consioucness}/{global.consioucness_m}"))
 	
-		draw_text(_xx+872, _yy+456, "Adrenaline")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+512, global.adrenaline/global.adrenaline_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+520, string($"{global.adrenaline}/{global.adrenaline_m} ng"))
+		draw_text(_xx+936, _yy+72, "Player HEALTH Stats")
 	
-		draw_text(_xx+872, _yy+616, "Oxygen (SpO2)")
-		draw_sprite_ext(spr_bar, 0, _xx+864, _yy+672, global.oxy/global.oxy_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+872, _yy+680, string($"{global.oxy}/{global.oxy_m}%"))
+		draw_text(_xx+936, _yy+136, "Blood Levels")
+		draw_sprite_ext(spr_bar, 0, _xx+928, _yy+192, global.blood_levels/global.blood_levels_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+936, _yy+200, string($"{global.blood_levels}/{global.blood_levels_m} mL"))
+	
+		draw_text(_xx+936, _yy+296, "Conciousness")
+		draw_sprite_ext(spr_bar, 0, _xx+928, _yy+352, global.consioucness/global.consioucness_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+936, _yy+360, string($"{global.consioucness}/{global.consioucness_m}"))
+	
+		draw_text(_xx+936, _yy+456, "Adrenaline")
+		draw_sprite_ext(spr_bar, 0, _xx+928, _yy+512, global.adrenaline/global.adrenaline_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+936, _yy+520, string($"{global.adrenaline}/{global.adrenaline_m} ng"))
+	
+		draw_text(_xx+936, _yy+616, "Oxygen (SpO2)")
+		draw_sprite_ext(spr_bar, 0, _xx+928, _yy+672, global.oxy/global.oxy_m*5, 1, 0, c_white, 1)
+		draw_text(_xx+936, _yy+680, string($"{global.oxy}/{global.oxy_m}%"))
 	
 	
 		draw_text(_xx+1160, _yy+136, "Thirst (H20)")
@@ -197,7 +199,11 @@ if (stats_open == true || obj_health_manager.health_open == true) && global.sett
 		draw_text(_xx+1160, _yy+616, "Cal. Expenditure")
 		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+672, global.metabolism/global.metabolism_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+1160, _yy+680, string($"{global.metabolism}/{global.metabolism_m} cal./min."))
-	}*/
+	
+	} else
+	{
+		layer_set_visible("stats_ui", false)
+	}
 	
 	
 	
@@ -2244,7 +2250,7 @@ if obj_health_manager.health_open == true
 		
 		init_prev = true
 	}
-} else if obj_health_manager.health_open == false && stats_open == false
+} else if obj_health_manager.health_open == false && stats_open == false && player_stats == false
 {
 	if init_prev == true
 	{
@@ -2254,7 +2260,7 @@ if obj_health_manager.health_open == true
 	}
 }
 
-if stats_open == false && obj_health_manager.health_open == false && close_inspect == false 
+if stats_open == false && obj_health_manager.health_open == false && close_inspect == false && player_stats == false
 {
 	if global.belt != noone
 	{
@@ -2270,7 +2276,7 @@ if stats_open == false && obj_health_manager.health_open == false && close_inspe
 }
 if close_inspect == false
 {
-		if using_hand == false && global.left_hand_item != noone &&  obj_health_manager.health_open == false && stats_open == false && global.left_hand_item != global.item_list.two_hand_item && global.ui_show == true
+		if using_hand == false && global.left_hand_item != noone &&  obj_health_manager.health_open == false && stats_open == false && global.left_hand_item != global.item_list.two_hand_item && global.ui_show == true && player_stats == false
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32 + 960, _yy + 374 + 224, 5, 0.5, 0, c_white, 1)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32 + 960, _yy + 416 + 224, 5, 0.5, 0, c_white, 1)
@@ -2292,7 +2298,7 @@ if close_inspect == false
 			}
 			
 		}
-		if using_hand == true && global.right_hand_item != noone &&  obj_health_manager.health_open == false && stats_open == false && global.right_hand_item != global.item_list.two_hand_item && global.ui_show == true
+		if using_hand == true && global.right_hand_item != noone &&  obj_health_manager.health_open == false && stats_open == false && global.right_hand_item != global.item_list.two_hand_item && global.ui_show == true && player_stats == false
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32 + 960, _yy + 374 + 224, 5, 0.5, 0, c_white, 1)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32 + 960, _yy + 416 + 224, 5, 0.5, 0, c_white, 1)
@@ -2314,37 +2320,40 @@ if close_inspect == false
 			}
 		}
 
-draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 544, 2.5, 0.5, 0, c_white, 1)
-draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 544, 2.5, 0.5, 0, c_white, 1)
-
-draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 608, 2.5, 2, 0, c_white, 1)
-draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 608, 2.5, 2, 0, c_white, 1)
-
-draw_sprite_ext(spr_ui_no_grid, 0, _xx + 160, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-draw_sprite_ext(spr_ui_no_grid, 0, _xx + 352, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-
-draw_sprite_ext(spr_ui_no_grid, 0, _xx + 32, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-
-
-if using_hand == true
+if player_stats == false
 {
-	draw_text(_xx+40, _yy+552, "Left Hand")
-	draw_text(_xx+232, _yy+552, "Right Hand (*)")
-	draw_text(_xx+166, _yy+610, global.left_hand_amount)
-	draw_text(_xx+358, _yy+610, global.right_hand_amount)
-	draw_text(_xx+38, _yy+610, hand_ammo[0])
-	draw_text(_xx+230, _yy+610, hand_ammo[1])
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 544, 2.5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 544, 2.5, 0.5, 0, c_white, 1)
+
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 608, 2.5, 2, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 608, 2.5, 2, 0, c_white, 1)
+
+	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 160, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 352, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+
+	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 32, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+
+
+	if using_hand == true
+	{
+		draw_text(_xx+40, _yy+552, "Left Hand")
+		draw_text(_xx+232, _yy+552, "Right Hand (*)")
+		draw_text(_xx+166, _yy+610, global.left_hand_amount)
+		draw_text(_xx+358, _yy+610, global.right_hand_amount)
+		draw_text(_xx+38, _yy+610, hand_ammo[0])
+		draw_text(_xx+230, _yy+610, hand_ammo[1])
 	
-} else
-{
-	draw_text(_xx+40, _yy+552, "Left Hand (*)")
-	draw_text(_xx+232, _yy+552, "Right Hand")
-	draw_text(_xx+166, _yy+610, global.left_hand_amount)
-	draw_text(_xx+358, _yy+610, global.right_hand_amount)
-	draw_text(_xx+38, _yy+610, hand_ammo[0])
-	draw_text(_xx+230, _yy+610, hand_ammo[1])
+	} else
+	{
+		draw_text(_xx+40, _yy+552, "Left Hand (*)")
+		draw_text(_xx+232, _yy+552, "Right Hand")
+		draw_text(_xx+166, _yy+610, global.left_hand_amount)
+		draw_text(_xx+358, _yy+610, global.right_hand_amount)
+		draw_text(_xx+38, _yy+610, hand_ammo[0])
+		draw_text(_xx+230, _yy+610, hand_ammo[1])
 	
+	}
 }
 
 

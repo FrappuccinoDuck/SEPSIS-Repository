@@ -4,3 +4,4 @@ global.point_direction = 0
 global.mouse_dropx = 0
 global.mouse_dropy = 0
 distance_val = 300
+global.mouse_object = noone

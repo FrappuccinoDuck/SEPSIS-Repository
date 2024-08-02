@@ -10,7 +10,10 @@ if distance_to_object(obj_player) > distance_val-1
 	global.mouse_dropy = y-obj_player.y
 }
 
-
+if place_meeting(x, y, obj_health_tangible)
+{
+	global.mouse_object = other
+}
 
 if obj_item_manager.stats_open == false && obj_health_manager.health_open == false && obj_item_manager.scoped == false
 {

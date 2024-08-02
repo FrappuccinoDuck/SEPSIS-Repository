@@ -4,10 +4,67 @@ global.selected_part = noone
 applied_item = noone
 applied_mods = 0
 
+condition = 100
+
+open_wound = false
+treated = false
+treated_amount = 0
+
 bleed_timer = 0
 bleeding = false
 bleed_amount = 0
 broken = false
+
+infection = false
+infection_amount = 0
+
+radiated = false
+
+contaminated = false
+contaminant = noone
+contaminated_amount = 0
+
+bruising = false
+inflammation = false
+
+
+condition_degradation_arr = array_create(0, 0)
+array_push(condition_degradation_arr, 0.01)
+array_push(condition_degradation_arr, 0.05)
+array_push(condition_degradation_arr, 0.1)
+array_push(condition_degradation_arr, 0.2)
+array_push(condition_degradation_arr, 0.5)
+
+function create_contaminant(_name, _sprite, _every_second_effect, _effect_description, _intensity) constructor
+{
+	name = _name
+	sprite = _sprite
+	every_second_effect = _every_second_effect
+	effect_description = _effect_description
+	intensity = _intensity
+}
+
+global.contaminant_list =
+{
+	dirt : new create_contaminant(
+		"Dirt",
+		spr_dirt_ui,
+		function(_obj)
+		{
+			if irandom(50) == 1
+			{
+				_obj.inflammation = true
+			}
+			if irandom(50) == 2
+			{
+				_obj.condition -= condition_degradation_arr[irandom(4)]
+			}
+		},
+		"Can cause additional damage over time",
+		1,
+	),
+}
+
 
 blood_loss_arr = array_create(0, 0)
 array_push(blood_loss_arr, 10)

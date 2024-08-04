@@ -4,7 +4,9 @@ regenerating = false
 
 timer = 0
 
-
+global.bleed_amount = 0
+global.bleed_volume = 0
+global.bleeding = 0
 
 health_tab = 0
 

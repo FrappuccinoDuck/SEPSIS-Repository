@@ -1,5 +1,8 @@
 global.door_touch = false
 
+
+blood_timer = 0
+
 init = false
 prev_x = 0
 prev_y = 0

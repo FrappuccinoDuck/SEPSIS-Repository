@@ -64,7 +64,7 @@ function mag_insert(_gun, _mag)
 					array_push(left_modifiers[38], extracted[k])
 				}
 				right_modifiers[38] = 0
-				
+				left_modifiers[11] = right_modifiers[10]
 				audio_play_sound(snd_small_mag_insert, 1, 0)
 				hand_ammo[0] += hand_ammo[1]
 				right_modifiers[36] = _mag
@@ -73,7 +73,7 @@ function mag_insert(_gun, _mag)
 				selected_mag[0] = _mag.obj
 				selected_mod[1] = noone
 				global.right_hand_amount -= 1
-				left_modifiers[11] = right_modifiers[10]
+				
 			} else
 			{
 				with(instance_create_depth(0, 0, -9, obj_temporary_notification))

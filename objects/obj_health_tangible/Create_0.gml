@@ -4,9 +4,15 @@ global.selected_part = noone
 applied_item = noone
 applied_mods = 0
 
+bleed_timer = 0
+
+
+
 condition = 100
+condition_max = 100
 
 open_wound = false
+open_wound_amount = 0
 treated = false
 treated_amount = 0
 

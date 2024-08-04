@@ -200,3 +200,4 @@ if obj_item_manager.stats_open == true
 		show_debug_message("test")
 	}
 }
+

@@ -415,7 +415,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				layer_set_visible("gunshot_effect", true)
 				if global.left_hand_item == _gun && left_modifiers[25] == "Not" && check_all_parts(_gun, 0)
 				{
-					array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
+					
 					if jam_checker(left_modifiers[9]) == true
 					{
 						left_modifiers[25] = "Is"
@@ -467,10 +467,11 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					left_modifiers[31] = 1
 					selected_chamber[0] = false
 					hand_ammo[0] -= 1
+					array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
 				}
 				if global.right_hand_item == _gun && right_modifiers[25] == "Not" && check_all_parts(_gun, 1)
 				{
-					array_delete(right_modifiers[38], array_length(right_modifiers[38])-1, 1)
+					
 					if jam_checker(right_modifiers[9]) == true
 					{
 						right_modifiers[25] = "Is"
@@ -523,6 +524,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					right_modifiers[31] = 1
 					selected_chamber[1] = false
 					hand_ammo[1] -= 1
+					array_delete(right_modifiers[38], array_length(right_modifiers[38])-1, 1)
 				}
 
 			}

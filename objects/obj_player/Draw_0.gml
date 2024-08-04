@@ -13,3 +13,4 @@ if dead == true
 }
 
 draw_self()
+

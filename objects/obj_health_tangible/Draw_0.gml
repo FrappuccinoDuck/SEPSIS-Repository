@@ -121,12 +121,21 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 				applied_mods = 0
 			}
 		}
-		if global.mouse_item != noone && global.mouse_item.type == "Medical" && mouse_check_button_pressed(mb_left)
+		if global.mouse_item != noone && global.mouse_item.specs.item_type == "Medical" && mouse_check_button_pressed(mb_left) && ((index > 9 && index <= 20 && global.mouse_item.specs.medical.organs == true) || (index <= 9 && global.mouse_item.specs.medical.limbs == true)) && obj_item_manager.mouse_modifiers[9] > 0
 		{
-			applied_item = global.mouse_item
-			applied_mods = obj_item_manager.mouse_modifiers
-			global.mouse_item = noone
-			obj_item_manager.mouse_modifiers = 0
+			if global.mouse_item.specs.medical.injection == false
+			{
+				applied_item = global.mouse_item
+				applied_mods = obj_item_manager.mouse_modifiers
+				global.mouse_item = noone
+			} else
+			{
+				obj_item_manager.mouse_modifiers[9] -= global.mouse_item.specs.medical.injection_loss
+			}
+			condition += global.mouse_item.specs.medical.condition_increase
+			temp_heal += global.mouse_item.specs.medical.continuous_heal
+			
+			
 		}
 		
 		if bleeding == false
@@ -234,6 +243,12 @@ if timer <= fps
 } else
 {
 	timer = 0
+	
+	if temp_heal > 0
+	{
+		temp_heal -= 1
+		condition += 1
+	}
 	
 	if contaminated == true
 	{

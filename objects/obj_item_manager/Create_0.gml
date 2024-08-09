@@ -476,11 +476,17 @@ function create_specs(_cost, _amount, _weight, _item_type, _chambered, _stack_ma
 	medical = _medical
 }
 
-function create_medical(_bleeding, _broken, _bleed_remedy) constructor
+function create_medical(_bleeding, _broken, _bleed_remedy, _condition_increase, _continuous_heal, _limbs, _organs, _injection, _injection_loss) constructor
 {
 	bleeding = _bleeding
 	broken = _broken
 	bleed_remedy = _bleed_remedy
+	condition_increase = _condition_increase
+	continuous_heal = _continuous_heal
+	limbs = _limbs
+	organs = _organs
+	injection = _injection
+	injection_loss = _injection_loss
 }
 
 function create_surface(_name, _description, _sprite) constructor
@@ -498,6 +504,21 @@ function create_armor(_protection, _type, _material, _location, _capacity, _over
 	location = _location
 	capacity = _capacity
 	overlay = _overlay
+}
+
+global.medical_list = 
+{
+	dipstick_medical : new create_medical(
+		false,
+		false,
+		0,
+		15,
+		5,
+		true,
+		false,
+		true,
+		50,
+	),
 }
 
 global.specs_list = 
@@ -2168,6 +2189,21 @@ global.specs_list =
 		noone,
 		0,
 		noone,
+	),
+	dipstick_specs : new create_specs(
+		1,
+		1,
+		1,
+		"Medical",
+		false,
+		1,	
+		true,
+		"DIPSTICK",
+		noone,
+		noone,
+		noone,
+		0,
+		global.medical_list.dipstick_medical,
 	),
 }
 
@@ -6437,6 +6473,42 @@ global.effect_list =
 		"NA",
 		"NA",
 	),
+	dipstick_effect : new create_effect(
+	function(){
+			
+		},
+		function(){
+			
+		},
+		function(){
+			show_debug_message("mag middle mouse click")
+		},
+		"NA",
+		"NA",
+		"NA",
+		
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+	),
 }
 
 global.min_list =
@@ -8965,6 +9037,24 @@ global.item_list =
 		noone,
 		noone,
 		1.5,
+		noone,
+		30,
+	),
+	dipstick : new create_item(
+		"Dipstick",
+		"This is a Dynamic Isopeptide Plasma Stick, capable of healing injected body parts up to 15% instantly, and 1% every second for 5 seconds.",
+		spr_dipstick,
+		obj_dipstick,
+		global.specs_list.dipstick_specs,
+		global.effect_list.dipstick_effect,
+		0,
+		64,
+		noone,
+		noone,
+		noone,
+		noone,
+		noone,
+		2,
 		noone,
 		30,
 	),

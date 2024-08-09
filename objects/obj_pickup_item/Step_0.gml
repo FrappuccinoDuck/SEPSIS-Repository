@@ -103,7 +103,7 @@ if keyboard_check_released(obj_game_initializers.right_hand_hold)
 }
 */
 
-if type == "Item" && obj_item_manager.debug_menu == false
+if type == "Item" && obj_item_manager.debug_menu == false && obj_item_manager.stats_open == false && obj_health_manager.health_open == false && obj_item_manager.player_stats == false
 {
 	if global.hold_pickup == false
 	{

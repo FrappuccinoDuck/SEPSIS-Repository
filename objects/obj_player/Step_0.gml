@@ -34,8 +34,11 @@ if global.blood_levels <= 0
 	global.death_type = "Player lost all their blood"
 }
 
-direction = point_direction(x, y, mouse_x, mouse_y)
-image_angle = direction
+if obj_item_manager.function_wheel == false && obj_item_manager.function_wheel_health == false && obj_item_manager.function_wheel_strip == false
+{
+	direction = point_direction(x, y, mouse_x, mouse_y)
+	image_angle = direction
+}
 
 if place_meeting(x, y, obj_door)
 {

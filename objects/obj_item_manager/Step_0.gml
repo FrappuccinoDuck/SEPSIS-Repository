@@ -13,7 +13,7 @@ if global.belt != noone
 }
 
 
-if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && debug_menu == false && global.mouse_item == noone && global.right_mouse_item == noone && obj_health_manager.health_open == false
+if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && debug_menu == false && global.mouse_item == noone && global.right_mouse_item == noone && obj_health_manager.health_open == false && player_stats == false
 {
 	stats_open = !stats_open
 	menu_switch = 0

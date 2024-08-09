@@ -2201,7 +2201,7 @@ global.specs_list =
 		"DIPSTICK",
 		noone,
 		noone,
-		noone,
+		snd_inject,
 		0,
 		global.medical_list.dipstick_medical,
 	),

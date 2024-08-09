@@ -6,7 +6,7 @@ applied_mods = 0
 
 bleed_timer = 0
 
-
+temp_heal = 0
 
 condition = 100
 condition_max = 100

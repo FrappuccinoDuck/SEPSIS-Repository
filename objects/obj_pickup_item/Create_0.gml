@@ -85,3 +85,5 @@ p_y = y
 // 37 = Battery Level
 
 // 38 = Mag Container Array
+
+// 39 = Fluid Content

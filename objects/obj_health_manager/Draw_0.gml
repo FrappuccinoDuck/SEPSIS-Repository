@@ -46,6 +46,14 @@ if timer <= fps
 } else
 {
 	timer = 0
+	
+	global.oxy = random_range(95, 100)
+	
+	if obj_player.xspd != 0 || obj_player.yspd != 0
+	{
+		global.player_energy -= ((player_weight*0.0005) + (obj_player.present_weight * random_range(0.3, 0.5)))
+	}
+	
 	if global.blood_levels >= 5000
 	{
 		global.blood_levels = 5000

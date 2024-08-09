@@ -123,6 +123,7 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 		}
 		if global.mouse_item != noone && global.mouse_item.specs.item_type == "Medical" && mouse_check_button_pressed(mb_left) && ((index > 9 && index <= 20 && global.mouse_item.specs.medical.organs == true) || (index <= 9 && global.mouse_item.specs.medical.limbs == true)) && obj_item_manager.mouse_modifiers[9] > 0
 		{
+			audio_play_sound(global.mouse_item.specs.misc_sound, 1, 0)
 			if global.mouse_item.specs.medical.injection == false
 			{
 				applied_item = global.mouse_item

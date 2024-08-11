@@ -7,6 +7,26 @@ for(var i = 0; i < current_belt_size; i++)
 	}
 }
 
+if global.right_hand_item != noone 
+{
+	if global.left_hand_item == noone
+	{
+		global.arms_weight = global.right_hand_item.specs.weight
+	} else
+	{
+		global.arms_weight = global.right_hand_item.specs.weight + global.left_hand_item.specs.weight
+	}
+} else
+{
+	if global.left_hand_item != noone
+	{
+		global.arms_weight = global.left_hand_item.specs.weight
+	} else
+	{
+		global.arms_weight = 0
+	}
+}
+
 if global.belt != noone
 {
 	current_belt_size = global.belt.armor.capacity
@@ -38,7 +58,10 @@ if keyboard_check_pressed(ord("S")) && menu_switch < 2
 	menu_switch += 1
 }
 
-
+if player_stats == false
+{
+	layer_set_visible("stats_ui", false)
+}
 
 if stats_open == true && menu_switch == 1
 {

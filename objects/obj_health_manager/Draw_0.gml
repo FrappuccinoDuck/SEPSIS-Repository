@@ -47,12 +47,29 @@ if timer <= fps
 {
 	timer = 0
 	
+	
+	
 	global.oxy = random_range(95, 100)
 	
 	if obj_player.xspd != 0 || obj_player.yspd != 0
 	{
-		global.player_energy -= ((player_weight*0.0005) + (obj_player.present_weight * random_range(0.3, 0.5)))
+		global.player_energy -= ((player_weight*0.0005) + (obj_player.present_weight * random_range(0.3, 0.5))) + (global.arms_weight*0.00347)
+		// sweat
+		global.thirst -= random_range(0.278, 0.417)
+		global.tiredness += 0.00058
+		global.vit_a -= random_range(0.0125, 0.0156)
+	} else
+	{
+		global.player_energy -= (player_weight*0.00009) + (global.arms_weight*0.00347)
+		// sweat
+		global.thirst -= random_range(0.023, 0.032)
+		global.vit_a -= 0.0104
 	}
+	
+	// respiration
+	global.thirst -= random_range(0.009, 0.014)
+	
+	global.tiredness += 0.00116
 	
 	if global.blood_levels >= 5000
 	{

@@ -243,59 +243,91 @@ global.salt_m = 6
 
 // VITAMINS
 
-global.vit_a = 2000 // milligrams
-global.vit_a_m = 2000 // milligrams
+global.vit_a = 1000 // mcg
+global.vit_a_bad = 100
+global.vit_a_good = 1000 // mcg
+global.vit_a_m = 1750 // mcg
 
 global.thiamin = 50 // milligrams
-global.thiamin_m = 50 // milligrams
+global.thiamin_good = 50 // milligrams
+global.thiamin_bad = 5
+global.thiamin_m = 75 // milligrams
 
 global.rivoflavin = 25 // milligrams
-global.rivo_m = 25 // milligrams
+global.rivoflavin_good = 25
+global.rivoflavin_bad = 5
+global.rivo_m = 40 // milligrams
 
-global.niacin = 150 // milligrams
-global.niacin_m = 150
+global.niacin = 25 // milligrams
+global.niacin_good = 25
+global.niacin_bad = 5
+global.niacin_m = 40
 
-global.vit_e = 15 // milligrams
-global.vit_e_m = 15
+global.vit_e = 1000 // milligrams
+global.vit_e_good = 1000
+global.vit_e_bad = 100
+global.vit_e_m = 1750
 
-global.folate = 8 // milligrams
-global.folate_m = 8 
+global.folate = 10 // milligrams
+global.folate_good = 10
+global.folate_bad = 0.5
+global.folate_m = 15
 
-global.vit_k = 2 // milligrams
-global.vit_k_m = 2
+global.vit_k = 200 // mcg
+global.vit_k_good = 200
+global.vit_k_bad = 30
+global.vit_k_m = 335
 
-global.vit_c = 90 // milligrams
-global.vit_c_m = 90 // milligrams
+global.vit_c = 2000 // milligrams
+global.vit_c_good = 2000
+global.vit_c_bad = 50
+global.vit_c_m = 3350 // milligrams
 
-global.vit_d = 60
-global.vit_d_m = 60 //micrograms
+global.vit_d = 500
+global.vit_d_good = 500
+global.vit_d_bad = 20
+global.vit_d_m = 750 //micrograms
 
 global.calcium = 1150
-global.calc_m = 1150
+global.calc_good = 1150
+global.calc_bad = 200
+global.calc_m = 2000
 
-global.phosph = 550
-global.phosph_m = 550
+global.phosph = 750
+global.phosph_good = 750
+global.phosph_bad = 100
+global.phosph_m = 1100
 
-global.magnesium = 300
-global.magnesium_m = 300
+global.magnesium = 25000
+global.mag_good = 25000
+global.mag_bad = 100
+global.magnesium_m = 30000
 
-global.potass = 3500
-global.potass_m = 3500
+global.potass = 140
+global.potass_good = 140
+global.potass_bad = 1
+global.potass_m = 200
 
 global.iron = 4000
-global.iron_m = 4000
+global.iron_good = 4000
+global.iron_bad = 100
+global.iron_m = 6000
 
-global.zinc = 11 // milligrams
-global.zinc_m = 11 // milligrams
+global.zinc = 2500  // milligrams
+global.zinc_good = 2500
+global.zinc_bad = 30
+global.zinc_m = 4000 // milligrams
 
-global.copper = 100 // milligrams
-global.copper_m = 100 // milligrams
+global.copper = 100000 // milligrams
+global.copper_good = 100000
+global.copper_bad = 20
+global.copper_m = 150000 // milligrams
 
 global.body_temp = 98
 global.body_temp_m = 106
 
-global.thirst = 3.7
-global.thirst_m = 3.7
+global.thirst = 3700
+global.thirst_m = 3700
 
 global.tiredness = 0
 global.tiredness_m = 100
@@ -305,6 +337,8 @@ global.hygiene_m = 100
 
 global.metabolism = 3
 global.metabolism_m = 30
+
+global.arms_weight = 0
 
 inv_rotation = 0
 

@@ -113,53 +113,101 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 
 		draw_text(_xx+488, _yy+72, "Player VITAMIN & MINERAL Stats")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+128, global.vit_a_good/global.vit_a_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+128, global.vit_a_bad/global.vit_a_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+128, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+128, global.vit_a/global.vit_a_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+136, "Vitamin A")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+192, global.thiamin_good/global.thiamin_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+192, global.thiamin_bad/global.thiamin_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+192, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+192, global.thiamin/global.thiamin_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+200, "Thiamin")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+288, global.rivoflavin_good/global.rivo_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+288, global.rivoflavin_bad/global.rivo_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+288, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+288, global.rivoflavin/global.rivo_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+296, "Rivoflavin")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+352, global.niacin_good/global.niacin_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+352, global.niacin_bad/global.niacin_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+352, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+352, global.niacin/global.niacin_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+360, "Niacin")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+448, global.vit_e_good/global.vit_e_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+448, global.vit_e_bad/global.vit_e_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+448, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+448, global.vit_e/global.vit_e_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+456, "Vitamin E")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+512, global.folate_good/global.folate_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+512, global.folate_bad/global.folate_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+512, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+512, global.folate/global.folate_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+520, "Folate")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+608, global.vit_k_good/global.vit_k_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+608, global.vit_k_bad/global.vit_k_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+608, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+608, global.vit_k/global.vit_k_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+616, "Vitamin K")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+480, _yy+672, global.vit_c_good/global.vit_c_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+480, _yy+672, global.vit_c_bad/global.vit_c_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+480, _yy+672, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+480, _yy+672, global.vit_c/global.vit_c_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+488, _yy+680, "Vitamin C")
 	
 		// RIGHT SECTION 
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+128, global.vit_d_good/global.vit_d_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+128, global.vit_d_bad/global.vit_d_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+128, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+128, global.vit_d/global.vit_d_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+136, "Vitamin D")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+192, global.calc_good/global.calc_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+192, global.calc_bad/global.calc_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+192, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+192, global.calcium/global.calc_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+200, "Calcium")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+288, global.phosph_good/global.phosph_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+288, global.phosph_bad/global.phosph_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+288, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+288, global.phosph/global.phosph_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+296, "Phosphorous")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+352, global.mag_good/global.magnesium_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+352, global.mag_bad/global.magnesium_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+352, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+352, global.magnesium/global.magnesium_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+360, "Magnesium")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+448, global.potass_good/global.potass_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+448, global.potass_bad/global.potass_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+448, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+448, global.potass/global.potass_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+456, "Potassium")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+512, global.iron_good/global.iron_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+512, global.iron_bad/global.iron_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+512, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+512, global.iron/global.iron_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+520, "Iron")
 	
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+608, global.zinc_good/global.zinc_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+608, global.zinc_bad/global.zinc_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+608, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+608, global.zinc/global.zinc_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+616, "Zinc")
 		
+		draw_sprite_ext(spr_bar_blue, 0, _xx+704, _yy+672, global.copper_good/global.copper_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_bar_red, 0, _xx+704, _yy+672, global.copper_bad/global.copper_m*5, 1.2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx+704, _yy+672, 2.5, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_bar, 0, _xx+704, _yy+672, global.copper/global.copper_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+712, _yy+680, "Copper")
 	
@@ -186,7 +234,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 		draw_text(_xx+1160, _yy+136, "Thirst (H20)")
 		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+192, global.thirst/global.thirst_m*5, 1, 0, c_white, 1)
-		draw_text(_xx+1160, _yy+200, string($"{global.thirst}/{global.thirst_m} L"))
+		draw_text(_xx+1160, _yy+200, string($"{global.thirst}/{global.thirst_m} mL"))
 	
 		draw_text(_xx+1160, _yy+296, "Tiredness")
 		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+352, global.tiredness/global.tiredness_m*5, 1, 0, c_white, 1)
@@ -199,6 +247,105 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 		draw_text(_xx+1160, _yy+616, "Cal. Expenditure")
 		draw_sprite_ext(spr_bar, 0, _xx+1152, _yy+672, global.metabolism/global.metabolism_m*5, 1, 0, c_white, 1)
 		draw_text(_xx+1160, _yy+680, string($"{global.metabolism}/{global.metabolism_m} cal./min."))
+	
+		if mouse_x >= 704 && mouse_y >= 128 && mouse_x <= 864 && mouse_y <= 166
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.vit_d}/{global.vit_d_good} mcg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.vit_d_m} | Dangerously Low - {global.vit_a_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 200 && mouse_x <= 864 && mouse_y <= 232
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.calcium}/{global.calc_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.calc_m} | Dangerously Low - {global.calc_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 296 && mouse_x <= 864 && mouse_y <= 328
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.phosph}/{global.phosph_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.phosph_m} | Dangerously Low - {global.phosph_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 352 && mouse_x <= 864 && mouse_y <= 392
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.magnesium}/{global.mag_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.magnesium_m} | Dangerously Low - {global.mag_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 448 && mouse_x <= 864 && mouse_y <= 488
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.potass}/{global.potass_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.potass_m} | Dangerously Low - {global.potass_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 512 && mouse_x <= 864 && mouse_y <= 544
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.iron}/{global.iron_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.iron_m} | Dangerously Low - {global.iron_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 608 && mouse_x <= 864 && mouse_y <= 640
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.zinc}/{global.zinc_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.zinc_m} | Dangerously Low - {global.zinc_bad}"))
+		}
+		if mouse_x >= 704 && mouse_y >= 672 && mouse_x <= 864 && mouse_y <= 704
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.copper}/{global.copper_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.copper_m} | Dangerously Low - {global.copper_bad}"))
+		}
+		// ------------------------------------------------
+	
+		if mouse_x >= 480 && mouse_y >= 128 && mouse_x <= 640 && mouse_y <= 166
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.vit_a}/{global.vit_a_good} mcg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.vit_a_m} | Dangerously Low - {global.vit_a_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 200 && mouse_x <= 640 && mouse_y <= 232
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.thiamin}/{global.thiamin_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.thiamin_m} | Dangerously Low - {global.thiamin_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 296 && mouse_x <= 640 && mouse_y <= 328
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.rivoflavin}/{global.rivoflavin_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.rivo_m} | Dangerously Low - {global.rivoflavin_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 352 && mouse_x <= 640 && mouse_y <= 392
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.niacin}/{global.niacin_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.niacin_m} | Dangerously Low - {global.niacin_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 448 && mouse_x <= 640 && mouse_y <= 488
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.vit_e}/{global.vit_e_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.vit_e_m} | Dangerously Low - {global.vit_e_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 512 && mouse_x <= 640 && mouse_y <= 544
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.folate}/{global.folate_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.folate_m} | Dangerously Low - {global.folate_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 608 && mouse_x <= 640 && mouse_y <= 640
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.vit_k}/{global.vit_k_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.vit_k_m} | Dangerously Low - {global.vit_k_bad}"))
+		}
+		if mouse_x >= 480 && mouse_y >= 672 && mouse_x <= 640 && mouse_y <= 704
+		{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, mouse_x, mouse_y, 5, 1, 0, c_white, 1)
+			draw_text(mouse_x+8, mouse_y+8, string($"{global.vit_c}/{global.vit_c_good} mg"))
+			draw_text(mouse_x+8, mouse_y+24, string($"Max - {global.vit_c_m} | Dangerously Low - {global.vit_c_bad}"))
+		}
 	
 	} else
 	{

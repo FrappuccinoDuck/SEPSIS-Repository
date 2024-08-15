@@ -2295,7 +2295,41 @@ if keyboard_check_pressed(obj_game_initializers.health_wheel_key)  && stats_open
 		function_wheel_health = !function_wheel_health
 	} 
 	
+if urinating == true
+{
+	with(instance_create_depth(x, y, -9, obj_temporary_notification))
+	{
+		notification = "Press C to stop urinating"
+		timer_max = 1
+	}
+	draw_sprite_ext(spr_urine_ui, 0, mouse_x + 20, mouse_y - 70, 1, 2.5, 0, c_white, 1)
+	draw_sprite_ext(spr_bar_yellow, 0, mouse_x + 20, mouse_y - 70 + 160, 2, -((global.urine_volume/500)*5), 0, c_white, 1)
 	
+	draw_set_halign(fa_center)
+	draw_text_transformed_color(mouse_x + 24 + 25, mouse_y - 66, string($"{global.urine_volume}"), 1, 1, 0, c_black, c_black, c_black, c_black, 1)
+	draw_text_transformed_color(mouse_x + 24 + 25, mouse_y - 50, string($"mL"), 1, 1, 0, c_black, c_black, c_black, c_black, 1)
+	
+	draw_sprite_ext(spr_urine_symbol, 0, mouse_x + 36, mouse_y + 20, 1, 1, 0, c_white, 1)
+	
+	draw_set_halign(fa_left)
+	if mouse_check_button(mb_left)
+	{
+		if global.urine_volume >= global.urine_speed
+		{
+			global.urine_volume -= global.urine_speed
+			var shift_x = random_range(-14, 14)
+			var shift_y = random_range(-14, 14)
+			for(i = 0; i< random_range(1, 4); i++)
+			{
+				instance_create_depth(global.mouse_dropx+obj_player.x+shift_x, global.mouse_dropy+obj_player.y+shift_y, -9, obj_urine)
+			}
+		}
+	}
+	if keyboard_check_pressed(ord("C"))
+	{
+		urinating = false
+	}
+}
 
 if function_wheel_health == true 
 	{
@@ -2311,7 +2345,8 @@ if function_wheel_health == true
 			draw_text_color(_xx+544, _yy+161, "Urinate", c_black, c_black, c_black, c_black, 1)
 			if mouse_check_button_pressed(mb_left)
 			{
-			
+				urinating = true
+				function_wheel_health = false
 			}
 		}
 		if mouse_x > _xx+674 && mouse_x < _xx+767 && mouse_y > _yy+158 && mouse_y <  _yy+254

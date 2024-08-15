@@ -58,14 +58,17 @@ if timer <= fps
 		global.thirst -= random_range(0.278, 0.417)
 		global.tiredness += 0.00058
 		global.vit_a -= random_range(0.0125, 0.0156)
+		global.thirst -=  random_range(0.02, 0.03)
+		
 	} else
 	{
 		global.player_energy -= (player_weight*0.00009) + (global.arms_weight*0.00347)
 		// sweat
 		global.thirst -= random_range(0.023, 0.032)
 		global.vit_a -= 0.0104
+		global.thirst -=  random_range(0.01, 0.015)
 	}
-	
+	global.urine_volume +=  random_range(0.008, 0.01)
 	// respiration
 	global.thirst -= random_range(0.009, 0.014)
 	
@@ -102,4 +105,8 @@ if timer <= fps
 	}
 }
 
+if global.urine_volume >= 500
+{
+	global.urine_volume = 500
+}
 

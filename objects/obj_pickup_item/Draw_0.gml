@@ -6,11 +6,11 @@ _yy = camera_get_view_y(view_camera[0])
 if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj_health_manager.health_open == false && obj_item_manager.function_wheel == false && obj_item_manager.player_stats == false
 {
 	//show_debug_message(item)
-	outline_start(2, c_black)
+	//outline_start(2, c_black)
 	draw_self()
 	if type == "Object" 
 	{
-		
+		//outline_end()
 		//depth = -infinity
 		//show_debug_message(item)
 		//draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx+16, _yy+16, 3, 0.5, 0, c_white, 1)
@@ -54,7 +54,7 @@ if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj
 	}
 } else
 {
-	outline_end()
+	//outline_end()
 	draw_self()
 	if type == "Surface"
 	{

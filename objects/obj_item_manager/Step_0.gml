@@ -33,7 +33,7 @@ if global.belt != noone
 }
 
 
-if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && debug_menu == false && global.mouse_item == noone && global.right_mouse_item == noone && obj_health_manager.health_open == false && player_stats == false
+if keyboard_check_pressed(obj_game_initializers.inventory_open_key) && debug_menu == false && global.mouse_item == noone && global.right_mouse_item == noone && obj_health_manager.health_open == false && player_stats == false && urinating == false
 {
 	stats_open = !stats_open
 	menu_switch = 0
@@ -238,7 +238,7 @@ if stats_open == false && function_wheel == false
 	}
 	
 
-	if throwing == false && function_wheel_strip == false && function_wheel == false && function_wheel_health == false
+	if throwing == false && function_wheel_strip == false && function_wheel == false && function_wheel_health == false && urinating == false
 	{
 		if mouse_check_button(mb_left) && using_hand == true && global.right_hand_item != noone
 		{

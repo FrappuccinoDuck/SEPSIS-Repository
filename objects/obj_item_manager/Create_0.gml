@@ -9,6 +9,11 @@ menu_switch = 0
 
 model_index = 0
 
+urinating = false
+
+global.urine_volume = 250
+global.urine_speed = 2
+
 debug_menu = false
 prague = false
 
@@ -9176,6 +9181,12 @@ global.obj_list =
 		"This is a test dummy",
 		obj_test_dummy,
 		spr_enemy,
+	),
+	urine : new create_obj(
+		"Urine",
+		"This is urine",
+		obj_urine,
+		spr_urine,
 	),
 	last_object : new create_obj(
 		">LAST OBJ IN ROOM>",

@@ -386,10 +386,17 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 			if obj_health_manager.health_tab == 2
 			{
 				draw_sprite_ext(spr_main_character_model, 9, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
-			} else
+			} 
+			if obj_health_manager.health_tab == 0
 			{
 				draw_sprite_ext(spr_main_character_model, model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
 			}
+			if obj_health_manager.health_tab == 1
+			{
+				draw_sprite_ext(spr_main_character_model, 10, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+				//draw_sprite_ext(spr_skeleton, 0, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			}
+			
 		}
 	}
 

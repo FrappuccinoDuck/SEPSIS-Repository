@@ -15,6 +15,15 @@ if health_open == true
 		layer_set_visible("health_tangibles_dermal", true)
 	}
 	
+	if health_tab == 1
+	{
+		instance_activate_layer("bone_tangibles")
+	} else
+	{
+		instance_deactivate_layer("bone_tangibles")
+	}
+	
+	
 	layer_x("health_ui", _xx)
 	layer_y("health_ui", _yy)
 	layer_x("health_tangibles_dermal", _xx)
@@ -27,10 +36,23 @@ if health_open == true
 	//draw_text(_xx+392, _yy+134, string($"Body Temp.           {global.body_temp} F"))
 	if global.selected_part != noone
 	{
-		//show_message(global.selected_part)
-		draw_text(_xx+872, _yy+36, string($"{global.parts[global.selected_part]}"))
-		//draw_text_ext(_xx+872, _yy+420, string($"Condition"), 20, 350)
-		draw_text_ext(_xx+880, _yy+428, string($"{global.parts_desc[global.selected_part]}"), 22, 400)
+		if health_tab != 1
+		{
+			//show_message(global.selected_part)
+			draw_text(_xx+872, _yy+36, string($"{global.parts[global.selected_part]}"))
+			//draw_text_ext(_xx+872, _yy+420, string($"Condition"), 20, 350)
+			draw_text_ext(_xx+880, _yy+428, string($"{global.parts_desc[global.selected_part]}"), 22, 400)
+		} 
+	}
+	if global.selected_bone != noone
+	{
+		if health_tab == 1
+		{
+			//show_message(global.selected_part)
+			draw_text(_xx+872, _yy+36, string($"{global.skel_parts[global.selected_bone]}"))
+			//draw_text_ext(_xx+872, _yy+420, string($"Condition"), 20, 350)
+			draw_text_ext(_xx+880, _yy+428, string($"{global.skel_parts_desc[global.selected_bone]}"), 22, 400)
+		} 
 	}
 	draw_sprite(spr_dot_counter, health_tab, _xx+320, _yy+48)
 	

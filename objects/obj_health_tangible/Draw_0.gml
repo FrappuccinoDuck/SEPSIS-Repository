@@ -147,6 +147,10 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 		{
 			bleeding = false
 		}
+		if keyboard_check_pressed(ord("1"))
+		{
+			condition -= 10
+		}
 		if keyboard_check_pressed(ord("2"))
 		{
 			if bleed_amount < 5

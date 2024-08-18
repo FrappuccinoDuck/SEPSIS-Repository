@@ -1,5 +1,13 @@
+
+timer = 0
+
+heartbeat = 60
+heart_val = 0
+
+
+
 index = 0
-global.selected_part = noone
+global.selected_bone = noone
 
 applied_item = noone
 applied_mods = 0
@@ -50,26 +58,6 @@ function create_contaminant(_name, _sprite, _every_second_effect, _effect_descri
 	intensity = _intensity
 }
 
-global.contaminant_list =
-{
-	dirt : new create_contaminant(
-		"Dirt",
-		spr_dirt_ui,
-		function(_obj)
-		{
-			if irandom(50) == 1
-			{
-				_obj.inflammation = true
-			}
-			if irandom(50) == 2
-			{
-				_obj.condition -= condition_degradation_arr[irandom(4)]
-			}
-		},
-		"Can cause additional damage over time",
-		1,
-	),
-}
 
 
 blood_loss_arr = array_create(0, 0)
@@ -109,6 +97,8 @@ array_push(global.parts, "Pancreas")
 array_push(global.parts, "Bladder")
 array_push(global.parts, "Large Intestines")
 array_push(global.parts, "Thyroid")
+
+
 
 array_push(global.parts_desc, "This is your head")
 array_push(global.parts_desc, "This is your Torso")

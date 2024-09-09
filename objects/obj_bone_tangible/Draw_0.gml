@@ -32,8 +32,8 @@ if bleed_timer < 10
 
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_health_manager.health_open == true
 {
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 25, mouse_y, 5, 5, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 25, mouse_y-40, 5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue_opaque, 0, mouse_x + 25, mouse_y, 5, 6, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue_opaque, 0, mouse_x + 25, mouse_y-40, 5, 0.5, 0, c_white, 1)
 		draw_text_transformed(mouse_x + 40, mouse_y - 30, string($"Condition: {condition}/{condition_max}%"), 1, 1, 0)
 		
 		
@@ -41,8 +41,21 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		if broken_amount > 0
 		{
 			draw_text_transformed(mouse_x + 40, mouse_y + 10, "Broken", 1, 1, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"Pain & Condition Degredation"), 0.8, 0.8, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"Condition Degredation"), 0.8, 0.8, 0)
 			draw_text_transformed(mouse_x + 40, mouse_y + 42, string($"-{condition_degradation_arr[broken_amount-1]}% per second"), 0.8, 0.8, 0)
+			
+			draw_sprite_ext(spr_breaks, break_type, mouse_x + 10, mouse_y + 100, 2.5, 2.5, 0, c_white, 1)
+			draw_line(mouse_x + 130, mouse_y + 135, mouse_x + 320, mouse_y + 135)
+			draw_text_transformed(mouse_x + 140, mouse_y + 110, string($"{break_array[break_type]} Fracture"), 0.8, 0.8, 0)
+			draw_text_ext_transformed(mouse_x + 145, mouse_y + 145, string($"{break_desc_array[break_type]}"), 21, 200, 0.8, 0.8, 0)
+			
+			draw_text_transformed(mouse_x + 60, mouse_y + 330, "Effects", 1, 1, 0)
+			if break_type == 2
+			{
+				draw_sprite_ext(spr_blood_ui, 0, mouse_x + 140, mouse_y+325, 1, 1, 0, c_white, 1)
+				draw_sprite_ext(spr_infection_ui, 0, mouse_x + 200, mouse_y+325, 1, 1, 0, c_white, 1)
+				draw_sprite_ext(spr_wound_ui, 0, mouse_x + 260, mouse_y+325, 1, 1, 0, c_white, 1)
+			}
 		}
 		if infection_amount > 0
 		{
@@ -159,6 +172,10 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		{
 			if broken_amount < 5
 			{
+				if broken_amount == 0
+				{
+					break_type = 1
+				}
 				broken_amount += 1
 				broken = true
 				//open_wound = true
@@ -174,14 +191,12 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		}
 		if keyboard_check_pressed(ord("3"))
 		{
-			if infection_amount < 5
+			if break_type < 13
 			{
-				infection_amount += 1
-				infection = true
+				break_type += 1
 			} else
 			{
-				infection_amount = 0
-				infection = false
+				break_type = 1
 			}
 		}
 		if keyboard_check_pressed(ord("6"))

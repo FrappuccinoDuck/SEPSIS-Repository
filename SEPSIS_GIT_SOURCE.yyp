@@ -538,6 +538,7 @@
     {"id":{"name":"spr_blood_pixel","path":"sprites/spr_blood_pixel/spr_blood_pixel.yy",},},
     {"id":{"name":"spr_blood_ui","path":"sprites/spr_blood_ui/spr_blood_ui.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
+    {"id":{"name":"spr_breaks","path":"sprites/spr_breaks/spr_breaks.yy",},},
     {"id":{"name":"spr_brennan_head","path":"sprites/spr_brennan_head/spr_brennan_head.yy",},},
     {"id":{"name":"spr_broken_ui","path":"sprites/spr_broken_ui/spr_broken_ui.yy",},},
     {"id":{"name":"spr_bullet_collider","path":"sprites/spr_bullet_collider/spr_bullet_collider.yy",},},

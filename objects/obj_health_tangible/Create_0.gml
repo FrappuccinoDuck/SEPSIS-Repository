@@ -58,6 +58,25 @@ function create_contaminant(_name, _sprite, _every_second_effect, _effect_descri
 	intensity = _intensity
 }
 
+global.contaminant_list =
+{
+	dirt : new create_contaminant(
+		"Dirt",
+		spr_dirt_ui,
+		function(_obj)
+		{
+			if irandom(50) == 1
+			{
+				_obj.inflammation = true
+			}
+			if irandom(50) == 2
+			{
+				_obj.condition -= condition_degradation_arr[irandom(4)]
+			}
+		},
+		"Can cause additional damage over time",
+	),
+}
 
 
 blood_loss_arr = array_create(0, 0)

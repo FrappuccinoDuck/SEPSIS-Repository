@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_grunt",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.48,
+  "name":"snd_grunt",
+  "parent":{
+    "name":"SEPSIS_GIT_SOURCE",
+    "path":"SEPSIS_GIT_SOURCE.yyp",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_grunt.mp3",
+  "type":0,
+  "volume":1.0,
+}

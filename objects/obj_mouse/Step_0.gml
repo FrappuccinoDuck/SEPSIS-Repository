@@ -1,5 +1,5 @@
-x = mouse_x
-y = mouse_y
+x = mouse_x + global.offset_x
+y = mouse_y + global.offset_y
 _xx = camera_get_view_x(view_camera[0]) 
 _yy = camera_get_view_y(view_camera[0])
 

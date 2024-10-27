@@ -132,3 +132,50 @@ if global.urine_volume >= 500
 	global.urine_volume = 500
 }
 
+if global.face_wear != noone && global.face_wear.specs.short_name == "Gas Mask"
+{
+	layer_set_visible("Effect_2_1", true)
+	layer_depth("Effect_2_1", layer_get_depth("gas_mask_overlay_ui")+1)
+	if shader_timer < 1.5 && switch_over = false
+	{
+		shader_timer += 0.02
+		fx_set_parameter(layer_get_fx("Effect_2_1"), "g_VignetteEdges", [2-shader_timer, 2])
+		if shader_timer == 1.5
+		{
+			switch_over = true
+		}
+	}
+	if shader_timer > 0 && switch_over = true
+	{
+		shader_timer -= 0.02
+		fx_set_parameter(layer_get_fx("Effect_2_1"), "g_VignetteEdges", [2-shader_timer, 2])
+		if shader_timer == 0
+		{
+			switch_over = false
+		}
+	}
+} else
+{
+	layer_set_visible("Effect_2_1", false)
+}
+
+layer_set_visible("heartbeat_ui", true)
+	layer_depth("heartbeat_ui", layer_get_depth("gas_mask_overlay_ui")-1)
+	if hshader_timer < 1+((global.blood_levels_m-global.blood_levels)/global.blood_levels_m) && hswitch_over = false
+	{
+		hshader_timer += 0.05
+		fx_set_parameter(layer_get_fx("heartbeat_ui"), "g_VignetteEdges", [2-hshader_timer, 2])
+		if hshader_timer >= 1+((global.blood_levels_m-global.blood_levels)/global.blood_levels_m)
+		{
+			hswitch_over = true
+		}
+	}
+	if hshader_timer > 0 && hswitch_over = true
+	{
+		hshader_timer -= 0.05
+		fx_set_parameter(layer_get_fx("heartbeat_ui"), "g_VignetteEdges", [2-hshader_timer, 2])
+		if hshader_timer <= 0
+		{
+			hswitch_over = false
+		}
+	}

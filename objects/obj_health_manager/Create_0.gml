@@ -24,3 +24,8 @@ shoe_size = "L"
 
 // shirt 3c size (xl-tall)
 
+shader_timer = 0
+switch_over = false
+
+hshader_timer = 0
+hswitch_over = false

@@ -235,6 +235,7 @@ if stats_open == false && function_wheel == false
 	{
 		first_click = 0
 		fire_amount = 0
+		arm_degrade = false
 	}
 	
 
@@ -244,6 +245,7 @@ if stats_open == false && function_wheel == false
 		{
 			global.right_hand_item.effect.lfunc()
 			first_click += 1
+			arm_degrade = true
 		}
 		else if mouse_check_button_pressed(mb_right) && using_hand == true && global.right_hand_item != noone
 		{
@@ -258,6 +260,7 @@ if stats_open == false && function_wheel == false
 		{
 			global.left_hand_item.effect.lfunc()
 			first_click += 1
+			arm_degrade = true
 		}
 		else if mouse_check_button_pressed(mb_right) && using_hand == false && global.left_hand_item != noone
 		{
@@ -428,6 +431,8 @@ if keyboard_check_pressed(obj_game_initializers.aim_key)
 if keyboard_check_released(obj_game_initializers.aim_key)
 {
 	scoped = false
+	global.offset_x = 0
+	global.offset_y = 0
 }
 
 if (using_hand == 1 && global.right_hand_item == noone) && (using_hand == 0 && global.left_hand_item == noone) 
@@ -438,6 +443,10 @@ if (using_hand == 1 && global.right_hand_item == noone) && (using_hand == 0 && g
 
 if scoped == true 
 {
+	shake_val = 10
+	global.offset_x += irandom_range(-shake_val, shake_val)*(global.shake)
+	global.offset_y += irandom_range(-shake_val, shake_val)*(global.shake)
+	
 	if left_modifiers[15] != 0 && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm" && using_hand == 0 
 	{
 		layer_set_visible("perception_effect", false)

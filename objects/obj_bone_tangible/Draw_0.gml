@@ -41,8 +41,9 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		if broken_amount > 0
 		{
 			draw_text_transformed(mouse_x + 40, mouse_y + 10, "Broken", 1, 1, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"Condition Degredation"), 0.8, 0.8, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 42, string($"-{condition_degradation_arr[broken_amount-1]}% per second"), 0.8, 0.8, 0)
+			//draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"Condition Degredation"), 0.8, 0.8, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"-{condition_degradation_arr[broken_amount-1]}% per second"), 0.8, 0.8, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 42, string($"-{broken_amount*10}% Max Percentage"), 0.8, 0.8, 0)
 			
 			draw_sprite_ext(spr_breaks, break_type, mouse_x + 10, mouse_y + 100, 2.5, 2.5, 0, c_white, 1)
 			draw_line(mouse_x + 130, mouse_y + 135, mouse_x + 320, mouse_y + 135)
@@ -252,6 +253,31 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		}
 }
 
+if broken_amount == 0
+{
+	condition_max = 100
+}
+if broken_amount == 1
+{
+	condition_max = 90
+}
+if broken_amount == 2
+{
+	condition_max = 80
+}
+if broken_amount == 3
+{
+	condition_max = 70
+}
+if broken_amount == 4
+{
+	condition_max = 60
+}
+if broken_amount == 5
+{
+	condition_max = 50
+}
+
 /*
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index == 11 && obj_health_manager.health_tab == 2
 {
@@ -306,3 +332,34 @@ if condition > condition_max
 {
 	condition = condition_max
 }
+
+if obj_player.xspd != 0 || obj_player.yspd != 0
+{
+	if ((index >= 12 && index <= 17) || (index == 22 || index == 23)) && condition < 100
+	{
+		if irandom(condition) == 1
+		{
+			condition -= 1
+			if irandom(condition) == 1
+				{
+					audio_play_sound(snd_grunt, 1, 0)
+				}
+		}
+	}
+}
+if (index >= 6 && index <= 11) && condition < 100
+	{
+		global.shake = (100-condition)/100
+		if obj_item_manager.arm_degrade == true
+		{
+			if irandom(condition) == 1
+			{
+				condition -= 1
+				if irandom(condition) == 1
+				{
+					audio_play_sound(snd_grunt, 1, 0)
+				}
+			}
+		}
+		
+	}

@@ -1,6 +1,7 @@
 //INIT
 layer_set_visible("loading_ui", true)
-
+fx_set_parameter(layer_get_fx("Effect_2_1"), "g_VignetteEdges", [2, 2])
+fx_set_parameter(layer_get_fx("heartbeat_ui"), "g_VignetteEdges", [2, 2])
 // KEYBINDINGS
 ini_open("config.ini")
 
@@ -53,7 +54,7 @@ timer = 0
 global.ui_show = true
 
 layer_set_visible("Effect_2", true)
-//layer_set_visible("Effect_1", true)
+layer_set_visible("Effect_2_1", false)
 layer_set_visible("perception_effect", true)
 
 if irandom(1) == 0

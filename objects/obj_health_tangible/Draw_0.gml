@@ -65,7 +65,7 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 		if open_wound == true
 		{
 			draw_text_transformed(mouse_x + 40, mouse_y + 100, "Open Wound", 1, 1, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 120, string($"-{open_wound_amount*10}%"), 0.8, 0.8, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 120, string($"-{open_wound_amount*10}% Max Percentage"), 0.8, 0.8, 0)
 		}
 		if radiated == true
 		{
@@ -376,3 +376,35 @@ if condition > condition_max
 {
 	condition = condition_max
 }
+
+/*
+if obj_player.xspd != 0 || obj_player.yspd != 0
+{
+	if (index == 4 || index == 5 || index == 8 || index == 9) && condition < 100
+	{
+		if irandom(condition) == 1
+		{
+			condition -= 1
+			if irandom(condition) == 1
+				{
+					audio_play_sound(snd_grunt, 1, 0)
+				}
+		}
+	}
+}
+if (index == 2 || index == 3 || index == 6 || index == 7) && condition < 100
+	{
+		global.shake = (100-condition)/100
+		if obj_item_manager.arm_degrade == true
+		{
+			if irandom(condition) == 1
+			{
+				condition -= 1
+				if irandom(condition) == 1
+				{
+					audio_play_sound(snd_grunt, 1, 0)
+				}
+			}
+		}
+		
+	}*/

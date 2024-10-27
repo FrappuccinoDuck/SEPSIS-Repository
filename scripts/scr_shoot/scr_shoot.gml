@@ -69,10 +69,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						speed = _speed	
@@ -89,10 +89,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -105,10 +105,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -121,10 +121,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -136,10 +136,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -152,10 +152,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -187,10 +187,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				{
 					if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 					image_angle = direction
 					//speed = _speed	
@@ -249,10 +249,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						speed = _speed	
@@ -268,10 +268,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -284,10 +284,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -300,10 +300,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -315,10 +315,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -331,10 +331,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value), _gun.weapon.innaccuracy*(100/barrel_value))/2
 						}
 						image_angle = direction
 						speed = _speed	
@@ -365,10 +365,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					
 					if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 					image_angle = direction
 					//speed = _speed	
@@ -426,10 +426,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						speed = _speed
@@ -455,10 +455,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					{
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						//speed = _speed	
@@ -483,10 +483,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 						randomize()
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						speed = _speed
@@ -513,10 +513,10 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					{
 						if obj_item_manager.scoped == false
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)
 						} else
 						{
-							direction = point_direction(obj_player.x, obj_player.y, mouse_x, mouse_y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
+							direction = point_direction(obj_player.x, obj_player.y, obj_mouse.x, obj_mouse.y) + irandom_range(_gun.weapon.innaccuracy*-1*(100/barrel_value)-extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val, _gun.weapon.innaccuracy*(100/barrel_value)+extracted_bullet[array_length(extracted_bullet)-1].specs.misc_val)/global.scoped_aim_change
 						}
 						image_angle = direction
 						//speed = _speed	

@@ -31,6 +31,11 @@ comp_num = 0
 
 global.degredation_value = 0.3
 
+arm_degrade = false
+
+global.shake = 0
+shake_val = 2
+
 global.left_hand_amount = 0
 global.right_hand_amount = 0
 
@@ -9081,7 +9086,7 @@ global.item_list =
 	),
 	dipstick : new create_item(
 		"Dipstick",
-		"This is a Dynamic Isopeptide Plasma Stick, capable of healing injected body parts up to 15% instantly, and 1% every second for 5 seconds.",
+		"This is a Dynamic Isopeptide Plasma Stick, capable of healing injected body parts up to 15% instantly, and 1% every second for 5 seconds. Can be used twice.",
 		spr_dipstick,
 		obj_dipstick,
 		global.specs_list.dipstick_specs,

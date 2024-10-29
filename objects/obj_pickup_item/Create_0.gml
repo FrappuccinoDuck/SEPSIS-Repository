@@ -87,3 +87,5 @@ p_y = y
 // 38 = Mag Container Array
 
 // 39 = Fluid Content
+
+// 40 = Bites Remaining

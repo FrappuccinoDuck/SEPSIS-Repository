@@ -390,6 +390,7 @@
     {"id":{"name":"scr_check_all_parts","path":"scripts/scr_check_all_parts/scr_check_all_parts.yy",},},
     {"id":{"name":"scr_condition_sprite","path":"scripts/scr_condition_sprite/scr_condition_sprite.yy",},},
     {"id":{"name":"scr_condition_to_val","path":"scripts/scr_condition_to_val/scr_condition_to_val.yy",},},
+    {"id":{"name":"scr_eat","path":"scripts/scr_eat/scr_eat.yy",},},
     {"id":{"name":"scr_equip_laser","path":"scripts/scr_equip_laser/scr_equip_laser.yy",},},
     {"id":{"name":"scr_equip_optic","path":"scripts/scr_equip_optic/scr_equip_optic.yy",},},
     {"id":{"name":"scr_equip_suppressor","path":"scripts/scr_equip_suppressor/scr_equip_suppressor.yy",},},

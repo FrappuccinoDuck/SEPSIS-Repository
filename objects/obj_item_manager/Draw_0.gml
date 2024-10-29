@@ -42,6 +42,10 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 		layer_y("inventory_ui", camera_get_view_y(view_camera[0]))
 	
 		layer_set_visible(layer_get_id("inventory_ui"), true)
+		
+		function_wheel = false
+		function_wheel_health = false
+		function_wheel_strip = false
 	} else
 	{
 		//layer_x("inventory_ui", camera_get_view_x(view_camera[0]))
@@ -1961,7 +1965,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	layer_set_visible(layer_get_id("close_item_inspect_ui"), false)
 	layer_set_visible(layer_get_id("inventory_ui"), false)
 	
-	if keyboard_check_pressed(obj_game_initializers.alt_function_key) && stats_open == false && function_wheel_strip == false && function_wheel_health == false 
+	if keyboard_check_pressed(obj_game_initializers.alt_function_key) && stats_open == false && function_wheel_strip == false && function_wheel_health == false && obj_health_manager.health_open == false && player_stats == false
 	{
 		function_wheel = !function_wheel
 	} 
@@ -2154,7 +2158,7 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 
 show_debug_message(using_hand)
 
-if keyboard_check_pressed(ord("F")) && stats_open == false && function_wheel == false && function_wheel_health == false 
+if keyboard_check_pressed(ord("F")) && stats_open == false && function_wheel == false && function_wheel_health == false && player_stats == false && obj_health_manager.health_open == false
 	{
 		if (using_hand == 0 && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm") || (using_hand == 1 && global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm") 
 		{
@@ -2297,7 +2301,7 @@ if function_wheel_strip
 		instance_destroy(obj_function_wheel)
 	}
 
-if keyboard_check_pressed(obj_game_initializers.health_wheel_key)  && stats_open == false && function_wheel == false && function_wheel_strip == false 
+if keyboard_check_pressed(obj_game_initializers.health_wheel_key)  && stats_open == false && function_wheel == false && function_wheel_strip == false && player_stats == false && obj_health_manager.health_open == false
 	{
 		function_wheel_health = !function_wheel_health
 	} 
@@ -2546,7 +2550,7 @@ if player_stats == false
 }
 
 
-if global.left_hand_item != noone
+if global.left_hand_item != noone && player_stats == false
 {
 	if left_modifiers[9] != 0
 	{
@@ -2568,7 +2572,7 @@ if global.left_hand_item != noone
 	
 }
 
-if global.right_hand_item != noone
+if global.right_hand_item != noone && player_stats == false
 {
 	if right_modifiers[9] != 0
 	{

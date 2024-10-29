@@ -12,8 +12,8 @@
   "duration":0.48,
   "name":"snd_grunt",
   "parent":{
-    "name":"SEPSIS_GIT_SOURCE",
-    "path":"SEPSIS_GIT_SOURCE.yyp",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

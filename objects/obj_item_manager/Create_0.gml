@@ -1,6 +1,8 @@
 stats_open = false
 backpack = false
 
+main_ticks = 0
+
 player_stats = false
 
 scoped = false
@@ -2256,6 +2258,7 @@ global.effect_list =
 	apple_effect : new create_effect(
 		function(){
 			show_debug_message("left click");
+			eat(global.item_list.apple, 8)
 		},
 		function(){
 			show_debug_message("right click")
@@ -2263,7 +2266,7 @@ global.effect_list =
 		function(){
 			show_debug_message("middle mouse click")
 		},
-		"N/A",
+		"Bite out of apple",
 		"N/A",
 		"N/A",
 		
@@ -2292,6 +2295,7 @@ global.effect_list =
 	orange_effect : new create_effect(
 		function(){
 			show_debug_message("left click");
+			eat(global.item_list.orange, 8)
 		},
 		function(){
 			show_debug_message("right click")
@@ -2299,7 +2303,7 @@ global.effect_list =
 		function(){
 			show_debug_message("middle mouse click")
 		},
-		"N/A",
+		"Bite out of orange",
 		"N/A",
 		"N/A",
 		
@@ -6581,8 +6585,8 @@ global.min_list =
 global.vit_list =
 {
 	apple_vit : new create_vit(
-		22,
-		0.01,
+		6,
+		0.03,
 		0.02,
 		0.1,
 		0.18,
@@ -6592,12 +6596,12 @@ global.vit_list =
 		0,
 	),
 	orange_vit : new create_vit(
-		130,
-		0.5,
+		11,
+		0.09,
 		0.04,
 		0.6,
 		0.18,
-		45,
+		29,
 		0,
 		80,
 		0,

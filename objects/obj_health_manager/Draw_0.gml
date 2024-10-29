@@ -125,6 +125,8 @@ if timer <= fps
 			global.zinc -= 0.01
 		}
 	}
+	
+	
 }
 
 if global.urine_volume >= 500

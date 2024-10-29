@@ -296,6 +296,7 @@ if timer <= fps
 	
 	if broken == true
 	{
+		global.calcium -= 0.05*broken_amount
 		broken_timer += 1
 		
 		if broken_amount > 1
@@ -320,6 +321,7 @@ if broken_timer >= 60 * broken_amount
 {
 	broken_timer = 0
 	broken_amount -= 1
+	
 	if broken_amount == 0
 	{
 		broken = false
@@ -347,7 +349,7 @@ if obj_player.xspd != 0 || obj_player.yspd != 0
 		}
 	}
 }
-if (index >= 6 && index <= 11) && condition < 100
+if ((index >= 6 && index <= 11) || (index == 20 || index == 21)) && condition < 100
 	{
 		global.shake = (100-condition)/100
 		if obj_item_manager.arm_degrade == true

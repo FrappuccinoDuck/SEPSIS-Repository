@@ -224,7 +224,7 @@ if keyboard_check_pressed(obj_game_initializers.page_navigation_l) && nutrition_
 		nutrition_page += 1
 	}
 
-if stats_open == false && function_wheel == false
+if stats_open == false && function_wheel == false && player_stats == false && obj_health_manager.health_open == false
 {
 	
 	if mouse_check_button_pressed(mb_left)
@@ -423,6 +423,17 @@ if debug_menu == true
 		}
 	})
 }
+
+/*
+if main_ticks < fps
+{
+	main_ticks += 1
+} else
+{
+	main_ticks = 0
+	every_second()
+}
+*/
 
 if keyboard_check_pressed(obj_game_initializers.aim_key)
 {

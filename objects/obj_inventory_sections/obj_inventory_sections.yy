@@ -10,8 +10,8 @@
   "name":"obj_inventory_sections",
   "overriddenProperties":[],
   "parent":{
-    "name":"Function Wheel",
-    "path":"folders/Item Management/Managers/Systems/Function Wheel.yy",
+    "name":"Systems",
+    "path":"folders/Item Management/Managers/Systems.yy",
   },
   "parentObjectId":null,
   "persistent":false,

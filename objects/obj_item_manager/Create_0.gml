@@ -573,7 +573,7 @@ global.specs_list =
 		10,
 		1,
 		0.33,
-		"Consumable",
+		"Food",
 		false,
 		1,
 		false,
@@ -588,7 +588,7 @@ global.specs_list =
 		10,
 		1,
 		0.31,
-		"Consumable",
+		"Food",
 		false,
 		1,
 		false,
@@ -6274,7 +6274,7 @@ global.effect_list =
 			unload_bullet(global.item_list.box_12gauge, global.item_list.single_12gauge)
 		},
 		function(){
-			
+			//load_bullet_from_box(global.item_list.box_12gauge, global.item_list.single_12gauge, "12G", false)
 		},
 		function(){
 			show_debug_message("mag middle mouse click")
@@ -8904,7 +8904,7 @@ global.item_list =
 		noone,
 		noone,
 		noone,
-		3,
+		2,
 		noone,
 		30,
 	),

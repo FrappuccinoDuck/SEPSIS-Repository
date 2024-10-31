@@ -900,7 +900,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 	
 	// SELECTION SECTION
-	if mouse_x >= _xx + 32 && mouse_x <= _xx + 189 && mouse_y >= _yy + 606 && mouse_y <= _yy + 734 && global.left_hand_item != global.item_list.two_hand_item
+	if mouse_x >= _xx + 32 && mouse_x <= _xx + 189 && mouse_y >= _yy + 606 && mouse_y <= _yy + 734 && global.left_hand_item != global.item_list.two_hand_item && player_stats == false
 	{
 		
 		// LEFT HAND
@@ -1393,7 +1393,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 		}
 	}
 	
-	if global.selected_item == noone && global.mouse_item == noone && stats_open == true
+	if global.selected_item == noone && global.mouse_item == noone && stats_open == true && obj_health_manager.health_open == false && player_stats == false
 	{
 		
 		if global.backpack != noone
@@ -2515,21 +2515,48 @@ if close_inspect == false
 
 if player_stats == false
 {
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 544, 2.5, 0.5, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 544, 2.5, 0.5, 0, c_white, 1)
+	
 
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 608, 2.5, 2, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 608, 2.5, 2, 0, c_white, 1)
-
-	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 160, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 352, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-
-	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 32, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+	if left_modifiers[9] > 0
+	{
+		if using_hand == 1
+		{
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, c_white, 0.5)
+		} else
+		{
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, c_white, 1)
+		}
+	}
+	if right_modifiers[9] > 0
+	{
+		if using_hand == 0
+		{
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, c_white, 0.5)
+		} else
+		{
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, c_white, 1)
+		}
+	}
 
 
 	if using_hand == true
 	{
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 544, 2.5, 0.5, 0, c_white, 0.5)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 544, 2.5, 0.5, 0, c_white, 1)
+
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 608, 2.5, 2, 0, c_white, 0.5)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 608, 2.5, 2, 0, c_white, 1)
+		
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 160, _yy+ 608, 0.5, 0.5, 0, c_white, 0.5)
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 352, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 32, _yy+ 608, 0.5, 0.5, 0, c_white, 0.5)
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+		
 		draw_text(_xx+40, _yy+552, "Left Hand")
 		draw_text(_xx+232, _yy+552, "Right Hand (*)")
 		draw_text(_xx+166, _yy+610, global.left_hand_amount)
@@ -2539,6 +2566,18 @@ if player_stats == false
 	
 	} else
 	{
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 544, 2.5, 0.5, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 544, 2.5, 0.5, 0, c_white, 0.5)
+
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 32, _yy + 608, 2.5, 2, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 224, _yy + 608, 2.5, 2, 0, c_white, 0.5)
+		
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 160, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 352, _yy+ 608, 0.5, 0.5, 0, c_white, 0.5)
+
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 32, _yy+ 608, 0.5, 0.5, 0, c_white, 1)
+		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 608, 0.5, 0.5, 0, c_white, 0.5)
+	
 		draw_text(_xx+40, _yy+552, "Left Hand (*)")
 		draw_text(_xx+232, _yy+552, "Right Hand")
 		draw_text(_xx+166, _yy+610, global.left_hand_amount)
@@ -2767,7 +2806,7 @@ if global.belt != noone && ((global.left_hand_item != noone && global.left_hand_
 	}
 }
 
-if mouse_x >= _xx + 32 && mouse_x <= _xx + 189 && mouse_y >= _yy + 606 && mouse_y <= _yy + 734 && global.left_hand_item != global.item_list.two_hand_item && global.left_hand_item != noone
+if mouse_x >= _xx + 32 && mouse_x <= _xx + 189 && mouse_y >= _yy + 606 && mouse_y <= _yy + 734 && global.left_hand_item != global.item_list.two_hand_item && global.left_hand_item != noone && player_stats == false
 {
 	
 	if global.left_hand_item.specs.item_type == "Trigger" || global.left_hand_item.specs.item_type == "Hammer" || global.left_hand_item.specs.item_type == "Barrel" || global.left_hand_item.specs.item_type == "Spring" || global.left_hand_item.specs.item_type == "Extractor" || global.left_hand_item.specs.item_type == "Bolt/Slide" || global.left_hand_item.specs.item_type == "Firing Pin" || global.left_hand_item.specs.item_type == "Scope" || global.left_hand_item.specs.item_type == "Sight" || global.left_hand_item.specs.item_type == "Underbarrel" || global.left_hand_item.specs.item_type == "Medical"

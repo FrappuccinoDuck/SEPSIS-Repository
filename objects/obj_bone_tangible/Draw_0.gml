@@ -147,12 +147,12 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 				applied_item = global.mouse_item
 				applied_mods = obj_item_manager.mouse_modifiers
 				global.mouse_item = noone
-			} else
+			} /*else
 			{
 				obj_item_manager.mouse_modifiers[9] -= global.mouse_item.specs.medical.injection_loss
 			}
 			condition += global.mouse_item.specs.medical.condition_increase
-			temp_heal += global.mouse_item.specs.medical.continuous_heal
+			temp_heal += global.mouse_item.specs.medical.continuous_heal*/
 			
 			
 		}

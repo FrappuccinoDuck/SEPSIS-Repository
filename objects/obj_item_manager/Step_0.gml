@@ -1,9 +1,95 @@
+
+
 for(var i = 0; i < current_belt_size; i++)
 {
-	if keyboard_check_pressed(ord(string(i+1))) && global.current_hotbar_item != i+1
+	if array_length(global.belt_arr) <= current_belt_size
 	{
-		global.current_hotbar_item = i+1
-		show_debug_message(global.current_hotbar_item)
+		if keyboard_check_direct(ord(string(i+1))) 
+		{
+			if keyboard_check_direct(vk_shift)
+			{
+				if using_hand == 0
+				{
+					if global.left_hand_item == noone && global.belt_arr[i] != noone
+					{
+						global.left_hand_item = global.belt_arr[i]
+						left_modifiers = global.belt_mod_arr[i]
+						global.left_hand_amount = 1
+						hand_ammo[0] = global.belt_ammo[i]
+						array_delete(global.belt_arr, array_get_index(global.belt_arr, global.belt_arr[i]), 1)
+						array_delete(global.belt_ammo, array_get_index(global.belt_ammo, global.belt_ammo[i]), 1)
+						array_delete(global.belt_mod_arr, array_get_index(global.belt_mod_arr, global.belt_mod_arr[i]), 1)
+						//---------------------------------------------------------
+						global.belt_capacity = 0
+						for(var k = 0; k < array_length(global.belt_arr); k++)
+						{	
+							global.belt_capacity += 1
+						}
+					}
+				} else
+				{
+					if global.right_hand_item == noone  && global.belt_arr[i] != noone
+					{
+						global.right_hand_item = global.belt_arr[i]
+						right_modifiers = global.belt_mod_arr[i]
+						global.right_hand_amount = 1
+						hand_ammo[1] = global.belt_ammo[i]
+						array_delete(global.belt_arr, array_get_index(global.belt_arr, global.belt_arr[i]), 1)
+						array_delete(global.belt_ammo, array_get_index(global.belt_ammo, global.belt_ammo[i]), 1)
+						array_delete(global.belt_mod_arr, array_get_index(global.belt_mod_arr, global.belt_mod_arr[i]), 1)
+						//---------------------------------------------------------
+						global.belt_capacity = 0
+						for(var k = 0; k < array_length(global.belt_arr); k++)
+						{	
+							global.belt_capacity += 1
+						}
+					}
+				}
+			}
+		
+		}
+	}
+	if array_length(global.belt_arr) < current_belt_size
+	{
+		if keyboard_check_direct(vk_control)
+			{
+				if using_hand == 0
+				{
+					if global.left_hand_item != noone && global.left_hand_item.specs.beltable == true
+					{
+						array_push(global.belt_arr, global.left_hand_item)
+						array_push(global.belt_ammo, hand_ammo[0])
+						array_push(global.belt_mod_arr, left_modifiers)
+						global.left_hand_item = noone
+						left_modifiers = array_create(obj_item_manager.modifier_amount, 0)
+						hand_ammo[0] = 0
+						//---------------------------------------------------------
+						global.belt_capacity = 0
+						for(var k = 0; k < array_length(global.belt_arr); k++)
+						{	
+							global.belt_capacity += 1
+						}
+					}
+				}
+				if using_hand == 1
+				{
+					if global.right_hand_item != noone && global.right_hand_item.specs.beltable == true
+					{
+						array_push(global.belt_arr, global.right_hand_item)
+						array_push(global.belt_ammo, hand_ammo[1])
+						array_push(global.belt_mod_arr, right_modifiers)
+						global.right_hand_item = noone
+						right_modifiers = array_create(obj_item_manager.modifier_amount, 0)
+						hand_ammo[1] = 0
+						//---------------------------------------------------------
+						global.belt_capacity = 0
+						for(var k = 0; k < array_length(global.belt_arr); k++)
+						{	
+							global.belt_capacity += 1
+						}
+					}
+				}
+			}
 	}
 }
 

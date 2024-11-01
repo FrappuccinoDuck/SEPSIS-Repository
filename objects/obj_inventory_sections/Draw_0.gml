@@ -155,7 +155,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.belt_arr); k++)
 				{
 					var _extracted = global.belt_mod_arr[k]
-					draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+					draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.belt_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -200,7 +200,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.lshoulder_arr); k++)
 				{
 					var _extracted = global.shoulder_mod_arr[k]
-					draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+					draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.lshoulder_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -272,6 +272,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 					
 						if mouse_x >= x && mouse_x <= x+416 && mouse_y >= y+33*k+33-33*num && mouse_y <= y+33*k+64-33*num
 						{
+						
 							draw_rectangle(x, y+33*k+33-33*num, x+416, y+33*k+64, true)
 							global.selected_item = global.backpack_arr[k]
 						 
@@ -309,7 +310,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.vest_arr); k++)
 				{
 					var _extracted = global.vest_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.vest_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -350,7 +351,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.right_foot_arr); k++)
 				{
 					var _extracted = global.right_foot_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.right_foot_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -391,7 +392,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.left_foot_arr); k++)
 				{
 					var _extracted = global.left_foot_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.left_foot_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -432,7 +433,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.top_head_arr); k++)
 				{
 					var _extracted = global.head_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.top_head_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -473,7 +474,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.torso_arr); k++)
 				{
 					var _extracted = global.torso_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.torso_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -515,7 +516,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.left_leg_arr); k++)
 				{
 					var _extracted = global.leg_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.left_leg_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -606,7 +607,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.right_wrist_arr); k++)
 				{
 					var _extracted = global.right_wrist_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.right_wrist_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -648,7 +649,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.left_wrist_arr); k++)
 				{
 					var _extracted = global.left_wrist_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.left_wrist_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -691,7 +692,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.left_hand_arr); k++)
 				{
 					var _extracted = global.left_hand_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.left_hand_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -733,7 +734,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.right_hand_arr); k++)
 				{
 					var _extracted = global.right_hand_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.right_hand_arr[k].name)
 					if _extracted[9] > 0
 					{
@@ -776,7 +777,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				for(var k = 0; k < array_length(global.face_arr); k++)
 				{
 					var _extracted = global.face_mod_arr[k]
-						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
+						draw_rectangle_color(x, y+33*k+33-33, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)
 					draw_text(x+4, y+4+33*k+33, global.face_arr[k].name)
 					if _extracted[9] > 0
 					{

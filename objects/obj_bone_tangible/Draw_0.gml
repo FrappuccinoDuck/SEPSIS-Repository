@@ -114,7 +114,13 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		
 		for(var i = 0; i < broken_amount; i++)
 		{
-			draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+			if i == 0
+			{
+				draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, ((60*broken_amount)-(broken_timer))/(60*broken_amount))
+			} else
+			{
+				draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+			}
 		}
 		for(var i = 0; i < infection_amount; i++)
 		{
@@ -301,10 +307,10 @@ if timer <= fps
 		
 		if broken_amount > 1
 		{
-			condition -= random_range(condition_degradation_arr[broken_amount-2], condition_degradation_arr[broken_amount-1])
+			//condition -= random_range(condition_degradation_arr[broken_amount-2], condition_degradation_arr[broken_amount-1])
 		} else
 		{
-			condition -= random(condition_degradation_arr[broken_amount-1])
+			//condition -= random(condition_degradation_arr[broken_amount-1])
 		}
 	} else
 	{

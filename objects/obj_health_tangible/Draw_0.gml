@@ -9,22 +9,6 @@ if (index > 9 && index <= 20 && obj_health_manager.health_tab == 2) && obj_healt
 	}
 }
 
-if bleed_timer < 10
-{
-	bleed_timer += 1
-} else
-{
-	bleed_timer = 0
-	if bleeding == true
-	{
-		var shift_x = random_range(-14, 14)
-		var shift_y = random_range(-14, 14)
-		for(i = 0; i< random_range(4, 32); i++)
-		{
-			//instance_create_depth(obj_player.x+shift_x, obj_player.y+shift_x, -9, obj_blood_surface)
-		}
-	}
-}
 
 if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_manager.health_tab == 2) || (index <= 9 && obj_health_manager.health_tab == 0)) && obj_health_manager.health_open == true
 {
@@ -36,7 +20,7 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 		
 		if bleed_amount > 0
 		{
-			draw_text_transformed(mouse_x + 40, mouse_y + 10, "Bleeding", 1, 1, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 10, string($"Bleeding"), 1, 1, 0)
 			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"{blood_loss_arr[bleed_amount-1]} mL per second"), 0.8, 0.8, 0)
 			draw_text_transformed(mouse_x + 40, mouse_y + 42, string($"-{condition_degradation_arr[bleed_amount-1]}% per second"), 0.8, 0.8, 0)
 		}
@@ -96,7 +80,14 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 		
 		for(var i = 0; i < bleed_amount; i++)
 		{
-			draw_sprite_ext(spr_blood_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+			if i == 0
+			{
+				draw_sprite_ext(spr_blood_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, ((60*bleed_amount)-(bleed_timer))/(60*bleed_amount))
+			} else
+			{
+				draw_sprite_ext(spr_blood_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+			}
+			
 		}
 		for(var i = 0; i < infection_amount; i++)
 		{

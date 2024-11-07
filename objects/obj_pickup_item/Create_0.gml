@@ -89,3 +89,5 @@ p_y = y
 // 39 = Fluid Content
 
 // 40 = Bites Remaining
+
+// 41 = Clear Mag (0 No, 1 Yes)

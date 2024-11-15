@@ -42,8 +42,8 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		{
 			draw_text_transformed(mouse_x + 40, mouse_y + 10, "Broken", 1, 1, 0)
 			//draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"Condition Degredation"), 0.8, 0.8, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"-{condition_degradation_arr[broken_amount-1]}% per second"), 0.8, 0.8, 0)
-			draw_text_transformed(mouse_x + 40, mouse_y + 42, string($"-{broken_amount*10}% Max Percentage"), 0.8, 0.8, 0)
+			//draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"-{condition_degradation_arr[broken_amount-1]}% per second"), 0.8, 0.8, 0)
+			draw_text_transformed(mouse_x + 40, mouse_y + 30, string($"-{broken_amount*10}% Max Percentage"), 0.8, 0.8, 0)
 			
 			draw_sprite_ext(spr_breaks, break_type, mouse_x + 10, mouse_y + 100, 2.5, 2.5, 0, c_white, 1)
 			draw_line(mouse_x + 130, mouse_y + 135, mouse_x + 320, mouse_y + 135)

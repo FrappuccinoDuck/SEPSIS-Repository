@@ -28,5 +28,7 @@ modifier[27] = 0
 
 modifier[38] = array_create(0, 0)
 
+modifier[42] = "Not"
+
 image_xscale = 0.5
 image_yscale = 0.5

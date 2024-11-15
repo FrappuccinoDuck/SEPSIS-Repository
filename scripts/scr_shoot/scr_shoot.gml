@@ -32,12 +32,45 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 		burst_delay += 1
 		if (global.left_hand_item == _gun && selected_chamber[0] == true) || (global.right_hand_item == _gun && selected_chamber[1] == true)
 		{
-			if global.left_hand_item == _gun && left_modifiers[9] > 1 && left_modifiers[25] == "Not" && check_all_parts(_gun, 0) && ((first_click >= 1 && left_modifiers[24] == 3) || (first_click == 1 && left_modifiers[24] == 1) || (fire_amount < global.left_hand_item.weapon.short_burst_amount && left_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate  && !audio_is_playing(_gun.weapon.chamber_sound)
+			if global.left_hand_item == _gun && left_modifiers[9] > 1 && left_modifiers[42] == "Not" && left_modifiers[25] == "Not" && check_all_parts(_gun, 0) && ((first_click >= 1 && left_modifiers[24] == 3) || (first_click == 1 && left_modifiers[24] == 1) || (fire_amount < global.left_hand_item.weapon.short_burst_amount && left_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate  && !audio_is_playing(_gun.weapon.chamber_sound)
 			{		
 				if jam_checker(left_modifiers[9]) == true
 				{
-					left_modifiers[25] = "Is"
+					if irandom(1) == 0
+					{
+						if left_modifiers[26] != "Break-Action"
+						{
+							left_modifiers[25] = "Is"
+							with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+							{
+								var i = irandom(2)
+								if i == 0
+								{
+									notification = "Failure to Eject (Chamber to Resolve)"
+								}
+								if i == 1
+								{
+									notification = "Failure to Feed (Chamber to Resolve)"
+								}
+								if i == 2
+								{
+									notification = "Failure to Cycle (Chamber to Resolve)"
+								}
+							}
+						}
+					} else
+					{	
+						if global.left_hand_item.weapon.parts.hammer == global.item_list.single_action_hammer
+						{
+							left_modifiers[42] = "Is"
+							with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+							{	
+								notification = "Misfire (Cock/Chamber to Resolve)"
+							}
+						}
+					}
 				}
+			
 				
 				weapon_degradation(_gun)
 				scope_degradation()
@@ -215,11 +248,43 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				}
 			array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
 			}
-			if global.right_hand_item == _gun && right_modifiers[9] > 1 && right_modifiers[25] == "Not" && check_all_parts(_gun, 1) && ((first_click >= 1 && right_modifiers[24] == 3) || (first_click == 1 && right_modifiers[24] == 1) || (fire_amount <= global.right_hand_item.weapon.short_burst_amount && right_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate && !audio_is_playing(_gun.weapon.chamber_sound)
+			if global.right_hand_item == _gun && right_modifiers[9] > 1 && right_modifiers[42] == "Not" && right_modifiers[25] == "Not" && check_all_parts(_gun, 1) && ((first_click >= 1 && right_modifiers[24] == 3) || (first_click == 1 && right_modifiers[24] == 1) || (fire_amount <= global.right_hand_item.weapon.short_burst_amount && right_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate && !audio_is_playing(_gun.weapon.chamber_sound)
 			{	
 				if jam_checker(right_modifiers[9]) == true
 				{
-					right_modifiers[25] = "Is"
+					if irandom(1) == 0
+					{
+						if right_modifiers[26] != "Break-Action"
+						{
+							right_modifiers[25] = "Is"
+							with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+							{
+								var i = irandom(2)
+								if i == 0
+								{
+									notification = "Failure to Eject (Chamber to Resolve)"
+								}
+								if i == 1
+								{
+									notification = "Failure to Feed (Chamber to Resolve)"
+								}
+								if i == 2
+								{
+									notification = "Failure to Cycle (Chamber to Resolve)"
+								}
+							}
+						}
+					} else
+					{	
+						if global.right_hand_item.weapon.parts.hammer == global.item_list.single_action_hammer
+						{
+							right_modifiers[42] = "Is"
+							with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+							{	
+								notification = "Misfire (Cock/Chamber to Resolve)"
+							}
+						}
+					}
 				}
 				
 				if global.left_hand_item == _gun

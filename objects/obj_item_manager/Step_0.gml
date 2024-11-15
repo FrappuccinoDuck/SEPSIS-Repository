@@ -276,7 +276,7 @@ global.parts_list.dis_pistol_parts.barrel = global.item_list.electromagnetic_len
 if keyboard_check_pressed(obj_game_initializers.switch_hands)
 {
 	using_hand = !using_hand
-	function_wheel = false
+	//function_wheel = false
 }
 
 /*if keyboard_check_pressed(obj_game_initializers.switch_hands) && stats_open == true

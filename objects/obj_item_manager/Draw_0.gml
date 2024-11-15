@@ -1971,188 +1971,124 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	} 
 
 if function_wheel == true && global.left_hand_item != noone && using_hand == false && global.left_hand_item != global.item_list.two_hand_item
-	{
-		instance_create_depth(_xx+320, _yy+32, -9, obj_function_wheel)
-		if !place_meeting(x, y, obj_mouse)
+	{	
+		for(var l = 0; l < 7; l++)
 		{
-			draw_sprite_ext(spr_function_wheel, 0, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-		}
-		
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y >  _yy+161 && mouse_y <  _yy+252
-		{
-			draw_sprite_ext(spr_function_wheel, 1, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+544, _yy+161, "Throw (Z)", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if l == 0
 			{
-				throw_item(global.left_hand_item)
+				function_list[0] = "* Throw (Z)"
+				function_list[1] = "* Combine"
+				function_list[2] = "* (Out of Order)"
+				function_list[3] = global.left_hand_item.effect.w4n
+				function_list[4] = global.left_hand_item.effect.w5n
+				function_list[5] = global.left_hand_item.effect.w6n
+				function_list[6] = global.left_hand_item.effect.w7n
+				function_list[7] = global.left_hand_item.effect.w8n
+			
+				throwing = false
+				function_wheel = true
 			}
-		}
-		if mouse_x > _xx+674 && mouse_x < _xx+767 && mouse_y > _yy+158 && mouse_y <  _yy+254
-		{
-			draw_sprite_ext(spr_function_wheel, 2, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+720, _yy+158, "Combine", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left) && global.right_hand_item != noone
+			
+			if mouse_x > _xx + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xx + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yy + camera_get_view_height(view_camera[0])/3 + 32*l && mouse_y < _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 32
 			{
-				combine(global.left_hand_item, global.right_hand_item)
-			}
-		}
-		if mouse_x > _xx+796 && mouse_x < _xx+896 && mouse_y > _yy+258 && mouse_y < _yy+349
-		{
-			draw_sprite_ext(spr_function_wheel, 3, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+820, _yy+300, "Two-hand", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left) && global.right_hand_item == noone
-			{
-				//global.left_hand_item.effect.w3()
-				if global.right_hand_item != global.item_list.two_hand_item
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_grey, 1)
+				if mouse_check_button_pressed(mb_left)
 				{
-					global.right_hand_item = global.item_list.two_hand_item
+					switch(l)
+					{
+						case 7:
+							global.left_hand_item.effect.w8()
+						break
+						case 6:
+							global.left_hand_item.effect.w7()
+						break
+						case 5:
+							global.left_hand_item.effect.w6()
+						break
+						case 4:
+							global.left_hand_item.effect.w5()
+						break
+						case 3:
+							global.left_hand_item.effect.w4()
+						break
+						case 2:
+							
+						break
+						case 1:
+							combine(global.left_hand_item, global.right_hand_item)
+						break
+						case 0:
+							throw_item(global.left_hand_item)
+						break
+					}
 				}
-				else if global.right_hand_item == global.item_list.two_hand_item
-				{
-					global.right_hand_item = noone
-				}
-			}
-		}
-		if mouse_x > _xx+798 && mouse_x < _xx+893 && mouse_y > _yy+388 && mouse_y < _yy+504
-		{
-			draw_sprite_ext(spr_function_wheel, 4, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+798, _yy+428, global.left_hand_item.effect.w4n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			} else
 			{
-				global.left_hand_item.effect.w4()
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_white, 1)
 			}
+			draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 4, function_list[l], 1, 1, 0)
 		}
-		if mouse_x > _xx+673 && mouse_x < _xx+768 && mouse_y > _yy+478 && mouse_y < _yy+599
-		{
-			draw_sprite_ext(spr_function_wheel, 5, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+693, _yy+568, global.left_hand_item.effect.w5n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.left_hand_item.effect.w5()
-			}
-		}
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y > _yy+480 && mouse_y < _yy+609
-		{
-			draw_sprite_ext(spr_function_wheel, 6, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+524, _yy+560, global.left_hand_item.effect.w6n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.left_hand_item.effect.w6()
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+548 && mouse_y > _yy+388 && mouse_y < _yy+478
-		{
-			draw_sprite_ext(spr_function_wheel, 7, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+407, _yy+438, global.left_hand_item.effect.w7n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.left_hand_item.effect.w7()
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+549 && mouse_y > _yy+259 && mouse_y < _yy+346
-		{
-			draw_sprite_ext(spr_function_wheel, 8, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+367, _yy+269, global.left_hand_item.effect.w8n, c_black, c_black, c_black, c_black, 1)
-		if mouse_check_button_pressed(mb_left)
-			{
-				global.left_hand_item.effect.w8()
-			}
-		}
-	} else
-	{
-		instance_destroy(obj_function_wheel)
 	}
 	if function_wheel == true && global.right_hand_item != noone && using_hand == true && global.right_hand_item != global.item_list.two_hand_item
 	{
-		instance_create_depth(_xx+320, _yy+32, -9, obj_function_wheel)
-		if !place_meeting(x, y, obj_mouse)
+		for(var w = 0; w < 7; w++)
 		{
-			draw_sprite_ext(spr_function_wheel, 0, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-		}
-		
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y >  _yy+161 && mouse_y <  _yy+252
-		{
-			draw_sprite_ext(spr_function_wheel, 1, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+544, _yy+161, "Throw (Z)", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if w == 0
 			{
-				throw_item(global.right_hand_item)
+				function_list[0] = "* Throw (Z)"
+				function_list[1] = "* Combine"
+				function_list[2] = "* (Out of Order)"
+				function_list[3] = global.right_hand_item.effect.w4n
+				function_list[4] = global.right_hand_item.effect.w5n
+				function_list[5] = global.right_hand_item.effect.w6n
+				function_list[6] = global.right_hand_item.effect.w7n
+				function_list[7] = global.right_hand_item.effect.w8n
+			
+				throwing = false
+				function_wheel = true
 			}
-		}
-		if mouse_x > _xx+674 && mouse_x < _xx+767 && mouse_y > _yy+158 && mouse_y <  _yy+254
-		{
-			draw_sprite_ext(spr_function_wheel, 2, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+720, _yy+158, "Combine", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left) && global.left_hand_item != noone
+			
+			
+			
+			if mouse_x > _xx + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xx + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yy + camera_get_view_height(view_camera[0])/3 + 32*w && mouse_y < _yy + camera_get_view_height(view_camera[0])/3 + 32*w + 32
 			{
-				combine(global.left_hand_item, global.right_hand_item)
-			}
-		}
-		if mouse_x > _xx+796 && mouse_x < _xx+896 && mouse_y > _yy+258 && mouse_y < _yy+349
-		{
-			draw_sprite_ext(spr_function_wheel, 3, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+820, _yy+300, "Two-hand", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left) && global.left_hand_item == noone
-			{
-				//global.left_hand_item.effect.w3()
-				if 	global.left_hand_item != global.item_list.two_hand_item
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*w, 5, 0.5, 0, c_grey, 1)
+				if mouse_check_button_pressed(mb_left)
 				{
-					global.left_hand_item = global.item_list.two_hand_item
+					switch(w)
+					{
+						case 7:
+							global.right_hand_item.effect.w8()
+						break
+						case 6:
+							global.right_hand_item.effect.w7()
+						break
+						case 5:
+							global.right_hand_item.effect.w6()
+						break
+						case 4:
+							global.right_hand_item.effect.w5()
+						break
+						case 3:
+							global.right_hand_item.effect.w4()
+						break
+						case 2:
+							
+						break
+						case 1:
+							combine(global.right_hand_item, global.left_hand_item)
+						break
+						case 0:
+							throw_item(global.right_hand_item)
+						break
+					}
 				}
-				else if global.left_hand_item == global.item_list.two_hand_item
-				{
-					global.left_hand_item = noone
-				}
-			}
-		}
-		if mouse_x > _xx+798 && mouse_x < _xx+893 && mouse_y > _yy+388 && mouse_y < _yy+504
-		{
-			draw_sprite_ext(spr_function_wheel, 4, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+798, _yy+428, global.right_hand_item.effect.w4n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			} else
 			{
-				global.right_hand_item.effect.w4()
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*w, 5, 0.5, 0, c_white, 1)
 			}
+			draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*w + 4, function_list[w], 1, 1, 0)
 		}
-		if mouse_x > _xx+673 && mouse_x < _xx+768 && mouse_y > _yy+478 && mouse_y < _yy+599
-		{
-			draw_sprite_ext(spr_function_wheel, 5, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+693, _yy+568, global.right_hand_item.effect.w5n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.right_hand_item.effect.w5()
-			}
-		}
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y > _yy+480 && mouse_y < _yy+609
-		{
-			draw_sprite_ext(spr_function_wheel, 6, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+524, _yy+560, global.right_hand_item.effect.w6n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.right_hand_item.effect.w6()
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+548 && mouse_y > _yy+388 && mouse_y < _yy+478
-		{
-			draw_sprite_ext(spr_function_wheel, 7, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+407, _yy+438, global.right_hand_item.effect.w7n, c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				global.right_hand_item.effect.w7()
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+549 && mouse_y > _yy+259 && mouse_y < _yy+346
-		{
-			draw_sprite_ext(spr_function_wheel, 8, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+367, _yy+269, global.right_hand_item.effect.w8n, c_black, c_black, c_black, c_black, 1)
-		if mouse_check_button_pressed(mb_left)
-			{
-				global.right_hand_item.effect.w8()
-			}
-		}
-	} else
-	{
-		instance_destroy(obj_function_wheel)
 	}
 }
 
@@ -2174,132 +2110,127 @@ if (using_hand == 1 && global.right_hand_item == noone)
 	function_wheel_strip = false
 }
 	
-if function_wheel_strip	
+if function_wheel_strip	&& using_hand == 0
 	{
-		instance_create_depth(_xx+320, _yy+32, -9, obj_function_wheel)
-		if !place_meeting(x, y, obj_mouse)
+		for(var l = 0; l < 7; l++)
 		{
-			draw_sprite_ext(spr_function_wheel_strip, 0, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-		}
-		
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y >  _yy+161 && mouse_y <  _yy+252
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 1, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+544, _yy+161, "Trigger", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if l == 0
 			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[1], 1, 5)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[1], 1, 5)
-				}
+				function_list[0] = "Trigger"
+				function_list[1] = "Hammer"
+				function_list[2] = "Barrel"
+				function_list[3] = "Recoil Spring"
+				function_list[4] = "Bolt/Slide"
+				function_list[5] = "Firing Pin"
+				function_list[6] = "Extractor"
+				function_list[7] = ""
 			}
-		}
-		if mouse_x > _xx+674 && mouse_x < _xx+767 && mouse_y > _yy+158 && mouse_y <  _yy+254
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 2, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+720, _yy+158, "Hammer", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 - 64, 5, 0.5, 0, c_grey, 1)
+				draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 - 64 + 4, "Field Strip Component", 1, 1, 0)
+			
+			if mouse_x > _xx + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xx + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yy + camera_get_view_height(view_camera[0])/3 + 32*l && mouse_y < _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 32
 			{
-				if using_hand == 0
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_grey, 1)
+				if mouse_check_button_pressed(mb_left)
 				{
-					field_strip(global.left_hand_item, left_modifiers[2], 2, 6)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[2], 2, 6)
+					switch(l)
+					{
+						case 7:
+							field_strip(global.left_hand_item, left_modifiers[1], 1, 5)
+						break
+						case 6:
+							field_strip(global.left_hand_item, left_modifiers[13], 13, 19)
+						break
+						case 5:
+							field_strip(global.left_hand_item, left_modifiers[12], 12, 18)
+						break
+						case 4:
+							field_strip(global.left_hand_item, left_modifiers[14], 14, 20)
+						break
+						case 3:
+							field_strip(global.left_hand_item, left_modifiers[4], 4, 8)
+						break
+						case 2:
+							field_strip(global.left_hand_item, left_modifiers[3], 3, 7)
+						break
+						case 1:
+							field_strip(global.left_hand_item, left_modifiers[2], 2, 6)
+						break
+						case 0:
+							field_strip(global.left_hand_item, left_modifiers[1], 1, 5)
+						break
+					}
 				}
-			}
-		}
-		if mouse_x > _xx+796 && mouse_x < _xx+896 && mouse_y > _yy+258 && mouse_y < _yy+349
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 3, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+820, _yy+300, "Barrel", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			} else
 			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[3], 3, 7)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[3], 3, 7)
-				}
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_white, 1)
 			}
+			draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 4, function_list[l], 1, 1, 0)
 		}
-		if mouse_x > _xx+798 && mouse_x < _xx+893 && mouse_y > _yy+388 && mouse_y < _yy+504
+	}
+if function_wheel_strip	&& using_hand == 1
+	{
+		for(var l = 0; l < 7; l++)
 		{
-			draw_sprite_ext(spr_function_wheel_strip, 4, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+798, _yy+428, "Recoil Spring", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if l == 0
 			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[4], 4, 8)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[4], 4, 8)
-				}
+				function_list[0] = "Trigger"
+				function_list[1] = "Hammer"
+				function_list[2] = "Barrel"
+				function_list[3] = "Recoil Spring"
+				function_list[4] = "Bolt/Slide"
+				function_list[5] = "Firing Pin"
+				function_list[6] = "Extractor"
+				function_list[7] = ""
 			}
-		}
-		if mouse_x > _xx+673 && mouse_x < _xx+768 && mouse_y > _yy+478 && mouse_y < _yy+599
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 5, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+693, _yy+568, "Bolt/Slide", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[14], 14, 20)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[14], 14, 20)
-				}
-			}
-		}
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y > _yy+480 && mouse_y < _yy+609
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 6, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+524, _yy+560, "Firing Pin", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[12], 12, 18)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[12], 12, 18)
-				}
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+548 && mouse_y > _yy+388 && mouse_y < _yy+478
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 7, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+407, _yy+438, "Extractor", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				if using_hand == 0
-				{
-					field_strip(global.left_hand_item, left_modifiers[13], 13, 19)
-				} else
-				{
-					field_strip(global.right_hand_item, right_modifiers[13], 13, 19)
-				}
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+549 && mouse_y > _yy+259 && mouse_y < _yy+346
-		{
-			draw_sprite_ext(spr_function_wheel_strip, 8, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+367, _yy+269, "", c_black, c_black, c_black, c_black, 1)
-		if mouse_check_button_pressed(mb_left)
+			
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 - 64, 5, 0.5, 0, c_grey, 1)
+				draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 - 64 + 4, "Field Strip Component", 1, 1, 0)
+			
+			if mouse_x > _xx + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xx + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yy + camera_get_view_height(view_camera[0])/3 + 32*l && mouse_y < _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 32
 			{
 				
+				
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_grey, 1)
+				if mouse_check_button_pressed(mb_left)
+				{
+					switch(l)
+					{
+						case 7:
+							field_strip(global.right_hand_item, right_modifiers[1], 1, 5)
+						break
+						case 6:
+							field_strip(global.right_hand_item, right_modifiers[13], 13, 19)
+						break
+						case 5:
+							field_strip(global.right_hand_item, right_modifiers[12], 12, 18)
+						break
+						case 4:
+							field_strip(global.right_hand_item, right_modifiers[14], 14, 20)
+						break
+						case 3:
+							field_strip(global.right_hand_item, right_modifiers[4], 4, 8)
+						break
+						case 2:
+							field_strip(global.right_hand_item, right_modifiers[3], 3, 7)
+						break
+						case 1:
+							field_strip(global.right_hand_item, right_modifiers[2], 2, 6)
+						break
+						case 0:
+							field_strip(global.right_hand_item, right_modifiers[1], 1, 5)
+						break
+					}
+				}
+			} else
+			{
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_white, 1)
 			}
+			draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 4, function_list[l], 1, 1, 0)
 		}
-	} else
-	{
-		instance_destroy(obj_function_wheel)
 	}
+	
 
 if keyboard_check_pressed(obj_game_initializers.health_wheel_key)  && stats_open == false && function_wheel == false && function_wheel_strip == false && player_stats == false && obj_health_manager.health_open == false
 	{
@@ -2342,90 +2273,65 @@ if urinating == true
 	}
 }
 
-if function_wheel_health == true 
+if function_wheel_health
 	{
-		instance_create_depth(_xx+320, _yy+32, -9, obj_function_wheel)
-		if !place_meeting(x, y, obj_mouse)
+		for(var l = 0; l < 7; l++)
 		{
-			draw_sprite_ext(spr_function_wheel_health, 0, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-		}
-		
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y >  _yy+161 && mouse_y <  _yy+252
-		{
-			draw_sprite_ext(spr_function_wheel_health, 1, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+544, _yy+161, "Urinate", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if l == 0
 			{
-				urinating = true
-				function_wheel_health = false
+				function_list[0] = "Urinate"
+				function_list[1] = "Defecate"
+				function_list[2] = "Force Vomit"
+				function_list[3] = "Check Pulse"
+				function_list[4] = ""
+				function_list[5] = ""
+				function_list[6] = ""
+				function_list[7] = ""
 			}
-		}
-		if mouse_x > _xx+674 && mouse_x < _xx+767 && mouse_y > _yy+158 && mouse_y <  _yy+254
-		{
-			draw_sprite_ext(spr_function_wheel_health, 2, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+720, _yy+158, "Check Pulse", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
 			
-			}
-		}
-		if mouse_x > _xx+796 && mouse_x < _xx+896 && mouse_y > _yy+258 && mouse_y < _yy+349
-		{
-			draw_sprite_ext(spr_function_wheel_health, 3, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+820, _yy+300, "Force Vomit", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-		
-			}
-		}
-		if mouse_x > _xx+798 && mouse_x < _xx+893 && mouse_y > _yy+388 && mouse_y < _yy+504
-		{
-			draw_sprite_ext(spr_function_wheel_health, 4, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+798, _yy+428, "Other Func. 1", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
+			draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 - 64, 5, 0.5, 0, c_grey, 1)
+				draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 - 64 + 4, "Health Actions", 1, 1, 0)
 			
-			}
-		}
-		if mouse_x > _xx+673 && mouse_x < _xx+768 && mouse_y > _yy+478 && mouse_y < _yy+599
-		{
-			draw_sprite_ext(spr_function_wheel_health, 5, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+693, _yy+568, "Other Func. 2", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+			if mouse_x > _xx + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xx + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yy + camera_get_view_height(view_camera[0])/3 + 32*l && mouse_y < _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 32
 			{
-			
-			}
-		}
-		if mouse_x > _xx+544 && mouse_x < _xx+642 && mouse_y > _yy+480 && mouse_y < _yy+609
-		{
-			draw_sprite_ext(spr_function_wheel_health, 6, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+524, _yy+560, "Other Func. 3", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_grey, 1)
+				if mouse_check_button_pressed(mb_left)
+				{
+					switch(l)
+					{
+						case 7:
+							
+						break
+						case 6:
+							
+						break
+						case 5:
+							
+						break
+						case 4:
+							
+						break
+						case 3:
+							
+						break
+						case 2:
+							
+						break
+						case 1:
+							
+						break
+						case 0:
+							urinating = true
+							function_wheel_health = false
+						break
+					}
+				}
+			} else
 			{
-				
+				draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_white, 1)
 			}
+			draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 4, function_list[l], 1, 1, 0)
 		}
-		if mouse_x > _xx+447 && mouse_x < _xx+548 && mouse_y > _yy+388 && mouse_y < _yy+478
-		{
-			draw_sprite_ext(spr_function_wheel_health, 7, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+407, _yy+438, "Other Func. 4", c_black, c_black, c_black, c_black, 1)
-			if mouse_check_button_pressed(mb_left)
-			{
-				
-			}
-		}
-		if mouse_x > _xx+447 && mouse_x < _xx+549 && mouse_y > _yy+259 && mouse_y < _yy+346
-		{
-			draw_sprite_ext(spr_function_wheel_health, 8, _xx+320, _yy+32, 5.5, 5.5, 0, c_white, 1)
-			draw_text_color(_xx+367, _yy+269, "Other Func. 5", c_black, c_black, c_black, c_black, 1)
-		if mouse_check_button_pressed(mb_left)
-			{
-				
-			}
-		}
-	} else
-	{
-		instance_destroy(obj_function_wheel_health)
 	}
 
 
@@ -2523,12 +2429,12 @@ if global.hover_item != noone
 	}
 }*/
 
-if layer_get_visible("close_inspect_inworld_ui") == true
+/*if layer_get_visible("close_inspect_inworld_ui") == true
 		{
 			draw_sprite_ext(global.selected_surface.sprite, 1, _xx+544, _yy+256, 4, 4, 0, c_white, 1)
 			draw_sprite_ext(global.selected_obj.spr, 0, _xx+600, _yy+320, 2, 2, 0, c_white, 1)
 			//draw_sprite_ext(item.spr, 3, 544, 256, 3, 3, 0, c_white, 1)
-		}
+		}*/
 
 if debug_menu == true
 {

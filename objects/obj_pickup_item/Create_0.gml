@@ -60,7 +60,7 @@ p_y = y
 
 // 24 = Firing Mode (1 : single || 2 : short burst || 3 : full auto)
 
-// 25 = Jam Status
+// 25 = Chamber/Bolt Jam Status
 
 // 26 = Chamber Type 
 // 27 = Open (0 = false; 1 = true)
@@ -91,3 +91,5 @@ p_y = y
 // 40 = Bites Remaining
 
 // 41 = Clear Mag (0 No, 1 Yes)
+
+// 42 = Hammer Jam Status

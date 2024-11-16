@@ -37,5 +37,7 @@ modifier[36] = global.item_list.vz58_mag
 
 modifier[38] = array_create(0, 0)
 
+modifier[42] = "Not"
+
 image_xscale = 0.5
 image_yscale = 0.5

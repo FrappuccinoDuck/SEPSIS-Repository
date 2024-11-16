@@ -20,7 +20,7 @@ if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj
 		
 		global.selected_obj = object
 		//show_debug_message(global.selected_obj)
-		if keyboard_check_pressed(obj_game_initializers.surface_inspect_key)
+		/*if keyboard_check_pressed(obj_game_initializers.surface_inspect_key)
 		{
 			//show_debug_message(global.selected_surface.name)
 			//show_debug_message(object.name)
@@ -31,7 +31,7 @@ if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj
 		if keyboard_check_released(obj_game_initializers.surface_inspect_key)
 		{
 			layer_set_visible("close_inspect_inworld_ui", false)
-		}
+		}*/
 		
 		
 	} else if type == "Surface"

@@ -7,6 +7,9 @@ player_stats = false
 
 scoped = false
 
+function_list = array_create(7, 0)
+function_array = array_create(7, 0)
+
 menu_switch = 0
 
 model_index = 0
@@ -2419,11 +2422,10 @@ global.effect_list =
 		
 		
 		function(){
-			remove_suppressor()
+			hammer_back(global.item_list.pistole_vz24)
 		},
 		function(){
-			show_debug_message("w5")
-			
+			remove_suppressor()
 		},
 		function(){
 			show_debug_message("w6")
@@ -2434,8 +2436,8 @@ global.effect_list =
 		function(){
 			show_debug_message("w8")
 		},
-		"Remove Supp.",
-		"NA",
+		"Pull Back Hammer",
+		"Remove Suppressor",
 		"NA",
 		"NA",
 		"NA",
@@ -2572,6 +2574,7 @@ global.effect_list =
 		
 		
 		function(){
+			hammer_back(global.item_list.gold_pistole_vz24)
 		},
 		function(){
 			show_debug_message("w5")
@@ -2586,8 +2589,8 @@ global.effect_list =
 		function(){
 			show_debug_message("w8")
 		},
-		"Remove Supp.",
-		"NA",
+		"Pull Back Hammer",
+		"Remove Suppressor",
 		"NA",
 		"NA",
 		"NA",

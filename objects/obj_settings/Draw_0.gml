@@ -54,6 +54,7 @@ if global.settings_open == true
 		if mouse_y >= _yy+192 && mouse_y <= _yy+254
 		{
 			global.fullscreen = !global.fullscreen
+			
 		}
 		if mouse_y >= _yy+286 && mouse_y <= _yy+354
 		{

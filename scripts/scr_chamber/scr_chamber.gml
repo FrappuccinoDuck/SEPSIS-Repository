@@ -12,6 +12,7 @@ function chamber(_gun, _shell)
 							left_modifiers[27] = 1
 							show_debug_message("Open")
 							left_modifiers[25] = "Not"
+					
 							
 							if _shell != noone
 							{
@@ -40,8 +41,18 @@ function chamber(_gun, _shell)
 						if hand_ammo[0] > 0
 						{
 							//audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
-							selected_chamber[0] = true
+							if selected_chamber[0] == false
+							{
+								selected_chamber[0] = true
+							} else
+							{
+								hand_ammo[0] -= 1
+								var copied_arr = left_modifiers[38]
+								instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", copied_arr[array_length(copied_arr)-1].obj)
+								array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
+							}
 							left_modifiers[25] = "Not"
+							left_modifiers[42] = "Not"
 						}
 					}
 					
@@ -81,12 +92,20 @@ function chamber(_gun, _shell)
 						if hand_ammo[1] > 0
 						{
 							//audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
-							selected_chamber[1] = true
+							if selected_chamber[1] == false
+							{
+								selected_chamber[1] = true
+							} else
+							{
+								hand_ammo[1] -= 1
+								//instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances",)
+							}
 							right_modifiers[25] = "Not"
-							if right_modifiers[26] == "Bolt-Action"
+							right_modifiers[42] = "Not"
+							/*if right_modifiers[26] == "Bolt-Action"
 							{
 								instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", _shell.obj)
-							}
+							}*/
 						}
 					}
 				}

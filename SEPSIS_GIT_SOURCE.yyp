@@ -130,12 +130,6 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"config.ini","CopyToMask":-1,"filePath":"datafiles","name":"config.ini","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"keybinds.txt","CopyToMask":-1,"filePath":"datafiles","name":"keybinds.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"rotationvals","CopyToMask":-1,"filePath":"datafiles","name":"rotationvals","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"sizexvals","CopyToMask":-1,"filePath":"datafiles","name":"sizexvals","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"sizeyvals","CopyToMask":-1,"filePath":"datafiles","name":"sizeyvals","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"sprites","CopyToMask":-1,"filePath":"datafiles","name":"sprites","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"xvals","CopyToMask":-1,"filePath":"datafiles","name":"xvals","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"yvals","CopyToMask":-1,"filePath":"datafiles","name":"yvals","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],

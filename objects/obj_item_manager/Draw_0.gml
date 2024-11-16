@@ -4,6 +4,7 @@ _yy = camera_get_view_y(view_camera[0])
 global.fnt_big = font_add_sprite_ext(spr_big_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ.!?1234567890", true, 2);
 global.fnt_main = font_add_sprite_ext(spr_small_font, "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz!?.,:;#@$%^&*()-_+={}[]|\/'1234567890", true, 1);
 draw_set_font(fnt_main)
+
 //font_enable_sdf(fnt_main, true)
 
 if prague == true

@@ -409,6 +409,7 @@
     {"id":{"name":"scr_OLDTVFilter_Draw","path":"scripts/scr_OLDTVFilter_Draw/scr_OLDTVFilter_Draw.yy",},},
     {"id":{"name":"scr_OLDTVFilter_Settings","path":"scripts/scr_OLDTVFilter_Settings/scr_OLDTVFilter_Settings.yy",},},
     {"id":{"name":"scr_OLDTVFilter_Setup","path":"scripts/scr_OLDTVFilter_Setup/scr_OLDTVFilter_Setup.yy",},},
+    {"id":{"name":"scr_part_present","path":"scripts/scr_part_present/scr_part_present.yy",},},
     {"id":{"name":"scr_remove_laser","path":"scripts/scr_remove_laser/scr_remove_laser.yy",},},
     {"id":{"name":"scr_remove_optic","path":"scripts/scr_remove_optic/scr_remove_optic.yy",},},
     {"id":{"name":"scr_remove_suppressor","path":"scripts/scr_remove_suppressor/scr_remove_suppressor.yy",},},

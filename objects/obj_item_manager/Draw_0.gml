@@ -2112,18 +2112,17 @@ if (using_hand == 1 && global.right_hand_item == noone)
 	
 if function_wheel_strip	&& using_hand == 0
 	{
-		for(var l = 0; l < 7; l++)
+		for(var l = 0; l < 6; l++)
 		{
 			if l == 0
 			{
-				function_list[0] = "Trigger"
-				function_list[1] = "Hammer"
-				function_list[2] = "Barrel"
-				function_list[3] = "Recoil Spring"
-				function_list[4] = "Bolt/Slide"
-				function_list[5] = "Firing Pin"
-				function_list[6] = "Extractor"
-				function_list[7] = ""
+				function_list[0] = string($"Trigger                  {part_present(global.left_hand_item.weapon.parts.trigger, 1, 5)}")
+				function_list[1] = string($"Hammer                {part_present(global.left_hand_item.weapon.parts.hammer, 2, 6)}")
+				function_list[2] = string($"Barrel                    {part_present(global.left_hand_item.weapon.parts.barrel, 3, 7)}")
+				function_list[3] = string($"Recoil Spring     {part_present(global.left_hand_item.weapon.parts.recoil_spring, 4, 8)}")
+				function_list[4] = string($"Bolt/Slide             {part_present(global.left_hand_item.weapon.parts.bolt_slide, 14, 20)}")
+				function_list[5] = string($"Firing Pin             {part_present(global.left_hand_item.weapon.parts.firing_pin, 12, 18)}")
+				function_list[6] = string($"Extractor              {part_present(global.left_hand_item.weapon.parts.extractor, 13, 19)}")
 			}
 			
 			draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 - 64, 5, 0.5, 0, c_grey, 1)

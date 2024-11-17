@@ -621,7 +621,7 @@ if scoped == true
 	obj_mouse.image_yscale = 2
 }
 
-if keyboard_check_pressed(ord("R")) && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm" && using_hand == 0 
+if keyboard_check_pressed(obj_game_initializers.firing_mode_keybind) && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm" && using_hand == 0 
 {
 	audio_play_sound(snd_switch_firing_mode, 1, 0)
 	if left_modifiers[24] == 1 && global.left_hand_item.weapon.short_burst == true
@@ -647,7 +647,7 @@ if keyboard_check_pressed(ord("R")) && global.left_hand_item != noone && global.
 	
 }
 
-if keyboard_check_pressed(ord("R")) && global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm" && using_hand == 1 
+if keyboard_check_pressed(obj_game_initializers.firing_mode_keybind) && global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm" && using_hand == 1 
 {
 	audio_play_sound(snd_switch_firing_mode, 1, 0)
 	if right_modifiers[24] == 1 && global.right_hand_item.weapon.short_burst == true
@@ -671,6 +671,14 @@ if keyboard_check_pressed(ord("R")) && global.right_hand_item != noone && global
 		right_modifiers[24] = 1
 	}
 	
+}
+
+if keyboard_check_pressed(obj_game_initializers.quick_reload_key) 
+{
+	if (global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm" && using_hand == 0) || (global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm" && using_hand == 1)
+	{
+		quick_reload()
+	}
 }
 
 

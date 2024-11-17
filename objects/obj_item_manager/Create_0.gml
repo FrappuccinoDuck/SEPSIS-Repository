@@ -5754,6 +5754,42 @@ global.effect_list =
 		"NA",
 		
 	),
+	vz58_clear_mag_effect : new create_effect(
+		function(){
+			mag_insert(global.item_list.vz58, global.item_list.vz58_mag_clear)
+		},
+		function(){
+			unload_bullet(global.item_list.vz58_mag_clear, global.item_list.single_762x39)
+		},
+		function(){
+			show_debug_message("middle mouse click")
+		},
+		"Put in Gun",
+		"Unload",
+		"N/A",
+		
+		function(){
+			show_debug_message("w4")
+		},
+		function(){
+			show_debug_message("w5")
+		},
+		function(){
+			show_debug_message("w6")
+		},
+		function(){
+			show_debug_message("w7")
+		},
+		function(){
+			show_debug_message("w8")
+		},
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		"NA",
+		
+	),
 	single_762x39_shell_effect : new create_effect(
 		function(){
 			
@@ -7968,7 +8004,7 @@ global.item_list =
 		noone,
 		noone,
 		noone,
-		1,
+		1.2,
 		noone,
 		10,
 	),
@@ -7978,7 +8014,7 @@ global.item_list =
 		spr_vz58_mag_clear,
 		obj_vz58_mag_clear,
 		global.specs_list.vz58_mag_specs,
-		global.effect_list.vz58_mag_effect,
+		global.effect_list.vz58_clear_mag_effect,
 		0,
 		32,
 		noone,
@@ -7986,7 +8022,7 @@ global.item_list =
 		noone,
 		noone,
 		noone,
-		1,
+		1.2,
 		noone,
 		10,
 	),
@@ -8004,7 +8040,7 @@ global.item_list =
 		noone,
 		noone,
 		noone,
-		1,
+		1.2,
 		noone,
 		10,
 	),

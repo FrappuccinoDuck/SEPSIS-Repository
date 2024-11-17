@@ -24,6 +24,7 @@ broken_timer = 0
 broken = false
 broken_amount = 0
 
+permanent_fracture = false
 
 infection = false
 infection_amount = 0
@@ -53,6 +54,7 @@ array_push(break_array, "Stress")
 array_push(break_array, "Avulsion")
 array_push(break_array, "Segmental")
 array_push(break_array, "Spiral")
+array_push(break_array, "Permanent")
 
 break_desc_array = array_create(0, 0)
 array_push(break_desc_array, "Simple")
@@ -69,6 +71,7 @@ array_push(break_desc_array, "A thin, hairline crack forms in the bone due to re
 array_push(break_desc_array, "A small fragment of bone is torn away from the main structure, pulled by a ligament or tendon. Sudden, forceful movements are usually the cause. The bone fragment may still be attached to the soft tissue.")
 array_push(break_desc_array, "The bone is broken in two places, creating a free-floating segment between the two breaks. This results in three distinct pieces of bone. It's one of the more complex fractures and leads to unstable movement.")
 array_push(break_desc_array, "The bone has twisted, causing a fracture that spirals around the shaft. This type of break is often caused by a forceful twisting motion. It leaves the bone with a corkscrew-like appearance, making it harder to stabilize.")
+array_push(break_desc_array, "This bone has suffered catastrophic displacement that cannot be reversed without surgical treatment. This will cause significant pain and permanent damage that will degress lightly over time, but remain permanent.")
 
 // 1 simple
 // 2 compound

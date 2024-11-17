@@ -40,6 +40,7 @@ function mag_insert(_gun, _mag)
 				array_push(right_modifiers[38], extracted[k])
 			}
 			//right_modifiers[38] = left_modifiers[38]
+			right_modifiers[41] = left_modifiers[41]
 			left_modifiers[38] = 0
 			audio_play_sound(snd_small_mag_insert, 1, 0)
 			hand_ammo[1] += hand_ammo[0]
@@ -92,6 +93,7 @@ function mag_insert(_gun, _mag)
 				array_push(left_modifiers[38], extracted[k])
 			}
 			//left_modifiers[38] = right_modifiers[38]
+			left_modifiers[41] = right_modifiers[41]
 			right_modifiers[38] = 0
 			audio_play_sound(snd_small_mag_insert, 1, 0)
 			hand_ammo[0] += hand_ammo[1]

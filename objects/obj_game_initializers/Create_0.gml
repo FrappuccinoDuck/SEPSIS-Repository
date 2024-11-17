@@ -2,6 +2,9 @@
 layer_set_visible("loading_ui", true)
 fx_set_parameter(layer_get_fx("Effect_2_1"), "g_VignetteEdges", [2, 2])
 fx_set_parameter(layer_get_fx("heartbeat_ui"), "g_VignetteEdges", [2, 2])
+
+global.gun_obj_scale = 0.4
+
 // KEYBINDINGS
 ini_open("config.ini")
 
@@ -26,6 +29,8 @@ load_key = ord("0")
 
 aim_key = vk_shift
 
+firing_mode_keybind = ord("F")
+field_strip_keybind = ord("V")
 
 alt_function_key = ord("X")
 
@@ -38,6 +43,10 @@ throw_key = ord("Z")
 light_toggle = vk_alt
 
 surface_inspect_key = ord("C")
+
+quick_reload_key = ord("R")
+
+close_keybind = ord("C")
 
 display_reset(24, false)
 

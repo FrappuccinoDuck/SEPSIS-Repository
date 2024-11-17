@@ -465,6 +465,19 @@ if global.debug_toggle == false
 
 if debug_menu == true 
 {
+	for(var i = 0; i < 64; i++)
+	{
+		for(var w = 0; w < 64; w++)
+		{
+			if keyboard_string == string($"$change.res {i*64}.{w*64}")
+			{
+				if keyboard_check_pressed(vk_enter)
+				{
+					window_set_size(i*64, w*64)
+				}
+			}
+		}
+	}
 	struct_foreach(global.item_list, function(_n, _attributes)
 	{
 		if keyboard_string == string($"$spawn.item '{_n}'") 
@@ -478,6 +491,7 @@ if debug_menu == true
 			//keyboard_string = ""
 			}
 		}
+		
 		if keyboard_string == string($"$enable.hacks") && keyboard_check_pressed(vk_enter)
 		{
 			game_end()

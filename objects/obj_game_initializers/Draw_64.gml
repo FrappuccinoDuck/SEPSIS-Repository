@@ -1,5 +1,5 @@
-_xx = camera_get_view_x(view_camera[0]) + 50
-_yy = camera_get_view_y(view_camera[0]) 
+_xx = 0 + 50
+_yy = 0
 draw_set_font(fnt_main)
 if baseline_fps < max_fps
 {
@@ -11,7 +11,7 @@ if baseline_fps < max_fps
 if timer <= 75
 {
 	draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx+320, _yy+260, 10, 1, 0, c_white, 1)
-	draw_text(_xx+326, _yy+265, "Loading SEPSIS BETA - November Build 3 (Backspace to Skip)")
+	draw_text(_xx+326, _yy+265, "Loading SEPSIS BETA - November Build 4 (Backspace to Skip)")
 	
 	draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx+320, _yy+300, 10, 1, 0, c_white, 1)
 	draw_sprite_ext(spr_bar_load, spin_timer, _xx+320, _yy+300, baseline_fps/3*(32/33), 1, 0, c_white, 1)

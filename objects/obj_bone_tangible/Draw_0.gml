@@ -1,10 +1,4 @@
 
-
-
-_xx = camera_get_view_x(view_camera[0])
-_yy = camera_get_view_y(view_camera[0])
-
-
 image_blend = find_color(condition) 
 if obj_health_manager.health_tab == 1 && obj_health_manager.health_open == true
 {

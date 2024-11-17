@@ -46,10 +46,13 @@ function chamber(_gun, _shell)
 								selected_chamber[0] = true
 							} else
 							{
-								hand_ammo[0] -= 1
-								var copied_arr = left_modifiers[38]
-								instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", copied_arr[array_length(copied_arr)-1].obj)
-								array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
+								if global.left_hand_item.specs.bullet != "Capacitor"
+								{
+									hand_ammo[0] -= 1
+									var copied_arr = left_modifiers[38]
+									instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", copied_arr[array_length(copied_arr)-1].obj)
+									array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
+								}
 							}
 							left_modifiers[25] = "Not"
 							left_modifiers[42] = "Not"
@@ -97,8 +100,13 @@ function chamber(_gun, _shell)
 								selected_chamber[1] = true
 							} else
 							{
-								hand_ammo[1] -= 1
-								//instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances",)
+								if global.right_hand_item.specs.bullet != "Capacitor"
+								{
+									hand_ammo[1] -= 1
+									var copied_arr = right_modifiers[38]
+									instance_create_layer(obj_player.x+random_range(-4, 4), obj_player.y+random_range(-10, 10), "Instances", copied_arr[array_length(copied_arr)-1].obj)
+									array_delete(right_modifiers[38], array_length(right_modifiers[38])-1, 1)
+								}
 							}
 							right_modifiers[25] = "Not"
 							right_modifiers[42] = "Not"

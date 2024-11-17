@@ -1,4 +1,14 @@
-draw_self()
+
+
+if obj_item_manager.function_wheel == true || obj_item_manager.function_wheel_health == true || obj_item_manager.function_wheel_strip == true
+{
+	window_set_cursor(cr_default)
+	//draw_self()
+} else
+{
+	window_set_cursor(cr_none)
+	draw_self()
+}
 
 if distance_to_object(obj_player) > distance_val-1
 {
@@ -19,5 +29,7 @@ if obj_item_manager.stats_open == false && obj_health_manager.health_open == fal
 {
 	//draw_sprite_ext(spr_mouse_second, 0, global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y, 1, 1, 0, c_white, 0.25)
 }
+
+
 
 //draw_line(obj_player.x, obj_player.y, global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y)

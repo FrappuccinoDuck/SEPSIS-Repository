@@ -3,6 +3,24 @@ _yy = camera_get_view_y(view_camera[0])
 
 if health_open == true
 {
+
+		
+			if health_tab == 2
+			{
+				draw_sprite_ext(spr_main_character_model, 9, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			} 
+			if health_tab == 0
+			{
+				draw_sprite_ext(spr_main_character_model, obj_item_manager.model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			}
+			if health_tab == 1
+			{
+				draw_sprite_ext(spr_main_character_model, 10, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+				//draw_sprite_ext(spr_skeleton, 0, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
+			}
+			
+		
+	
 	layer_set_visible("health_ui", true)
 	
 	

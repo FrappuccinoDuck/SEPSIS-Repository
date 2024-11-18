@@ -2640,14 +2640,13 @@ if player_stats == false
 
 	if left_modifiers[9] > 0
 	{
-		show_debug_message(find_color(left_modifiers[9]))
 		if using_hand == 1
 		{
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, find_color(left_modifiers[9]), 0.5)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, find_color(left_modifiers[9]), 0.5)
 		} else
 		{
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, find_color(left_modifiers[9]), 1)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, find_color(left_modifiers[9]), 1)
 		}
 	}
@@ -2655,11 +2654,11 @@ if player_stats == false
 	{
 		if using_hand == 0
 		{
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, find_color(right_modifiers[9]), 0.5)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, find_color(right_modifiers[9]), 0.5)
 		} else
 		{
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, find_color(right_modifiers[9]), 1)
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, find_color(right_modifiers[9]), 1)
 		}
 	}

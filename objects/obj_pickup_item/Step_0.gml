@@ -182,6 +182,7 @@ if type == "Item" && obj_item_manager.debug_menu == false && obj_item_manager.st
 		{
 			with(instance_create_layer(global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y, "Instances", global.left_hand_item.obj))
 			{
+				image_angle = random(360)
 				ammo_arr = obj_item_manager.selected_ammo[0]
 				chambered = obj_item_manager.selected_chamber[0]
 				array = obj_item_manager.selected_array[0]
@@ -225,6 +226,7 @@ if type == "Item" && obj_item_manager.debug_menu == false && obj_item_manager.st
 		{
 			with(instance_create_layer(global.mouse_dropx+obj_player.x, global.mouse_dropy+obj_player.y, "Instances", global.right_hand_item.obj))
 			{
+				image_angle = random(360)
 				ammo_arr = obj_item_manager.selected_ammo[1]
 				chambered = obj_item_manager.right_chamber_arr
 				array = obj_item_manager.selected_array[1]

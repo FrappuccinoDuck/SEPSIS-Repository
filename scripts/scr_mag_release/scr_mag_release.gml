@@ -25,6 +25,7 @@ function mag_release(_gun, _mag)
 				left_modifiers[38] = array_create(0, 0)
 				right_modifiers[10] = left_modifiers[11]
 				left_modifiers[11] = 0
+				right_modifiers[41] = left_modifiers[41]
 						
 			} else
 			{
@@ -44,6 +45,7 @@ function mag_release(_gun, _mag)
 				left_modifiers[38] = array_create(1, extracted_arr[array_length(left_modifiers[38])-1])
 				right_modifiers[10] = left_modifiers[11]
 				left_modifiers[11] = 0
+				right_modifiers[41] = left_modifiers[41]
 			}
 				
 			} else if global.left_hand_item == noone && right_modifiers[11] != 0
@@ -68,6 +70,7 @@ function mag_release(_gun, _mag)
 					right_modifiers[38] = array_create(0, 0)
 					left_modifiers[10] = right_modifiers[11]
 					right_modifiers[11] = 0
+					left_modifiers[41] = right_modifiers[41]
 				} else
 				{
 					
@@ -86,7 +89,7 @@ function mag_release(_gun, _mag)
 					right_modifiers[38] = array_create(1, extracted_arr[array_length(right_modifiers[38])-1])
 					left_modifiers[10] = right_modifiers[11]
 					right_modifiers[11] = 0
-					
+					left_modifiers[41] = right_modifiers[41]
 						
 				}
 			}

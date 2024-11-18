@@ -13,4 +13,6 @@ modifier[10] = 45
 image_xscale = 0.5
 image_yscale = 0.5
 
+modifier[11] = 45
+
 modifier[38] = array_create(0, 0)

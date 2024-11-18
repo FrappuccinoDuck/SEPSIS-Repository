@@ -43,10 +43,10 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 			draw_line(mouse_x + 130, mouse_y + 135, mouse_x + 320, mouse_y + 135)
 			draw_text_transformed(mouse_x + 140, mouse_y + 110, string($"{break_array[break_type]} Fracture"), 0.8, 0.8, 0)
 			draw_text_ext_transformed(mouse_x + 145, mouse_y + 145, string($"{break_desc_array[break_type]}"), 21, 200, 0.8, 0.8, 0)
-			
-			draw_text_transformed(mouse_x + 60, mouse_y + 330, "Effects", 1, 1, 0)
+		
 			if break_type == 2
 			{
+				draw_text_transformed(mouse_x + 60, mouse_y + 330, "Effects", 1, 1, 0)
 				draw_sprite_ext(spr_blood_ui, 0, mouse_x + 140, mouse_y+325, 1, 1, 0, c_white, 1)
 				draw_sprite_ext(spr_infection_ui, 0, mouse_x + 200, mouse_y+325, 1, 1, 0, c_white, 1)
 				draw_sprite_ext(spr_wound_ui, 0, mouse_x + 260, mouse_y+325, 1, 1, 0, c_white, 1)
@@ -110,10 +110,22 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		{
 			if i == 0
 			{
-				draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, ((60*broken_amount)-(broken_timer))/(60*broken_amount))
+				if permanent_fracture == true
+				{
+					draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_red, 1)
+				} else
+				{
+					draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, ((60*broken_amount)-(broken_timer))/(60*broken_amount))
+				}
 			} else
 			{
-				draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+				if permanent_fracture == true
+				{
+					draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_red, 1)
+				} else
+				{
+					draw_sprite_ext(spr_broken_ui, 0, mouse_x + 180+25*i, mouse_y+10, 1, 1, 0, c_white, 1)
+				}
 			}
 		}
 		for(var i = 0; i < infection_amount; i++)
@@ -141,9 +153,9 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		}
 		if global.mouse_item != noone && global.mouse_item.specs.item_type == "Medical" && mouse_check_button_pressed(mb_left) && ((index > 9 && index <= 20 && global.mouse_item.specs.medical.organs == true) || (index <= 9 && global.mouse_item.specs.medical.limbs == true)) && obj_item_manager.mouse_modifiers[9] > 0
 		{
-			audio_play_sound(global.mouse_item.specs.misc_sound, 1, 0)
 			if global.mouse_item.specs.medical.injection == false
 			{
+				audio_play_sound(global.mouse_item.specs.misc_sound, 1, 0)
 				applied_item = global.mouse_item
 				applied_mods = obj_item_manager.mouse_modifiers
 				global.mouse_item = noone
@@ -192,7 +204,7 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 		}
 		if keyboard_check_pressed(ord("3"))
 		{
-			if break_type < 13
+			if break_type < 14
 			{
 				break_type += 1
 			} else
@@ -200,57 +212,14 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_h
 				break_type = 1
 			}
 		}
-		if keyboard_check_pressed(ord("6"))
+		if break_type == 14
 		{
-			if contaminated_amount < 1
-			{
-				contaminant = global.contaminant_list.dirt
-				//show_message(global.contaminant_list.dirt)
-				contaminated_amount += 1
-				contaminated = true
-			} else
-			{
-				contaminated_amount = 0
-				contaminated = false
-				contaminant = noone
-			}
-		}
-		if keyboard_check_pressed(ord("7"))
+			permanent_fracture = true
+		} else
 		{
-			bruising = !bruising
+			permanent_fracture = false
 		}
-		if keyboard_check_pressed(ord("9"))
-		{
-			inflammation = !inflammation
-		}
-		if keyboard_check_pressed(ord("5"))
-		{
-			if treated_amount < 5
-			{
-				treated_amount += 1
-				treated = true
-			} else
-			{
-				treated_amount = 0
-				treated = false
-			}
-		}
-		if keyboard_check_pressed(ord("8"))
-		{
-			radiated =!radiated
-		}
-		if keyboard_check_pressed(ord("4"))
-		{
-			if open_wound_amount < 5
-			{
-				open_wound_amount += 1
-				open_wound = true
-			} else
-			{
-				open_wound_amount = 0
-				open_wound = false
-			}
-		}
+		
 }
 
 if broken_amount == 0
@@ -293,31 +262,34 @@ if timer <= fps
 {
 	
 	timer = 0
-	
-	if broken == true
+	if permanent_fracture == false
 	{
-		global.calcium -= 0.05*broken_amount
-		broken_timer += 1
-		
-		if broken_amount > 1
+		if broken == true 
 		{
-			//condition -= random_range(condition_degradation_arr[broken_amount-2], condition_degradation_arr[broken_amount-1])
+			global.calcium -= 0.05*broken_amount
+			broken_timer += 1
+		
+			if broken_amount > 1
+			{
+				//condition -= random_range(condition_degradation_arr[broken_amount-2], condition_degradation_arr[broken_amount-1])
+			} else
+			{
+				//condition -= random(condition_degradation_arr[broken_amount-1])
+			}
 		} else
 		{
-			//condition -= random(condition_degradation_arr[broken_amount-1])
+			broken_timer = 0
 		}
-	} else
-	{
-		broken_timer = 0
-	}
 	
-	if temp_heal > 0
-	{
-		temp_heal -= 1
-		condition += 1
+		if temp_heal > 0
+		{
+			temp_heal -= 1
+			condition += 1
+		}
 	}
 }
-if broken_timer >= 60 * broken_amount 
+
+if broken_timer >= 60 * broken_amount && permanent_fracture == false
 {
 	broken_timer = 0
 	broken_amount -= 1

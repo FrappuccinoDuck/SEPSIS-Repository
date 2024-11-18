@@ -49,7 +49,12 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 		function_wheel = false
 		function_wheel_health = false
 		function_wheel_strip = false
-	} else
+	}
+	if player_stats == true
+	{
+		layer_set_visible("stats_ui", true)
+	}
+	if stats_open == false
 	{
 		//layer_x("inventory_ui", camera_get_view_x(view_camera[0]))
 		//layer_y("inventory_ui", camera_get_view_y(view_camera[0]))
@@ -79,7 +84,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 	if player_stats == true
 	{
-		layer_set_visible("stats_ui", true)
+		
 		
 		draw_text(_xx+38, _yy+72, "Player NUTRITION Stats")
 	
@@ -404,6 +409,9 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 					global.lshoulder_arr = selected_array[using_hand]
 					global.lshoulder_ammo = selected_ammo[using_hand]
 					global.shoulder_mod_arr = selected_mod[using_hand]
+					global.shoulder_firearm_ammo = global.mouse_ammo
+					global.shoulder_chamber = selected_chamber[using_hand]
+					global.mouse_ammo = 0
 					selected_array[using_hand] = noone
 					selected_ammo[using_hand] = noone
 					selected_chamber[using_hand] = noone
@@ -888,7 +896,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	// SELECTION SECTION
 	if mouse_x >= _xxm + 32 && mouse_x <= _xxm + 189 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.left_hand_item != global.item_list.two_hand_item && player_stats == false
 	{
-		
+		using_hand = 0
 		// LEFT HAND
 		if mouse_check_button_pressed(mb_left) && global.left_hand_item != noone && global.mouse_item == noone
 		{
@@ -973,6 +981,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 	if mouse_x >= _xxm + 224 && mouse_x <= _xxm + 381 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.right_hand_item != global.item_list.two_hand_item
 	{
+		using_hand = 1
 		// RIGHT HAND
 		if mouse_check_button_pressed(mb_left) && global.right_hand_item != noone && global.mouse_item == noone
 		{
@@ -1446,6 +1455,10 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.lshoulder
+					global.mouse_ammo = global.shoulder_firearm_ammo
+					selected_chamber[using_hand] = global.shoulder_chamber
+					global.shoulder_chamber = false
+					global.shoulder_firearm_ammo = 0
 					global.lshoulder = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.lshoulder_arr
@@ -1970,9 +1983,9 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 				function_list[5] = global.left_hand_item.effect.w6n
 				function_list[6] = global.left_hand_item.effect.w7n
 				function_list[7] = global.left_hand_item.effect.w8n
-				function_list[8] = "* Field Strip"
+				function_list[8] = "* Ammo Check"
 				function_list[9] = "* Press Check"
-				function_list[10] = "* Ammo Check"
+				function_list[10] = "* Field Strip"
 
 			
 				throwing = false
@@ -1981,7 +1994,7 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 			
 			if mouse_x > _xxm + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xxm + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yym + camera_get_view_height(view_camera[0])/3 + 32*l && mouse_y < _yym + camera_get_view_height(view_camera[0])/3 + 32*l + 32
 			{
-				if (l > 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm")
+				if (l >= 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm") || (l == 8 && (global.left_hand_item.specs.item_type == "Magazine" || global.left_hand_item.specs.item_type == "Box" || global.left_hand_item.specs.item_type == "Speedloader"))
 				{
 					draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_grey, 1)
 				
@@ -1990,14 +2003,14 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 						switch(l)
 						{
 							case 10:
-								ammo_check()
+								function_wheel_strip = true
+								function_wheel = false
 							break
 							case 9:
 								press_check()
 							break
 							case 8:
-								function_wheel_strip = true
-								function_wheel = false
+								ammo_check()
 							case 7:
 								global.left_hand_item.effect.w8()
 							break
@@ -2027,12 +2040,12 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 				}
 			} else
 			{
-				if (l > 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm")
+				if (l >= 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm") || (l == 8 && (global.left_hand_item.specs.item_type == "Magazine" || global.left_hand_item.specs.item_type == "Box" || global.left_hand_item.specs.item_type == "Speedloader"))
 				{
 					draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*l, 5, 0.5, 0, c_white, 1)
 				}
 			}
-			if (l > 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm")
+			if (l >= 0 && l < 8) || (l >= 8 && global.left_hand_item.specs.item_type == "Firearm") || (l == 8 && (global.left_hand_item.specs.item_type == "Magazine" || global.left_hand_item.specs.item_type == "Box" || global.left_hand_item.specs.item_type == "Speedloader"))
 			{
 				draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*l + 4, function_list[l], 1, 1, 0)
 			}
@@ -2052,9 +2065,9 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 				function_list[5] = global.right_hand_item.effect.w6n
 				function_list[6] = global.right_hand_item.effect.w7n
 				function_list[7] = global.right_hand_item.effect.w8n
-				function_list[8] = "* Field Strip"
+				function_list[8] = "* Ammo Check"
 				function_list[9] = "* Press Check"
-				function_list[10] = "* Ammo Check"
+				function_list[10] = "* Field Strip"
 			
 				throwing = false
 				function_wheel = true
@@ -2064,7 +2077,7 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 			
 			if mouse_x > _xxm + camera_get_view_width(view_camera[0])/2.5 && mouse_x < _xxm + camera_get_view_width(view_camera[0])/2.5 + 320 && mouse_y > _yym + camera_get_view_height(view_camera[0])/3 + 32*w && mouse_y < _yym + camera_get_view_height(view_camera[0])/3 + 32*w + 32
 			{
-				if (w > 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm")
+				if (w >= 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm") || (w == 8 && (global.right_hand_item.specs.item_type == "Magazine" || global.right_hand_item.specs.item_type == "Box" || global.right_hand_item.specs.item_type == "Speedloader"))
 				{
 					draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*w, 5, 0.5, 0, c_grey, 1)
 					if mouse_check_button_pressed(mb_left)
@@ -2072,14 +2085,14 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 						switch(w)
 						{
 							case 10:
-								ammo_check()
+								function_wheel_strip = true
+								function_wheel = false
 							break
 							case 9:
 								press_check()
 							break
 							case 8:
-								function_wheel_strip = true
-								function_wheel = false
+								ammo_check()
 							case 7:
 								global.right_hand_item.effect.w8()
 							break
@@ -2109,12 +2122,12 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 				}
 			} else
 			{
-				if (w > 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm")
+				if (w >= 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm")|| (w == 8 && (global.right_hand_item.specs.item_type == "Magazine" || global.right_hand_item.specs.item_type == "Box" || global.right_hand_item.specs.item_type == "Speedloader"))
 				{
 					draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx + camera_get_view_width(view_camera[0])/2.5, _yy + camera_get_view_height(view_camera[0])/3 + 32*w, 5, 0.5, 0, c_white, 1)
 				}
 			}
-			if (w > 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm")
+			if (w >= 0 && w < 8) || (w >= 8 && global.right_hand_item.specs.item_type == "Firearm")|| (w == 8 && (global.right_hand_item.specs.item_type == "Magazine" || global.right_hand_item.specs.item_type == "Box" || global.right_hand_item.specs.item_type == "Speedloader"))
 			{
 				draw_text_transformed(_xx + camera_get_view_width(view_camera[0])/2.5 + 10, _yy + camera_get_view_height(view_camera[0])/3 + 32*w + 4, function_list[w], 1, 1, 0)
 			}
@@ -2624,18 +2637,18 @@ if close_inspect == false
 
 if player_stats == false
 {
-	
 
 	if left_modifiers[9] > 0
 	{
+		show_debug_message(find_color(left_modifiers[9]))
 		if using_hand == 1
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 0.5)
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, find_color(left_modifiers[9]), 0.5)
 		} else
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2, 0, c_white, 1)
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 190, _yy + 608, 0.25, 2*(left_modifiers[9]/100), 0, find_color(left_modifiers[9]), 1)
 		}
 	}
 	if right_modifiers[9] > 0
@@ -2643,11 +2656,11 @@ if player_stats == false
 		if using_hand == 0
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 0.5)
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, c_white, 0.5)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, find_color(right_modifiers[9]), 0.5)
 		} else
 		{
 			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2, 0, c_white, 1)
-			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, c_white, 1)
+			draw_sprite_ext(spr_ui_no_grid_blue, 0, _xx + 382, _yy + 608, 0.25, 2*(right_modifiers[9]/100), 0, find_color(right_modifiers[9]), 1)
 		}
 	}
 
@@ -3032,6 +3045,120 @@ if mouse_x >= _xxm + 224 && mouse_x <= _xxm + 381 && mouse_y >= _yym + 606 && mo
 	
 	
 	
+}
+if keyboard_check_pressed(vk_alt) && (((using_hand == 0 && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm" && global.left_hand_item.armor != noone) || (using_hand == 1 && global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm" && global.right_hand_item.armor != noone)) || (global.lshoulder != noone && global.lshoulder.specs.item_type == "Firearm" && global.left_hand_item == noone))
+{
+	if using_hand == 0 
+	{
+		var switching = false
+		if global.lshoulder != noone
+		{
+			var s_item = global.lshoulder
+			var s_mods = global.shoulder_mods
+			var s_ammo = global.shoulder_firearm_ammo
+			var s_chamber = global.shoulder_chamber
+			switching = true
+			
+			array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.lshoulder), 1)
+			global.lshoulder = noone
+			global.shoulder_mods = array_create(modifier_amount, 0)
+			global.shoulder_firearm_ammo = 0
+			global.shoulder_chamber = false
+		}
+		if global.left_hand_item != noone 
+		{
+			array_push(global.clothing_arr, global.left_hand_item)
+			global.lshoulder = global.left_hand_item
+			global.left_hand_item = noone
+			global.left_hand_amount = 0
+			for(var i = 0; i < array_length(left_modifiers); i++)
+			{
+				global.shoulder_mods[i] = left_modifiers[i]
+				left_modifiers[i] = 0
+			}
+			global.shoulder_firearm_ammo = hand_ammo[0]
+			global.shoulder_chamber = selected_chamber[0]
+			hand_ammo[0] = 0
+			selected_chamber[0] = false
+		}
+		if switching == true
+		{
+			global.left_hand_item = s_item
+			global.left_hand_amount = 1
+			hand_ammo[0] = s_ammo
+			selected_chamber[0] = s_chamber
+			
+			for(var i = 0; i < array_length(s_mods); i++)
+			{
+				left_modifiers[i] = s_mods[i]
+				s_mods[i] = 0
+						
+			}
+			
+		}			
+		mouse_clear(mb_left)
+		global.lshoulder_capacity = 0
+		for(var k = 0; k < array_length(global.lshoulder_arr); k++)
+		{	
+			show_debug_message("test")
+			global.lshoulder_capacity += global.lshoulder_arr[k].cont_size
+		}
+	} else
+	{
+		var switching = false
+		if global.lshoulder != noone
+		{
+			var s_item = global.lshoulder
+			var s_mods = global.shoulder_mods
+			var s_ammo = global.shoulder_firearm_ammo
+			var s_chamber = global.shoulder_chamber
+			switching = true
+			
+			array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.lshoulder), 1)
+			global.lshoulder = noone
+			global.shoulder_mods = array_create(modifier_amount, 0)
+			global.shoulder_firearm_ammo = 0
+			global.shoulder_chamber = false
+		}
+		if global.right_hand_item != noone 
+		{
+			array_push(global.clothing_arr, global.right_hand_item)
+			global.lshoulder = global.right_hand_item
+			global.right_hand_item = noone
+			global.right_hand_amount = 0
+			for(var i = 0; i < array_length(right_modifiers); i++)
+			{
+				global.shoulder_mods[i] = right_modifiers[i]
+				right_modifiers[i] = 0
+			}
+			global.shoulder_firearm_ammo = hand_ammo[1]
+			global.shoulder_chamber = selected_chamber[1]
+			hand_ammo[1] = 0
+			selected_chamber[1] = false
+		}
+		if switching == true
+		{
+			global.right_hand_item = s_item
+			global.right_hand_amount = 1
+			hand_ammo[1] = s_ammo
+			selected_chamber[1] = s_chamber
+			
+			for(var i = 0; i < array_length(s_mods); i++)
+			{
+				right_modifiers[i] = s_mods[i]
+				s_mods[i] = 0
+						
+			}
+			
+		}			
+		mouse_clear(mb_left)
+		global.lshoulder_capacity = 0
+		for(var k = 0; k < array_length(global.lshoulder_arr); k++)
+		{	
+			show_debug_message("test")
+			global.lshoulder_capacity += global.lshoulder_arr[k].cont_size
+		}
+	}
 }
 
 if global.mouse_item != noone

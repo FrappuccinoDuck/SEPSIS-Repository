@@ -8,5 +8,5 @@ ammo_arr = array_create(0, 0)
 mag_arr = array_create(0, 0)
 
 modifier[10] = 8
-
+modifier[11] = 8
 modifier[38] = array_create(0, 0)

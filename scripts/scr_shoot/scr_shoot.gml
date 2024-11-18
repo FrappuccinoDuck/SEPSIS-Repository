@@ -32,7 +32,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 		burst_delay += 1
 		if (global.left_hand_item == _gun && selected_chamber[0] == true) || (global.right_hand_item == _gun && selected_chamber[1] == true)
 		{
-			if global.left_hand_item == _gun && left_modifiers[9] > 1 && left_modifiers[42] == "Not" && left_modifiers[25] == "Not" && check_all_parts(_gun, 0) && ((first_click >= 1 && left_modifiers[24] == 3) || (first_click == 1 && left_modifiers[24] == 1) || (fire_amount < global.left_hand_item.weapon.short_burst_amount && left_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate  && !audio_is_playing(_gun.weapon.chamber_sound)
+			if global.left_hand_item == _gun && obj_item_manager.using_hand == 0 && obj_item_manager.selected_chamber[0] == true && left_modifiers[9] > 1 && left_modifiers[42] == "Not" && left_modifiers[25] == "Not" && check_all_parts(_gun, 0) && ((first_click >= 1 && left_modifiers[24] == 3) || (first_click == 1 && left_modifiers[24] == 1) || (fire_amount < global.left_hand_item.weapon.short_burst_amount && left_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate  && !audio_is_playing(_gun.weapon.chamber_sound)
 			{		
 				if jam_checker(left_modifiers[9]) == true
 				{
@@ -248,7 +248,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				}
 			array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
 			}
-			if global.right_hand_item == _gun && right_modifiers[9] > 1 && right_modifiers[42] == "Not" && right_modifiers[25] == "Not" && check_all_parts(_gun, 1) && ((first_click >= 1 && right_modifiers[24] == 3) || (first_click == 1 && right_modifiers[24] == 1) || (fire_amount <= global.right_hand_item.weapon.short_burst_amount && right_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate && !audio_is_playing(_gun.weapon.chamber_sound)
+			if global.right_hand_item == _gun && obj_item_manager.using_hand == 1 && obj_item_manager.selected_chamber[1] == true && right_modifiers[9] > 1 && right_modifiers[42] == "Not" && right_modifiers[25] == "Not" && check_all_parts(_gun, 1) && ((first_click >= 1 && right_modifiers[24] == 3) || (first_click == 1 && right_modifiers[24] == 1) || (fire_amount <= global.right_hand_item.weapon.short_burst_amount && right_modifiers[24] == 2)) && burst_delay >= _gun.weapon.fire_rate && !audio_is_playing(_gun.weapon.chamber_sound)
 			{	
 				if jam_checker(right_modifiers[9]) == true
 				{
@@ -463,7 +463,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 		{
 			if (global.left_hand_item == _gun && left_modifiers[9] > 1 && selected_chamber[0] == true) || (global.right_hand_item == _gun && right_modifiers[9] > global.degredation_value && selected_chamber[1] == true)
 			{
-				if global.left_hand_item == _gun
+				if global.left_hand_item == _gun && obj_item_manager.using_hand == 0 && obj_item_manager.selected_chamber[0] == true
 				{
 					var extracted_bullet = obj_item_manager.left_modifiers[38]
 					var barrel_value = left_modifiers[7]
@@ -478,7 +478,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 				suppressor_degradation()
 				underbarrel_degradation()
 				layer_set_visible("gunshot_effect", true)
-				if global.left_hand_item == _gun && left_modifiers[25] == "Not" && check_all_parts(_gun, 0)
+				if global.left_hand_item == _gun && left_modifiers[25] == "Not" && check_all_parts(_gun, 0) && obj_item_manager.using_hand == 0 && obj_item_manager.selected_chamber[0] == true 
 				{
 					
 					if jam_checker(left_modifiers[9]) == true
@@ -534,7 +534,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 					hand_ammo[0] -= 1
 					array_delete(left_modifiers[38], array_length(left_modifiers[38])-1, 1)
 				}
-				if global.right_hand_item == _gun && right_modifiers[25] == "Not" && check_all_parts(_gun, 1)
+				if global.right_hand_item == _gun && right_modifiers[25] == "Not" && check_all_parts(_gun, 1) && obj_item_manager.using_hand == 1 && obj_item_manager.selected_chamber[1] == true 
 				{
 					
 					if jam_checker(right_modifiers[9]) == true

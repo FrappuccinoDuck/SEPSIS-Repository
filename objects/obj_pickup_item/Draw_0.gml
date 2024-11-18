@@ -55,7 +55,10 @@ if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj
 } else
 {
 	//outline_end()
-	draw_self()
+	if place_meeting(x, y, obj_view_collider)
+	{
+		draw_self()
+	}
 	if type == "Surface"
 	{
 		depth = layer_get_depth("ground_objects")

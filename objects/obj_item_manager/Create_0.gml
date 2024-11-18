@@ -118,6 +118,8 @@ global.lshoulder_ammo = array_create(0, 0)
 global.lshoulder_capacity = 0
 global.shoulder_mods = array_create(modifier_amount, 0)
 global.shoulder_mod_arr = array_create(0, 0)
+global.shoulder_firearm_ammo = 0
+global.shoulder_chamber = false
 
 global.backpack = noone
 global.backpack_arr = array_create(0, 0)
@@ -7074,7 +7076,16 @@ global.armor_list =
 	vz54_armor: new create_armor(
 		0, 
 		"None",
-		"Wood",
+		"Scrap",
+		"Shoulder",
+		0,
+		noone,
+		
+	),
+	vz58_armor: new create_armor(
+		0, 
+		"None",
+		"Scrap",
 		"Shoulder",
 		0,
 		noone,
@@ -7860,7 +7871,7 @@ global.item_list =
 		global.weapon_list.vz58_weapon,
 		"7.62x39",
 		0.4,
-		noone,
+		global.armor_list.vz58_armor,
 		533.7,
 	),
 	vz54 : new create_item(

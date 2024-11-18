@@ -3,7 +3,7 @@ function chamber(_gun, _shell)
 	if audio_is_playing(_gun.weapon.chamber_sound) == false
 	{
 				show_debug_message("chambered")
-				if global.left_hand_item == _gun //&& hand_ammo[0] > 0
+				if global.left_hand_item == _gun && obj_item_manager.using_hand == 0 //&& hand_ammo[0] > 0 
 				{
 					if left_modifiers[26] == "Break-Action"
 					{
@@ -38,7 +38,7 @@ function chamber(_gun, _shell)
 					} else
 					{
 						audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
-						if hand_ammo[0] > 0
+						if hand_ammo[0] > 0 && obj_item_manager.using_hand == 0
 						{
 							//audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
 							if selected_chamber[0] == false
@@ -63,8 +63,9 @@ function chamber(_gun, _shell)
 						}
 					}
 					
-				} else if global.right_hand_item == _gun /// && hand_ammo[1] > 0
-				{
+				} if global.right_hand_item == _gun && obj_item_manager.using_hand == 1 /// && hand_ammo[1] > 0
+				{	
+					show_message("chamber right")
 					if right_modifiers[26] == "Break-Action"
 					{
 						if right_modifiers[27] == 0
@@ -96,7 +97,7 @@ function chamber(_gun, _shell)
 					} else
 					{
 						audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
-						if hand_ammo[1] > 0
+						if hand_ammo[1] > 0 && obj_item_manager.using_hand == 1
 						{
 							//audio_play_sound(_gun.weapon.chamber_sound, 1, 0)
 							if selected_chamber[1] == false

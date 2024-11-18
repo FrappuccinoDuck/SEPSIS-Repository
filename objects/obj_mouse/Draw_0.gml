@@ -1,6 +1,6 @@
 
 
-if obj_item_manager.function_wheel == true || obj_item_manager.function_wheel_health == true || obj_item_manager.function_wheel_strip == true
+if obj_item_manager.function_wheel == true || obj_item_manager.function_wheel_health == true || obj_item_manager.function_wheel_strip == true || obj_item_manager.stats_open == true || obj_item_manager.player_stats == true || obj_health_manager.health_open == true
 {
 	window_set_cursor(cr_default)
 	//draw_self()

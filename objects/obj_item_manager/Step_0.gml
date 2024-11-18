@@ -151,24 +151,25 @@ if player_stats == false
 
 if stats_open == true && menu_switch == 1
 {
-	stats_open = false
 	obj_health_manager.health_open = true
+	stats_open = false
 }
 if obj_health_manager.health_open == true && menu_switch == 0
 {
-	obj_health_manager.health_open = false
 	stats_open = true
+	obj_health_manager.health_open = false
 }
 if obj_health_manager.health_open == true && menu_switch == 2
 {
-	obj_health_manager.health_open = false
 	player_stats = true
+	obj_health_manager.health_open = false
 }
 if player_stats == true && menu_switch == 1
 {
-	player_stats = false
 	obj_health_manager.health_open = true
+	player_stats = false
 }
+
 
 if global.left_hand_item == global.item_list.two_hand_item && global.right_hand_item == noone && using_hand == false
 {

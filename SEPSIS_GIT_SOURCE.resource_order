@@ -185,7 +185,7 @@
     {"name":"obj_gas_mask","order":6,"path":"objects/obj_gas_mask/obj_gas_mask.yy",},
     {"name":"obj_goliath","order":2,"path":"objects/obj_goliath/obj_goliath.yy",},
     {"name":"obj_inc_grenade","order":12,"path":"objects/obj_inc_grenade/obj_inc_grenade.yy",},
-    {"name":"obj_inventory_sections","order":2,"path":"objects/obj_inventory_sections/obj_inventory_sections.yy",},
+    {"name":"obj_inventory_sections","order":1,"path":"objects/obj_inventory_sections/obj_inventory_sections.yy",},
     {"name":"obj_LAST_OBJECT_ALWAYS","order":4,"path":"objects/obj_LAST_OBJECT_ALWAYS/obj_LAST_OBJECT_ALWAYS.yy",},
     {"name":"obj_left_boot","order":8,"path":"objects/obj_left_boot/obj_left_boot.yy",},
     {"name":"obj_left_glove","order":4,"path":"objects/obj_left_glove/obj_left_glove.yy",},

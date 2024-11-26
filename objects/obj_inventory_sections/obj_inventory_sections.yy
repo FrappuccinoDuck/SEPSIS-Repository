@@ -11,8 +11,8 @@
   "name":"obj_inventory_sections",
   "overriddenProperties":[],
   "parent":{
-    "name":"Systems",
-    "path":"folders/Item Management/Managers/Systems.yy",
+    "name":"Objects",
+    "path":"folders/Item Management/Managers/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

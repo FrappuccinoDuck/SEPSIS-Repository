@@ -1410,6 +1410,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.backpack
+					global.mouse_ammo = 0
 					global.backpack = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					
@@ -1492,6 +1493,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.right_foot_wear
+					global.mouse_ammo = 0
 					global.right_foot_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.right_foot_arr
@@ -1525,6 +1527,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.left_foot_wear
+					global.mouse_ammo = 0
 					global.left_foot_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.left_foot_arr
@@ -1559,6 +1562,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.left_leg_wear
+					global.mouse_ammo = 0
 					global.left_leg_wear = noone
 					global.right_leg_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
@@ -1594,6 +1598,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.left_leg_wear
+					global.mouse_ammo = 0
 					global.left_leg_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.left_leg_arr
@@ -1628,6 +1633,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.right_hand_wear
+					global.mouse_ammo = 0
 					global.right_hand_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.right_hand_arr
@@ -1661,6 +1667,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.right_leg_wear
+					global.mouse_ammo = 0
 					global.right_leg_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.right_leg_arr
@@ -1700,6 +1707,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.vest
+					global.mouse_ammo = 0
 					global.vest = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.vest_arr
@@ -1732,6 +1740,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.torso_wear
+					global.mouse_ammo = 0
 					global.torso_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.torso_arr
@@ -1766,6 +1775,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.left_hand_wear
+					global.mouse_ammo = 0
 					global.left_hand_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.left_hand_arr
@@ -1800,6 +1810,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.face_wear
+					global.mouse_ammo = 0
 					global.face_wear = noone
 					global.overlay = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
@@ -1836,6 +1847,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.left_wrist
+					global.mouse_ammo = 0
 					global.left_wrist = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1) 
 					temp_arr = global.left_wrist_arr
@@ -1870,6 +1882,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.right_wrist
+					global.mouse_ammo = 0
 					global.right_wrist = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.right_wrist_arr
@@ -1902,6 +1915,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.top_head_wear
+					global.mouse_ammo = 0
 					global.top_head_wear = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.top_head_arr
@@ -1934,6 +1948,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 				if mouse_check_button_pressed(mb_left)
 				{
 					global.mouse_item = global.belt
+					global.mouse_ammo = 0
 					global.belt = noone
 					array_delete(global.clothing_arr, array_get_index(global.clothing_arr, global.mouse_item), 1)
 					temp_arr = global.belt_arr

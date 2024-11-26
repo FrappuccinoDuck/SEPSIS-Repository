@@ -242,7 +242,7 @@ if (obj_item_manager.stats_open == true || obj_health_manager.health_open == tru
 				{
 				
 					
-					if (global.backpack_arr[k].specs.stack_max > 1 && number_in_array_before(global.backpack_arr, global.backpack_arr[k], k) == 0) || (global.backpack_arr[k].specs.stack_max == 1)
+					//if (global.backpack_arr[k].specs.stack_max > 1 && number_in_array_before(global.backpack_arr, global.backpack_arr[k], k) == 0) || (global.backpack_arr[k].specs.stack_max == 1)
 					{
 						var _extracted = global.backpack_mod_arr[k]
 						draw_rectangle_color(x, y+33*k+33-33*num, x+416, y+33*k+64, c_black, c_black, c_black, c_black, true)

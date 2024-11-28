@@ -499,6 +499,12 @@ if debug_menu == true
 			show_message("It did not in fact say gullible on the ceiling")
 			show_message("Dumbass")
 		}
+		if keyboard_string == string($"$toggle.enemystats") && keyboard_check_pressed(vk_enter)
+		{
+			global.show_enemy_stats = !global.show_enemy_stats
+			keyboard_string = ""
+			//show_message(global.show_enemy_stats)
+		}
 		if keyboard_string == string($"$enable.debug") && keyboard_check_pressed(vk_enter)
 		{
 			show_debug_log(true)

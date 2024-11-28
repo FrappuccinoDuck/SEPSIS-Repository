@@ -80,11 +80,11 @@ global.contaminant_list =
 
 
 blood_loss_arr = array_create(0, 0)
-array_push(blood_loss_arr, 10)
-array_push(blood_loss_arr, 50)
-array_push(blood_loss_arr, 200)
-array_push(blood_loss_arr, 500)
-array_push(blood_loss_arr, 1000)
+array_push(blood_loss_arr, 0.2)
+array_push(blood_loss_arr, 1.5)
+array_push(blood_loss_arr, 5)
+array_push(blood_loss_arr, 15)
+array_push(blood_loss_arr, 100)
 
 timer = 0
 

@@ -19,6 +19,8 @@ urinating = false
 global.urine_volume = 250
 global.urine_speed = 2
 
+global.show_enemy_stats = true
+
 debug_menu = false
 prague = false
 
@@ -541,7 +543,7 @@ function create_medical(_bleeding, _broken, _bleed_remedy, _condition_increase, 
 	injection_loss = _injection_loss
 }
 
-function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_dam, _medium_dam, _heavy_dam) constructor
+function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_dam, _medium_dam, _heavy_dam, _pass_chance) constructor
 {
 	wound_amount = _wound_amount
 	light_pen = _light_pen
@@ -550,6 +552,7 @@ function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_d
 	light_dam = _light_dam
 	medium_dam = _medium_dam
 	heavy_dam = _heavy_dam
+	pass_chance = _pass_chance
 }
 
 function create_surface(_name, _description, _sprite) constructor
@@ -579,6 +582,7 @@ global.bullet_list =
 		4,
 		5,
 		3,
+		20,
 	),
 	ACP380_ap_bull : new create_bullet(
 		1,
@@ -588,6 +592,7 @@ global.bullet_list =
 		12,
 		10,
 		8,
+		70,
 	),
 	ACP380_fmj_bull : new create_bullet(
 		2,
@@ -597,6 +602,7 @@ global.bullet_list =
 		10, 
 		8,
 		6,
+		50,
 	),
 	ACP380_du_bull : new create_bullet(
 		1,
@@ -606,6 +612,7 @@ global.bullet_list =
 		15,
 		12,
 		9,
+		75,
 	),
 	ACP380_exp_bull : new create_bullet(
 		3,
@@ -615,6 +622,7 @@ global.bullet_list =
 		10,
 		9,
 		7,
+		10,
 	),
 	
 	ACP32_bull : new create_bullet(
@@ -625,6 +633,7 @@ global.bullet_list =
 		4,
 		3,
 		2,
+		15,
 	),
 	ACP32_ap_bull : new create_bullet(
 		1,
@@ -634,6 +643,7 @@ global.bullet_list =
 		9,
 		8,
 		7,
+		60,
 	),
 	ACP32_fmj_bull : new create_bullet(
 		2,
@@ -643,6 +653,7 @@ global.bullet_list =
 		7,
 		6,
 		5,
+		40,
 	),
 	ACP32_du_bull : new create_bullet(
 		1,
@@ -652,6 +663,7 @@ global.bullet_list =
 		12,
 		9,
 		7,
+		65,
 	),
 	ACP32_exp_bull : new create_bullet(
 		3,
@@ -661,6 +673,7 @@ global.bullet_list =
 		13,
 		11,
 		10,
+		5,
 	),
 	
 	magnum44_bull : new create_bullet(
@@ -671,6 +684,7 @@ global.bullet_list =
 		10,
 		8,
 		6,
+		25,
 	),
 	magnum44_ap_bull : new create_bullet(
 		3,
@@ -680,6 +694,7 @@ global.bullet_list =
 		18,
 		15,
 		13,
+		85,
 	),
 	magnum44_fmj_bull : new create_bullet(
 		4,
@@ -689,6 +704,7 @@ global.bullet_list =
 		15,
 		12,
 		10,
+		60,
 	),
 	magnum44_du_bull : new create_bullet(
 		3,
@@ -698,6 +714,7 @@ global.bullet_list =
 		20,
 		18,
 		15,
+		90,
 	),
 	magnum44_exp_bull : new create_bullet(
 		5,
@@ -707,6 +724,7 @@ global.bullet_list =
 		20,
 		18,
 		16,
+		15,
 	),
 	
 	bull_76239 : new create_bullet(
@@ -717,6 +735,7 @@ global.bullet_list =
 		12,
 		10,
 		8,
+		40,
 	),
 	bull_76239_ap : new create_bullet(
 		3,
@@ -726,6 +745,7 @@ global.bullet_list =
 		22,
 		20,
 		18,
+		90,
 	),
 	bull_76239_fmj : new create_bullet(
 		4,
@@ -735,6 +755,7 @@ global.bullet_list =
 		18,
 		15,
 		13,
+		70,
 	),
 	bull_76239_du : new create_bullet(
 		3,
@@ -744,6 +765,7 @@ global.bullet_list =
 		25,
 		22,
 		19,
+		95,
 	),
 	bull_76239_exp : new create_bullet(
 		5,
@@ -753,6 +775,7 @@ global.bullet_list =
 		20,
 		18,
 		16,
+		25,
 	),
 	
 	bull_76245 : new create_bullet(
@@ -763,6 +786,7 @@ global.bullet_list =
 		13,
 		11,
 		9,
+		45,
 	),
 	bull_76245_ap : new create_bullet(
 		3,
@@ -772,6 +796,7 @@ global.bullet_list =
 		23,
 		21,
 		19,
+		90,
 	),
 	bull_76245_fmj : new create_bullet(
 		4,
@@ -781,6 +806,7 @@ global.bullet_list =
 		19,
 		16,
 		14,
+		75,
 	),
 	bull_76245_du : new create_bullet(
 		3,
@@ -790,6 +816,7 @@ global.bullet_list =
 		26,
 		23,
 		20,
+		95,
 	),
 	bull_76245_exp : new create_bullet(
 		5,
@@ -799,6 +826,7 @@ global.bullet_list =
 		21,
 		19,
 		17,
+		30,
 	),
 	
 	bull_76225 : new create_bullet(
@@ -809,6 +837,7 @@ global.bullet_list =
 		8,
 		6,
 		4,
+		35,
 	),
 	bull_76225_ap : new create_bullet(
 		3,
@@ -818,6 +847,7 @@ global.bullet_list =
 		15,
 		13,
 		10,
+		80,
 	),
 	bull_76225_fmj : new create_bullet(
 		4,
@@ -827,6 +857,7 @@ global.bullet_list =
 		12,
 		10,
 		8,
+		65,
 	),
 	bull_76225_du : new create_bullet(
 		3,
@@ -836,6 +867,7 @@ global.bullet_list =
 		22,
 		19,
 		17,
+		85,
 	),
 	bull_76225_exp : new create_bullet(
 		5,
@@ -845,6 +877,7 @@ global.bullet_list =
 		18,
 		15,
 		12,
+		20,
 	),
 	
 	bull_12gauge : new create_bullet(
@@ -855,6 +888,7 @@ global.bullet_list =
 		5,
 		4,
 		3,
+		5,
 	),
 	bull_12gauge_buck : new create_bullet(
 		3,
@@ -864,6 +898,7 @@ global.bullet_list =
 		10,
 		8,
 		6,
+		20,
 	),
 	bull_12gauge_slug : new create_bullet(
 		4,
@@ -873,6 +908,7 @@ global.bullet_list =
 		15,
 		12,
 		10,
+		50,
 	),
 	bull_12gauge_exp : new create_bullet(
 		4,
@@ -882,6 +918,7 @@ global.bullet_list =
 		20,
 		18,
 		17,
+		20,
 	),
 }
 
@@ -7388,22 +7425,20 @@ global.weapon_list =
 global.armor_list =
 {
 	test_shirt_armor : new create_armor(
-		5, 
-		"Blunt",
+		1, 
+		"Light",
 		"Cloth",
 		"Torso",
 		2,
 		noone,
-		
 	),
 	test_pants_armor : new create_armor(
-		5, 
-		"Blunt",
+		2, 
+		"Light",
 		"Cloth",
 		"Legs",
 		117, //(NO BACK POCKETS)
 		noone,
-		
 	),
 	right_pant_armor : new create_armor(
 		5, 
@@ -7412,7 +7447,6 @@ global.armor_list =
 		"Right Leg",
 		58.24,
 		noone,
-		
 	),
 	left_pant_armor : new create_armor(
 		5, 
@@ -7421,119 +7455,106 @@ global.armor_list =
 		"Left Leg",
 		58.24,
 		noone,
-		
 	),
 	rolex_armor : new create_armor(
 		0, 
-		"None",
+		"Light",
 		"Scrap",
 		"Either Wrist",
 		0,
 		noone,
-		
 	),
 	left_glove_armor: new create_armor(
-		5, 
-		"Blunt",
+		1, 
+		"Light",
 		"Cloth",
 		"Left Hand",
 		0,
 		noone,
-		
 	),
 	right_glove_armor: new create_armor(
-		5, 
-		"Blunt",
+		1, 
+		"Light",
 		"Cloth",
 		"Right Hand",
 		0,
 		noone,
-		
 	),
 	gas_mask_armor: new create_armor(
-		5, 
-		"Blunt",
+		1, 
+		"Light",
 		"Scrap",
 		"Face",
 		0,
 		spr_gas_mask_overlay1,
-		
 	),
 	military_helmet_armor: new create_armor(
-		5, 
-		"Blunt",
+		3, 
+		"Medium",
 		"Scrap",
 		"Head",
 		0,
 		noone,
-		
 	),
 	right_boot_armor: new create_armor(
-		5, 
-		"Blunt",
+		2, 
+		"Light",
 		"Leather",
 		"Right Foot",
 		5,
 		noone,
-		
 	),
 	left_boot_armor: new create_armor(
-		5, 
-		"Blunt",
+		2, 
+		"Light",
 		"Leather",
 		"Left Foot",
 		5,
 		noone,
-		
 	),
 	coat_armor: new create_armor(
-		10, 
-		"Blunt",
+		1, 
+		"Light",
 		"Plastic",
 		"Vest",
 		117,
 		noone,
-		
 	),
 	backpack_armor: new create_armor(
-		10, 
-		"Piercing",
+		2, 
+		"Light",
 		"Cloth",
 		"Backpack",
 		122500,
 		noone,
-		
 	),
 	strapped_stick_armor: new create_armor(
 		0, 
-		"None",
+		"Light",
 		"Wood",
 		"Shoulder",
 		0,
 		noone,
-		
 	),
 	vz54_armor: new create_armor(
-		0, 
-		"None",
+		2, 
+		"Medium",
 		"Scrap",
 		"Shoulder",
 		0,
 		noone,
-		
 	),
 	vz58_armor: new create_armor(
-		0, 
-		"None",
+		2, 
+		"Medium",
 		"Scrap",
 		"Shoulder",
 		0,
 		noone,
-		
 	),
 	copper_band_armor: new create_armor(
 		0, 
-		"None",
+		"Light",
 		"Copper",
 		"Either Wrist",
 		0,
@@ -7541,8 +7562,8 @@ global.armor_list =
 		
 	),
 	small_belt_armor: new create_armor(
-		0, 
-		"None",
+		1, 
+		"Light",
 		"Leather",
 		"Belt",
 		4,

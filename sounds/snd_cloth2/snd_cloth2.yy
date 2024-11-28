@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_cloth2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.896,
+  "name":"snd_cloth2",
+  "parent":{
+    "name":"Bullet Impacts Cloth",
+    "path":"folders/Sounds/Bullet Impacts Cloth.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cloth2.mp3",
+  "type":0,
+  "volume":1.0,
+}

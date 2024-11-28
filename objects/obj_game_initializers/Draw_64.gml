@@ -11,7 +11,7 @@ if baseline_fps < max_fps
 if timer <= 75
 {
 	draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx+320, _yy+260, 10, 1, 0, c_white, 1)
-	draw_text(_xx+326, _yy+265, "Loading SEPSIS BETA - November Build 6 (Backspace to Skip)")
+	draw_text(_xx+326, _yy+265, "Loading SEPSIS BETA - November Build 7 (Backspace to Skip)")
 	
 	draw_sprite_ext(spr_ui_no_grid_opaque, 0, _xx+320, _yy+300, 10, 1, 0, c_white, 1)
 	draw_sprite_ext(spr_bar_load, spin_timer, _xx+320, _yy+300, baseline_fps/3*(32/33), 1, 0, c_white, 1)

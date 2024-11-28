@@ -253,8 +253,24 @@ if timer <= fps
 	
 	if bleeding == true
 	{
+		
 		global.bleed_volume += bleed_amount
 		global.bleed_amount += 1
+		
+		/*var instance_blood = instance_create_depth(obj_player.x, obj_player.y, -9, obj_Particles)
+			instance_blood.set_depth(-9)
+			instance_blood.set_size(0, 0.1)
+			instance_blood.set_sprite(spr_Blood, false, false, true)
+		
+			instance_blood.set_orientation(0, 380)
+			instance_blood.set_color_mix(c_red, make_color_rgb(128, 0, 0))
+			instance_blood.set_alpha(random_range(0.6, 1), random_range(0.6, 1))
+			instance_blood.set_direction(0, 0)
+			instance_blood.set_speed(0, 0, 0)
+			instance_blood.set_life(0, 100000)
+		
+			instance_blood.burst(bleed_amount)*/
+		
 		//instance_create_layer(obj_player.x+irandom_range(-5, 5), obj_player.y+irandom_range(-5, 5), "Instances", obj_blood_surface)
 		bleed_timer += 1
 		

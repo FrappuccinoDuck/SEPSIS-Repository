@@ -4,7 +4,50 @@ timer = 0
 heartbeat = 60
 heart_val = 0
 
+infection_list = array_create(0, 0)
+array_push(infection_list, "No Infection In Selected Area")
+array_push(infection_list, "Cellulitis -- Bacterial")
+array_push(infection_list, "Abscess -- Bacterial")
+array_push(infection_list, "Tetanus -- Bacterial")
+array_push(infection_list, "Sepsis -- Bacterial")
+array_push(infection_list, "Necrotizing Fasciitis -- Bacterial")
+array_push(infection_list, "Gas Gangrene -- Bacterial")
+array_push(infection_list, "Meningitis -- Bacterial")
+array_push(infection_list, "Fungal Infection")
+array_push(infection_list, "Peritonitis -- Bacterial")
 
+infection_desc_list = array_create(0, 0)
+array_push(infection_desc_list, "")
+array_push(infection_desc_list, "A spreading bacterial infection causing redness, swelling, and pain around the wound")
+array_push(infection_desc_list, "A localized pus-filled pocket that forms due to untreated infection")
+array_push(infection_desc_list, "A toxin-driven infection causing muscle spasms and stiffness, often fatal if untreated")
+array_push(infection_desc_list, "A life-threatening condition where infection spreads into the bloodstream, causing organ failure")
+array_push(infection_desc_list, "A fast-moving, deadly infection that destroys skin and muscle tissue")
+array_push(infection_desc_list, "A bacterial infection producing gas and toxins, leading to rapid tissue death")
+array_push(infection_desc_list, "A critical infection of the brain's protective membranes, often fatal without quick treatment")
+array_push(infection_desc_list, "Slow-developing infections caused by spores entering unclean wounds in damp environments")
+array_push(infection_desc_list, "A severe abdominal infection caused by perforation of internal organs")
+
+infection_index = 0
+
+bleed_list = array_create(0, 0)
+array_push(bleed_list, "No Bleed In Selected Area")
+array_push(bleed_list, "Flesh Wound | Graze")
+array_push(bleed_list, "Superficial Wound | Small Cut")
+array_push(bleed_list, "Significant Injury | Deep Cut")
+array_push(bleed_list, "Severe Injury | Large Vein")
+array_push(bleed_list, "Major Arterial Bleed")
+
+bleed_desc_list = array_create(0, 0)
+array_push(bleed_desc_list, "")
+array_push(bleed_desc_list, "A superficial graze or small cut, barely breaking the skin, causing minimal blood loss")
+array_push(bleed_desc_list, "A deeper cut or puncture affecting capillaries or small veins, with steady blood flow requiring basic care")
+array_push(bleed_desc_list, "A deep wound penetrating into muscle or damaging larger veins, leading to rapid blood loss and significant risk")
+array_push(bleed_desc_list, "A large wound severing a major vein or smaller artery, with life-threatening blood loss and a need for immediate treatment")
+array_push(bleed_desc_list, "A catastrophic wound involving major arteries or extreme tissue damage, resulting in uncontrollable blood loss and imminent danger of death without emergency intervention.")
+
+
+selected_type = 0
 
 index = 0
 global.selected_bone = noone

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_explosion_mini",
-    "path":"sprites/spr_explosion_mini/spr_explosion_mini.yy",
+    "name":"spr_explosion_mini_blood",
+    "path":"sprites/spr_explosion_mini_blood/spr_explosion_mini_blood.yy",
   },
   "spriteMaskId":null,
   "visible":true,

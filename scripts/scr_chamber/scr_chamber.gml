@@ -65,7 +65,6 @@ function chamber(_gun, _shell)
 					
 				} if global.right_hand_item == _gun && obj_item_manager.using_hand == 1 /// && hand_ammo[1] > 0
 				{	
-					show_message("chamber right")
 					if right_modifiers[26] == "Break-Action"
 					{
 						if right_modifiers[27] == 0

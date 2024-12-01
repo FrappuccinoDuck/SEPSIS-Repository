@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.416,
+  "duration":2.064,
   "name":"snd_metal4",
   "parent":{
     "name":"Bullet Impacts Metal",

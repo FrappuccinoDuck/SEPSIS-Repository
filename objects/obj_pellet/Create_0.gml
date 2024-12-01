@@ -1,8 +1,9 @@
 event_inherited()
 
 type = "Item"
+shot = false
 
-image_xscale = 2.5
+image_xscale = 2
 //image_yscale = 0.2
 
 destroy_timer = 0

@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_z_rapid_suppressor",
-    "path":"sprites/spr_z_rapid_suppressor/spr_z_rapid_suppressor.yy",
+    "name":"spr_y_heath_suppressor",
+    "path":"sprites/spr_y_heath_suppressor/spr_y_heath_suppressor.yy",
   },
   "spriteMaskId":null,
   "visible":true,

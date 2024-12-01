@@ -2763,7 +2763,7 @@ if global.right_hand_item != noone && player_stats == false
 	if right_modifiers[35] == false && global.right_hand_item.specs.item_type == "Grenade"
 	{
 		draw_sprite_ext(spr_ui_no_grid, 0, _xx + 224, _yy+ 710, 2.5, 0.4, 0, c_white, 0.5)
-		draw_text(_xx+232, _yy+610, "Armed")
+		draw_text(_xx+232, _yy+710, "Armed")
 	}
 	if global.right_hand_item.specs.item_type == "Magazine" && right_modifiers[38] != 0 && array_length(right_modifiers[38]) > 0
 	{

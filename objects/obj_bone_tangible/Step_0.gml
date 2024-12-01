@@ -11,5 +11,3 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && o
 	
 }
 
-depth = obj_mouse.depth+100
-

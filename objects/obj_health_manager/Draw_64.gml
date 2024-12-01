@@ -13,12 +13,8 @@ if health_open == true
 			{
 				draw_sprite_ext(spr_main_character_model, obj_item_manager.model_index, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
 			}
-			if health_tab == 1
-			{
-				draw_sprite_ext(spr_main_character_model, 10, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
-				//draw_sprite_ext(spr_skeleton, 0, _xx+140.25, _yy+128, 2.5, 2.5, 0, c_white, 1)
-			}
 			
+		
 		
 	
 	layer_set_visible("health_ui", true)
@@ -35,10 +31,11 @@ if health_open == true
 	
 	if health_tab == 1
 	{
-		instance_activate_layer("bone_tangibles")
+		draw_sprite_ext(spr_ui_no_grid_opaque_noline, 0, 32, 96, 1.5, 0.5, 0, c_white, 1)
+		layer_set_visible("bone_tangibles", true)
 	} else
 	{
-		instance_deactivate_layer("bone_tangibles")
+		layer_set_visible("bone_tangibles", false)
 	}
 	
 	
@@ -123,7 +120,7 @@ if timer <= fps
 	{
 		regenerating = true
 		//if global.blood_levels_m-global.blood_levels
-		global.blood_levels += random_range(75, 100)
+		/*global.blood_levels += random_range(75, 100)
 		
 		if global.blood_levels_m-global.blood_levels <= 100
 		{
@@ -141,7 +138,7 @@ if timer <= fps
 			global.copper -= 0.01
 			global.vit_a -= 0.8
 			global.zinc -= 0.01
-		}
+		}*/
 	}
 	
 	

@@ -55,7 +55,7 @@ if place_meeting(x, y, obj_mouse) && obj_item_manager.stats_open == false && obj
 } else
 {
 	//outline_end()
-	if place_meeting(x, y, obj_view_collider)
+	if place_meeting(x, y, obj_view_collider) && obj_item_manager.stats_open == false && obj_item_manager.player_stats == false && obj_health_manager.health_open == false
 	{
 		draw_self()
 	}

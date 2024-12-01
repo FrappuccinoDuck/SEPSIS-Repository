@@ -1,2 +1,2 @@
-dead = true
-global.death_type = "Player embraced the flames"
+//dead = true
+//global.death_type = "Player embraced the flames"

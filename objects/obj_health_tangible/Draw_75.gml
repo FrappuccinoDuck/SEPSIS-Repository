@@ -8,7 +8,8 @@ if (index > 9 && index <= 20 && obj_health_manager.health_tab == 2) && obj_healt
 		draw_self()
 	}
 }
-if obj_health_manager.health_open == true && obj_health_manager.health_tab == 0
+
+if obj_health_manager.health_open == true && (obj_health_manager.health_tab == 0 || obj_health_manager.health_tab == 2)
 {
 	for(var i = 1; i < 4; i++)
 	{
@@ -85,10 +86,10 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 				draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 355, mouse_y, 5, 2.2, 0, c_white, 1)
 				if treated == false
 				{
-					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/(50/open_wound_amount)*1000}% Chance of Increased Infection"))
+					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/(50/open_wound_amount)*100}% Chance of Increased Infection"))
 				} else
 				{
-					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/((100*treated_amount)/open_wound_amount)*1000}% Chance of Increased Infection"))
+					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/((100*treated_amount)/open_wound_amount)*100}% Chance of Increased Infection"))
 				}
 			} else
 			{
@@ -99,7 +100,7 @@ if place_meeting(x, y, obj_mouse) && ((index > 9 && index <= 20 && obj_health_ma
 				} else
 				{
 					draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 355, mouse_y, 5, 2.2, 0, c_white, 1)
-					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/(50*treated_amount)*1000}% Chance of Infection Remedy"))
+					draw_text(mouse_x + 370, mouse_y + 10, string($"{1/(50*treated_amount)*100}% Chance of Infection Remedy"))
 				}
 			}
 			//draw_sprite_ext(spr_infections, bleed_amount, mouse_x + 355, mouse_y+10, 3, 3, 0, c_white, 1)
@@ -389,26 +390,29 @@ if timer <= fps
 		}
 	} 
 	if open_wound == true
-	{		
-		if treated == false
+	{	
+		if infection < 5
 		{
-			if irandom(50/open_wound_amount) == 1
+			if treated == false
 			{
-				if infection_amount == 0
+				if irandom(50/open_wound_amount) == 1
 				{
-					infection = true
+					if infection_amount == 0
+					{
+						infection = true
+					}
+					infection_amount += 1
 				}
-				infection_amount += 1
-			}
-		} else
-		{
-			if irandom((100*treated_amount)/open_wound_amount) == 1
+			} else
 			{
-				if infection_amount == 0
+				if irandom((100*treated_amount)/open_wound_amount) == 1
 				{
-					infection = true
+					if infection_amount == 0
+					{
+						infection = true
+					}
+					infection_amount += 1
 				}
-				infection_amount += 1
 			}
 		}
 	} else
@@ -474,6 +478,20 @@ if condition > condition_max
 {
 	condition = condition_max
 }
+
+if bleed_amount > 5
+{
+	bleed_amount = 5
+}
+if infection_amount > 5
+{
+	infection_amount = 5
+}
+if open_wound_amount > 5
+{
+	open_wound_amount = 5
+}
+
 
 /*
 if obj_player.xspd != 0 || obj_player.yspd != 0

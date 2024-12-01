@@ -10,7 +10,7 @@ if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && i
 
 }
 */
-depth = obj_mouse.depth+100
+//depth = obj_mouse.depth+100
 
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_open == true && index > 9 && index <= 20 && obj_health_manager.health_tab == 2
 {

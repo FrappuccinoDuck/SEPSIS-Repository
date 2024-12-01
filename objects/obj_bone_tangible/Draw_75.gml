@@ -1,9 +1,6 @@
 
 image_blend = find_color(condition) 
-if obj_health_manager.health_tab == 1 && obj_health_manager.health_open == true
-{
-	draw_self()
-}
+
 
 
 
@@ -26,8 +23,8 @@ if bleed_timer < 10
 
 if place_meeting(x, y, obj_mouse) && obj_health_manager.health_tab == 1 && obj_health_manager.health_open == true
 {
-	draw_sprite_ext(spr_ui_no_grid_blue_opaque, 0, mouse_x + 25, mouse_y, 5, 6, 0, c_white, 1)
-	draw_sprite_ext(spr_ui_no_grid_blue_opaque, 0, mouse_x + 25, mouse_y-40, 5, 0.5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 25, mouse_y, 5, 6, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, mouse_x + 25, mouse_y-40, 5, 0.5, 0, c_white, 1)
 		draw_text_transformed(mouse_x + 40, mouse_y - 30, string($"Condition: {condition}/{condition_max}%"), 1, 1, 0)
 		
 		

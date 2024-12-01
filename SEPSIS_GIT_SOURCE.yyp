@@ -284,6 +284,7 @@
     {"id":{"name":"obj_sa23","path":"objects/obj_sa23/obj_sa23.yy",},},
     {"id":{"name":"obj_sc_box_mouse","path":"objects/obj_sc_box_mouse/obj_sc_box_mouse.yy",},},
     {"id":{"name":"obj_sc_box","path":"objects/obj_sc_box/obj_sc_box.yy",},},
+    {"id":{"name":"obj_self_dummy","path":"objects/obj_self_dummy/obj_self_dummy.yy",},},
     {"id":{"name":"obj_settings","path":"objects/obj_settings/obj_settings.yy",},},
     {"id":{"name":"obj_shadow_caster","path":"objects/obj_shadow_caster/obj_shadow_caster.yy",},},
     {"id":{"name":"obj_short_barrel","path":"objects/obj_short_barrel/obj_short_barrel.yy",},},

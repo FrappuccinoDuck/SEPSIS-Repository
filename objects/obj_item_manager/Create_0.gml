@@ -543,7 +543,7 @@ function create_medical(_bleeding, _broken, _bleed_remedy, _condition_increase, 
 	injection_loss = _injection_loss
 }
 
-function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_dam, _medium_dam, _heavy_dam, _pass_chance) constructor
+function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_dam, _medium_dam, _heavy_dam, _pass_chance, _bullet_stop_power) constructor
 {
 	wound_amount = _wound_amount
 	light_pen = _light_pen
@@ -553,6 +553,7 @@ function create_bullet(_wound_amount, _light_pen, _med_pen, _heavy_pen, _light_d
 	medium_dam = _medium_dam
 	heavy_dam = _heavy_dam
 	pass_chance = _pass_chance
+	bullet_stop_power = _bullet_stop_power
 }
 
 function create_surface(_name, _description, _sprite) constructor
@@ -583,6 +584,7 @@ global.bullet_list =
 		5,
 		3,
 		20,
+		2,
 	),
 	ACP380_ap_bull : new create_bullet(
 		1,
@@ -593,6 +595,7 @@ global.bullet_list =
 		10,
 		8,
 		70,
+		2,
 	),
 	ACP380_fmj_bull : new create_bullet(
 		2,
@@ -603,6 +606,7 @@ global.bullet_list =
 		8,
 		6,
 		50,
+		1,
 	),
 	ACP380_du_bull : new create_bullet(
 		1,
@@ -613,6 +617,7 @@ global.bullet_list =
 		12,
 		9,
 		75,
+		3,
 	),
 	ACP380_exp_bull : new create_bullet(
 		3,
@@ -623,6 +628,7 @@ global.bullet_list =
 		9,
 		7,
 		10,
+		3,
 	),
 	
 	ACP32_bull : new create_bullet(
@@ -634,6 +640,7 @@ global.bullet_list =
 		3,
 		2,
 		15,
+		1,
 	),
 	ACP32_ap_bull : new create_bullet(
 		1,
@@ -644,6 +651,7 @@ global.bullet_list =
 		8,
 		7,
 		60,
+		2,
 	),
 	ACP32_fmj_bull : new create_bullet(
 		2,
@@ -654,6 +662,7 @@ global.bullet_list =
 		6,
 		5,
 		40,
+		1,
 	),
 	ACP32_du_bull : new create_bullet(
 		1,
@@ -664,6 +673,7 @@ global.bullet_list =
 		9,
 		7,
 		65,
+		2,
 	),
 	ACP32_exp_bull : new create_bullet(
 		3,
@@ -674,6 +684,7 @@ global.bullet_list =
 		11,
 		10,
 		5,
+		2,
 	),
 	
 	magnum44_bull : new create_bullet(
@@ -685,6 +696,7 @@ global.bullet_list =
 		8,
 		6,
 		25,
+		3,
 	),
 	magnum44_ap_bull : new create_bullet(
 		3,
@@ -695,6 +707,7 @@ global.bullet_list =
 		15,
 		13,
 		85,
+		3,
 	),
 	magnum44_fmj_bull : new create_bullet(
 		4,
@@ -705,6 +718,7 @@ global.bullet_list =
 		12,
 		10,
 		60,
+		2,
 	),
 	magnum44_du_bull : new create_bullet(
 		3,
@@ -715,6 +729,7 @@ global.bullet_list =
 		18,
 		15,
 		90,
+		4,
 	),
 	magnum44_exp_bull : new create_bullet(
 		5,
@@ -725,6 +740,7 @@ global.bullet_list =
 		18,
 		16,
 		15,
+		4,
 	),
 	
 	bull_76239 : new create_bullet(
@@ -736,6 +752,7 @@ global.bullet_list =
 		10,
 		8,
 		40,
+		3,
 	),
 	bull_76239_ap : new create_bullet(
 		3,
@@ -746,6 +763,7 @@ global.bullet_list =
 		20,
 		18,
 		90,
+		3,
 	),
 	bull_76239_fmj : new create_bullet(
 		4,
@@ -756,6 +774,7 @@ global.bullet_list =
 		15,
 		13,
 		70,
+		2,
 	),
 	bull_76239_du : new create_bullet(
 		3,
@@ -766,6 +785,7 @@ global.bullet_list =
 		22,
 		19,
 		95,
+		4,
 	),
 	bull_76239_exp : new create_bullet(
 		5,
@@ -776,6 +796,7 @@ global.bullet_list =
 		18,
 		16,
 		25,
+		4,
 	),
 	
 	bull_76245 : new create_bullet(
@@ -787,6 +808,7 @@ global.bullet_list =
 		11,
 		9,
 		45,
+		3,
 	),
 	bull_76245_ap : new create_bullet(
 		3,
@@ -797,6 +819,7 @@ global.bullet_list =
 		21,
 		19,
 		90,
+		3,
 	),
 	bull_76245_fmj : new create_bullet(
 		4,
@@ -807,6 +830,7 @@ global.bullet_list =
 		16,
 		14,
 		75,
+		2,
 	),
 	bull_76245_du : new create_bullet(
 		3,
@@ -817,6 +841,7 @@ global.bullet_list =
 		23,
 		20,
 		95,
+		4,
 	),
 	bull_76245_exp : new create_bullet(
 		5,
@@ -827,6 +852,7 @@ global.bullet_list =
 		19,
 		17,
 		30,
+		4,
 	),
 	
 	bull_76225 : new create_bullet(
@@ -838,6 +864,7 @@ global.bullet_list =
 		6,
 		4,
 		35,
+		2,
 	),
 	bull_76225_ap : new create_bullet(
 		3,
@@ -848,6 +875,7 @@ global.bullet_list =
 		13,
 		10,
 		80,
+		2,
 	),
 	bull_76225_fmj : new create_bullet(
 		4,
@@ -858,6 +886,7 @@ global.bullet_list =
 		10,
 		8,
 		65,
+		1,
 	),
 	bull_76225_du : new create_bullet(
 		3,
@@ -868,6 +897,7 @@ global.bullet_list =
 		19,
 		17,
 		85,
+		3,
 	),
 	bull_76225_exp : new create_bullet(
 		5,
@@ -878,6 +908,7 @@ global.bullet_list =
 		15,
 		12,
 		20,
+		3,
 	),
 	
 	bull_12gauge : new create_bullet(
@@ -889,6 +920,7 @@ global.bullet_list =
 		4,
 		3,
 		5,
+		1,
 	),
 	bull_12gauge_buck : new create_bullet(
 		3,
@@ -899,6 +931,7 @@ global.bullet_list =
 		8,
 		6,
 		20,
+		2,
 	),
 	bull_12gauge_slug : new create_bullet(
 		4,
@@ -909,6 +942,7 @@ global.bullet_list =
 		12,
 		10,
 		50,
+		3,
 	),
 	bull_12gauge_exp : new create_bullet(
 		4,
@@ -919,6 +953,7 @@ global.bullet_list =
 		18,
 		17,
 		20,
+		4,
 	),
 }
 
@@ -7258,7 +7293,7 @@ global.weapon_list =
 		false,
 	),
 	pistole_vz24_weapon : new create_weapon(
-		10,
+		1,
 		8,
 		noone, // Each press = 1 shot
 		global.parts_list.cz24_parts,
@@ -7276,7 +7311,7 @@ global.weapon_list =
 		false,
 	),
 	gold_pistole_vz24_weapon : new create_weapon(
-		10,
+		1,
 		8,
 		1, 
 		global.parts_list.cz24_parts,
@@ -7294,7 +7329,7 @@ global.weapon_list =
 		false,
 	),
 	vz58_weapon : new create_weapon(
-		10,
+		2,
 		30,
 		5, 
 		global.parts_list.vz58_parts,
@@ -7313,7 +7348,7 @@ global.weapon_list =
 	),
 	
 	vz54_weapon : new create_weapon(
-		10,
+		3,
 		30,
 		10, 
 		global.parts_list.vz54_parts,
@@ -7331,7 +7366,7 @@ global.weapon_list =
 		false,
 	),
 	zbrojovka_304_weapon : new create_weapon(
-		10,
+		2,
 		1,
 		noone, 
 		global.parts_list.zbrojovka_304_parts,
@@ -7349,9 +7384,9 @@ global.weapon_list =
 		false,
 	),
 	sa23_weapon : new create_weapon(
-		10,
+		1,
 		32,
-		7, 
+		8, 
 		global.parts_list.sa23_parts,
 		true,
 		false,
@@ -7367,7 +7402,7 @@ global.weapon_list =
 		false,
 	),
 	skorpion_weapon : new create_weapon(
-		10,
+		1,
 		20,
 		3, 
 		global.parts_list.skorpion_parts,
@@ -7385,7 +7420,7 @@ global.weapon_list =
 		false,
 	),
 	sw_model29_weapon : new create_weapon(
-		10,
+		3,
 		6,
 		noone, 
 		global.parts_list.sw_model29_parts,

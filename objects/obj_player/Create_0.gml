@@ -1,5 +1,11 @@
 global.door_touch = false
 
+part_threshold = array_create(0, 0)
+array_push(part_threshold, 3) // HEAD
+array_push(part_threshold, 6) // TORSO
+array_push(part_threshold, 5) // ARMS
+array_push(part_threshold, 5) // LEGS
+array_push(part_threshold, 4) // HANDS & FEET
 
 blood_timer = 0
 

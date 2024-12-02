@@ -137,7 +137,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1100.0.686",
+    "IDEVersion":"2024.1100.0.700",
   },
   "name":"SEPSIS_GIT_SOURCE",
   "resources":[
@@ -391,6 +391,7 @@
     {"id":{"name":"scr_bool_to_on_off","path":"scripts/scr_bool_to_on_off/scr_bool_to_on_off.yy",},},
     {"id":{"name":"scr_chamber","path":"scripts/scr_chamber/scr_chamber.yy",},},
     {"id":{"name":"scr_check_all_parts","path":"scripts/scr_check_all_parts/scr_check_all_parts.yy",},},
+    {"id":{"name":"scr_check_stopping_power","path":"scripts/scr_check_stopping_power/scr_check_stopping_power.yy",},},
     {"id":{"name":"scr_condition_sprite","path":"scripts/scr_condition_sprite/scr_condition_sprite.yy",},},
     {"id":{"name":"scr_condition_to_val","path":"scripts/scr_condition_to_val/scr_condition_to_val.yy",},},
     {"id":{"name":"scr_eat","path":"scripts/scr_eat/scr_eat.yy",},},

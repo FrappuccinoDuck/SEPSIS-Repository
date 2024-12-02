@@ -4,6 +4,8 @@ var bleed_chance = irandom(100)
 var one_or_other = irandom(1)
 var characteristics = other.modifier[28]
 
+shot_at = true
+
 instance_destroy(other)
 
 with(obj_health_tangible)
@@ -14,6 +16,10 @@ with(obj_health_tangible)
 		open_wound = true
 		open_wound_amount += irandom_range(1, characteristics.specs.bullet_stats.wound_amount)
 		bleeding = true
+		
+		check_stopping_power(characteristics, 1)
+		
+		
 		// Torso
 		if bleed_chance >= 0 && bleed_chance <= 10
 		{
@@ -43,6 +49,7 @@ with(obj_health_tangible)
 	{
 		if (one_or_other == 0 && index == 4) || (one_or_other == 1 && index == 8)
 		{
+			check_stopping_power(characteristics, 3)
 			show_debug_message("LEG")
 			open_wound = true
 			open_wound_amount += irandom_range(1, characteristics.specs.bullet_stats.wound_amount)
@@ -79,6 +86,7 @@ with(obj_health_tangible)
 		// Arms
 		if (one_or_other == 0 && index == 2) || (one_or_other == 1 && index == 6)
 		{
+			check_stopping_power(characteristics, 2)
 			show_debug_message("ARMS")
 			open_wound = true
 			open_wound_amount += irandom_range(1, characteristics.specs.bullet_stats.wound_amount)
@@ -110,6 +118,7 @@ with(obj_health_tangible)
 		} 
 	} else if chance_hit > 85 && chance_hit <= 95 && index == 0 && ((global.top_head_wear != noone && characteristics.specs.bullet_stats.light_pen >= global.top_head_wear.armor.protection ) || (global.top_head_wear == noone))
 	{
+		check_stopping_power(characteristics, 0)
 		show_debug_message("HEAD")
 		open_wound = true
 		open_wound_amount += irandom_range(1, characteristics.specs.bullet_stats.wound_amount)
@@ -143,6 +152,7 @@ with(obj_health_tangible)
 	{ 
 		if ((global.left_hand_wear != noone && characteristics.specs.bullet_stats.light_pen >= global.left_hand_wear.armor.protection) || (global.left_hand_wear == noone)) || ((global.right_hand_wear != noone && characteristics.specs.bullet_stats.light_pen >= global.right_hand_wear.armor.protection ) || (global.right_hand_wear == noone))
 		{
+			check_stopping_power(characteristics, 4)
 			if (one_or_other == 0 && index == 3) || (one_or_other == 1 && index == 7)
 			{
 				show_debug_message("HAND")
@@ -181,6 +191,7 @@ with(obj_health_tangible)
 	{ 
 		if ((global.left_foot_wear != noone && characteristics.specs.bullet_stats.light_pen >= global.left_foot_wear.armor.protection) || (global.left_foot_wear == noone)) || ((global.right_foot_wear != noone && characteristics.specs.bullet_stats.light_pen >= global.right_foot_wear.armor.protection) || (global.right_foot_wear == noone))
 		{
+			check_stopping_power(characteristics, 4)
 			if (one_or_other == 0 && index == 5) || (one_or_other == 1 && index == 9)
 			{
 				show_debug_message("FOOT")
@@ -217,4 +228,4 @@ with(obj_health_tangible)
 	}
 }
 
-
+//layer_set_visible("Effect_3", false)

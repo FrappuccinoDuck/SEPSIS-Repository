@@ -1182,7 +1182,7 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 			
 			if inspection_item.weapon.fire_rate != noone
 			{
-				draw_text(_xx+1088+4, _yy+544+4, string($"{inspection_item.weapon.fire_rate} round p/m"))
+				draw_text(_xx+1088+4, _yy+544+4, string($"{4000/inspection_item.weapon.fire_rate} round p/m"))
 			} else
 			{
 				draw_text(_xx+1088+4, _yy+544+4, string($"1 per click"))
@@ -2150,7 +2150,6 @@ if function_wheel == true && global.left_hand_item != noone && using_hand == fal
 	}
 }
 
-show_debug_message(using_hand)
 
 /*if keyboard_check_pressed(obj_game_initializers.field_strip_keybind) && stats_open == false && function_wheel == false && function_wheel_health == false && player_stats == false && obj_health_manager.health_open == false
 	{

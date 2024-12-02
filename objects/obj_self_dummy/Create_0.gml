@@ -4,6 +4,9 @@ delay_timer = 0
 type = "Object"
 ammo = 0
 
+disarray_timer = 0
+shot_at = false
+
 hit_count = 0
 
 event_inherited()

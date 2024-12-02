@@ -1,6 +1,18 @@
 
 event_inherited();
 
+if shot_at == true
+{
+	layer_set_visible("Effect_3", true)
+	disarray_timer += 1
+}
+if disarray_timer >= 5
+{
+	layer_set_visible("Effect_3", false)
+	shot_at = false
+	disarray_timer = 0
+}
+
 if hit_count >= 5
 {
 	instance_destroy()

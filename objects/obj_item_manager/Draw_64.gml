@@ -896,7 +896,10 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	// SELECTION SECTION
 	if mouse_x >= _xxm + 32 && mouse_x <= _xxm + 189 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.left_hand_item != global.item_list.two_hand_item && player_stats == false
 	{
-		using_hand = 0
+		if global.mouse_item != noone && global.mouse_item.specs.item_type != "Armor"
+		{
+			using_hand = 0
+		}
 		// LEFT HAND
 		if mouse_check_button_pressed(mb_left) && global.left_hand_item != noone && global.mouse_item == noone
 		{
@@ -981,7 +984,11 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 	if mouse_x >= _xxm + 224 && mouse_x <= _xxm + 381 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.right_hand_item != global.item_list.two_hand_item
 	{
-		using_hand = 1
+		if global.mouse_item != noone && global.mouse_item.specs.item_type != "Armor"
+		{
+			using_hand = 1
+		}
+		
 		// RIGHT HAND
 		if mouse_check_button_pressed(mb_left) && global.right_hand_item != noone && global.mouse_item == noone
 		{
@@ -2648,6 +2655,7 @@ if close_inspect == false
 				draw_text(_xx+40 + 960, _yy+286 + 224, string($"{chr(obj_game_initializers.firing_mode_keybind)} to Switch Modes ({firing_mode_name(right_modifiers[24])})"))
 			}
 		}
+		
 
 if player_stats == false
 {
@@ -3177,4 +3185,21 @@ if keyboard_check_pressed(vk_alt) && (((using_hand == 0 && global.left_hand_item
 if global.mouse_item != noone
 {
 	draw_sprite(global.mouse_item.spr, 0, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
+}
+
+if stats_open == false && obj_health_manager.health_open == false && player_stats == false
+{
+	var start_y = 512
+	var tired_increase = 2
+	var thirst_increase = 0.5
+	var adrenaline_increase = 2
+	var tenergy = (global.player_energy/1000)
+	var ttired = (global.tiredness/100)*tired_increase
+	var tthirst = ((3700-global.thirst)/3700)*thirst_increase
+	var tadrenaline = (global.adrenaline/500)*adrenaline_increase
+	draw_sprite_ext(spr_ui_no_grid_white, 0, 32, 192, 0.5, 5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_green, 0, 32, start_y, 0.5, -tenergy+ttired+tthirst, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_red, 0, 32, start_y-(tenergy*64)+(ttired*64)+(tthirst*64), 0.5, -ttired, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, 32, start_y-(tenergy*64)+(tthirst*64), 0.5, -tthirst, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_yellow, 0, 32, start_y-(tenergy*64)+(ttired*64)+(tthirst*64), 0.5, -tadrenaline, 0, c_white, 1)
 }

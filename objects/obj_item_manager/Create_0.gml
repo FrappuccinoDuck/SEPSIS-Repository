@@ -7,6 +7,8 @@ player_stats = false
 
 scoped = false
 
+global.temp_stamina = 100
+
 function_list = array_create(7, 0)
 function_array = array_create(7, 0)
 
@@ -224,8 +226,8 @@ global.blood_levels_m = 5000
 global.consioucness = 100
 global.consioucness_m = 100
 
-global.adrenaline = 250
-global.adrenaline_m = 2500
+global.adrenaline = 20
+global.adrenaline_m = 1000
 
 global.oxy = 96
 global.oxy_m = 100
@@ -237,7 +239,7 @@ global.mouse_item = noone
 global.right_mouse_item = noone
 
 global.player_energy = 2500
-global.energy_m = 2500
+global.energy_m = 5000
 
 global.player_fat = 97
 global.fat_m = 97
@@ -345,10 +347,10 @@ global.copper_m = 150000 // milligrams
 global.body_temp = 98
 global.body_temp_m = 106
 
-global.thirst = 3700
+global.thirst = 2775
 global.thirst_m = 3700
 
-global.tiredness = 0
+global.tiredness = 25
 global.tiredness_m = 100
 
 global.hygiene = 100

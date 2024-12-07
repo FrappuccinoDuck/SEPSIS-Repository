@@ -896,7 +896,10 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	// SELECTION SECTION
 	if mouse_x >= _xxm + 32 && mouse_x <= _xxm + 189 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.left_hand_item != global.item_list.two_hand_item && player_stats == false
 	{
-		using_hand = 0
+		if global.mouse_item != noone && global.mouse_item.specs.item_type != "Armor"
+		{
+			using_hand = 0
+		}
 		// LEFT HAND
 		if mouse_check_button_pressed(mb_left) && global.left_hand_item != noone && global.mouse_item == noone
 		{
@@ -981,7 +984,11 @@ if (stats_open == true || obj_health_manager.health_open == true || player_stats
 	
 	if mouse_x >= _xxm + 224 && mouse_x <= _xxm + 381 && mouse_y >= _yym + 606 && mouse_y <= _yym + 734 && global.right_hand_item != global.item_list.two_hand_item
 	{
-		using_hand = 1
+		if global.mouse_item != noone && global.mouse_item.specs.item_type != "Armor"
+		{
+			using_hand = 1
+		}
+		
 		// RIGHT HAND
 		if mouse_check_button_pressed(mb_left) && global.right_hand_item != noone && global.mouse_item == noone
 		{
@@ -2374,7 +2381,10 @@ if function_wheel_health
 							
 						break
 						case 3:
-							
+							with(instance_create_depth(0, 0, -9, obj_temporary_notification))
+							{
+								notification = string($"~{floor(global.heart_rate)} BPM")
+							}
 						break
 						case 2:
 							
@@ -2648,6 +2658,7 @@ if close_inspect == false
 				draw_text(_xx+40 + 960, _yy+286 + 224, string($"{chr(obj_game_initializers.firing_mode_keybind)} to Switch Modes ({firing_mode_name(right_modifiers[24])})"))
 			}
 		}
+		
 
 if player_stats == false
 {
@@ -3177,4 +3188,63 @@ if keyboard_check_pressed(vk_alt) && (((using_hand == 0 && global.left_hand_item
 if global.mouse_item != noone
 {
 	draw_sprite(global.mouse_item.spr, 0, device_mouse_x_to_gui(0), device_mouse_y_to_gui(0))
+}
+
+if global.temp_stamina < 100
+{
+	global.temp_stamina += 0.1
+} else
+{
+	global.temp_stamina = 100
+}
+if global.temp_stamina < 0
+{
+	global.temp_stamina = 0
+}
+
+if stats_open == false && obj_health_manager.health_open == false && player_stats == false
+{
+	var start_y = 512
+	var tired_increase = 2
+	var thirst_increase = 0.5
+	var adrenaline_increase = 2
+	var tenergy = (global.player_energy/1000)
+	var ttired = (global.tiredness/100)*tired_increase
+	var tthirst = ((3700-global.thirst)/3700)*thirst_increase
+	var tadrenaline = (global.adrenaline/500)*adrenaline_increase
+	draw_sprite_ext(spr_ui_no_grid_white, 0, 64, 192, 0.5, 5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_green, 0, 64, start_y, 0.5, -tenergy+ttired+tthirst, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_red, 0, 64, start_y-(tenergy*64)+(ttired*64)+(tthirst*64)-tadrenaline*64, 0.5, -ttired, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_blue, 0, 64, start_y-(tenergy*64)+(tthirst*64)-tadrenaline*64, 0.5, -tthirst, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_yellow, 0, 64, start_y-(tenergy*64)+(ttired*64)+(tthirst*64), 0.5, -tadrenaline, 0, c_white, 1)
+	
+	draw_sprite_ext(spr_ui_no_grid_white, 0, 96, 192, 0.25, 5, 0, c_white, 1)
+	if global.temp_stamina > 25
+	{
+		draw_sprite_ext(spr_ui_no_grid_green, 0, 96, start_y, 0.25, -global.temp_stamina/20, 0, c_white, 1)
+	} else
+	{
+		draw_sprite_ext(spr_ui_no_grid_red, 0, 96, start_y, 0.25, -global.temp_stamina/20, 0, c_white, 1)
+	}
+	
+	draw_sprite_ext(spr_ui_no_grid_white, 0, 32, 192, 0.5, 5, 0, c_white, 1)
+	draw_sprite_ext(spr_ui_no_grid_red, 0, 32, 512, 0.5, -(global.blood_levels/global.blood_levels_m)*5, 0, c_white, 1)
+	
+	if mouse_x >= _xxm + 65 && mouse_x <= _xxm+96 && mouse_y >= _yym+192 && mouse_y <= _yym+512
+	{
+		draw_sprite_ext(spr_ui_no_grid_opaque, 0, device_mouse_x_to_gui(0) + 10, device_mouse_y_to_gui(0) + 10-50, 3, 1.8, 0, c_white, 1)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+15-50, string($"Usable Energy- {global.player_energy-(ttired*64)-(tthirst*64)+(global.adrenaline)}/{global.energy_m}"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+35-50, string($"Calories- {global.player_energy}/{global.energy_m}"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+55-50, string($"Thirst- {((global.thirst_m-global.thirst)/global.thirst_m)*100}%"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+75-50, string($"Tiredness- {global.tiredness}%"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+95-50, string($"Adrenaline- {global.adrenaline}/{global.adrenaline_m}"), 0.8, 0.8, 0)
+	}
+	if mouse_x >= _xxm + 32 && mouse_x <= _xxm+64 && mouse_y >= _yym+192 && mouse_y <= _yym+512
+	{
+		draw_sprite_ext(spr_ui_no_grid_opaque, 0, device_mouse_x_to_gui(0) + 10, device_mouse_y_to_gui(0) + 10-50, 3.5, 1.5, 0, c_white, 1)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+15-50, string($"Blood  {global.blood_levels}/{global.blood_levels_m} mL"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+35-50, string($"Loss per second  {global.whole_bleeding} mL/sec"), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+55-50, string($"Time Remaining  ~{global.blood_levels/((global.whole_bleeding+global.whole_bleeding_av)/2)} sec."), 0.8, 0.8, 0)
+		draw_text_transformed(device_mouse_x_to_gui(0)+15, device_mouse_y_to_gui(0)+75-50, string($"Heart Rate ~{floor(global.heart_rate)} BPM"), 0.8, 0.8, 0)
+	}
 }

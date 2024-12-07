@@ -47,6 +47,8 @@ array_push(bleed_desc_list, "A large wound severing a major vein or smaller arte
 array_push(bleed_desc_list, "A catastrophic wound involving major arteries or extreme tissue damage, resulting in uncontrollable blood loss and imminent danger of death without emergency intervention.")
 
 
+global.bleed_amounts = array_create(50, 0);
+
 selected_type = 0
 
 index = 0

@@ -3,6 +3,7 @@ event_inherited();
 
 if shot_at == true
 {
+	global.adrenaline = random_range(350, 500)
 	layer_set_visible("Effect_3", true)
 	disarray_timer += 1
 }

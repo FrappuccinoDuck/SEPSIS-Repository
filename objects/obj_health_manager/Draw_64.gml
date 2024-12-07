@@ -77,6 +77,16 @@ if health_open == true
 	layer_set_visible("health_tangibles_organs", false)
 }
 
+if heart_timer <= (92/floor(global.heart_rate))*92
+{
+	heart_timer += 1
+} else
+{
+	heart_timer = 0
+	//audio_sound_gain(snd_heartbeat, power(0.5, (floor(global.heart_rate)/92)), 1)
+	audio_play_sound(snd_heartbeat, 1, 0)
+}
+
 if timer <= fps
 {
 	timer += 1
@@ -84,22 +94,31 @@ if timer <= fps
 {
 	timer = 0
 	
+	if global.adrenaline < 21
+	{
+		global.adrenaline = random_range(10, 20)
+	} else
+	{
+		global.adrenaline -= random_range(0, 2)
+	}
+	global.heart_rate = 92 * power(2, ((global.adrenaline-10)/490))
 	
+	global.whole_bleeding_av = global.whole_bleeding
 	
 	global.oxy = random_range(95, 100)
 	
 	if obj_player.xspd != 0 || obj_player.yspd != 0
 	{
-		global.player_energy -= ((player_weight*0.0005) + (obj_player.present_weight * random_range(0.3, 0.5))) + (global.arms_weight*0.00347)
+		global.player_energy -= (((player_weight*0.0005) + (obj_player.present_weight * random_range(0.3, 0.5))) + (global.arms_weight*0.00347))*abs(((obj_player.xspd + obj_player.yspd)/2))
 		// sweat
-		global.thirst -= random_range(0.278, 0.417)
-		global.tiredness += 0.00058
-		global.vit_a -= random_range(0.0125, 0.0156)
-		global.thirst -=  random_range(0.02, 0.03)
+		global.thirst -= random_range(0.278, 0.417)*abs(((obj_player.xspd + obj_player.yspd)/2))
+		global.tiredness += 0.00058*abs(((obj_player.xspd + obj_player.yspd)/2))
+		global.vit_a -= random_range(0.0125, 0.0156)*abs(((obj_player.xspd + obj_player.yspd)/2))
+		global.thirst -=  random_range(0.02, 0.03)*abs(((obj_player.xspd + obj_player.yspd)/2))
 		
 	} else
 	{
-		global.player_energy -= (player_weight*0.00009) + (global.arms_weight*0.00347)
+		global.player_energy -= ((player_weight*0.00009) + (global.arms_weight*0.00347))
 		// sweat
 		global.thirst -= random_range(0.023, 0.032)
 		global.vit_a -= 0.0104

@@ -19,13 +19,7 @@ function shoot(_gun, _bullet_type, _shell, _speed, _bolt_action)
 			notification = "Gun Not Closed"
 		}
 	}
-	if (left_modifiers[25] != "Not" && obj_item_manager.using_hand == 0) || (right_modifiers[25] != "Not" && obj_item_manager.using_hand == 1) 
-	{
-		with(instance_create_depth(0, 0, -9, obj_temporary_notification))
-		{
-			notification = "Jammed (Chamber to Resolve)"
-		}
-	}
+	
 	
 	if _bolt_action == false
 	{

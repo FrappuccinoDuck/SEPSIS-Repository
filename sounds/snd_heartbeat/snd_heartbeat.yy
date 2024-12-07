@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_hammer_back",
+  "%Name":"snd_heartbeat",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.705281,
-  "name":"snd_hammer_back",
+  "duration":0.496327,
+  "name":"snd_heartbeat",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_hammer_back.mp3",
+  "soundFile":"snd_heartbeat.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.5,
 }

@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.828562,
+  "duration":0.0,
   "name":"snd_bad_notification",
   "parent":{
     "name":"Sounds",

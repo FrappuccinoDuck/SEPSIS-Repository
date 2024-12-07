@@ -6,10 +6,44 @@ up_key = keyboard_check(vk_up) || keyboard_check(ord("W")) || gamepad_axis_value
 left_key = keyboard_check(vk_left) || keyboard_check(ord("A"))|| gamepad_axis_value(0, gp_axislh) < -0.7;
 down_key = keyboard_check(vk_down) || keyboard_check(ord("S")) || gamepad_axis_value(0, gp_axislv) > 0
 
-xspd = (right_key - left_key) * (move_spd + 1);
-yspd = (down_key - up_key) * (move_spd + 1);
-xspd = (right_key - left_key) * (move_spd + 2);
-yspd = (down_key - up_key) * (move_spd + 2);
+
+if keyboard_check_direct(vk_shift)
+{
+	if ((obj_item_manager.using_hand == 0 && global.left_hand_item != noone && global.left_hand_item.specs.item_type == "Firearm") || (obj_item_manager.using_hand == 1 && global.right_hand_item != noone && global.right_hand_item.specs.item_type == "Firearm")) 
+	{
+		xspd = (right_key - left_key) * (move_spd + 1);
+		yspd = (down_key - up_key) * (move_spd + 1);
+		global.sprint = false
+	} else
+	{
+		if global.temp_stamina > 25
+			{
+				global.sprint_lock = false
+			}
+		if global.temp_stamina > 0 && global.sprint_lock == false
+		{
+			global.temp_stamina -= 0.5
+			global.sprint = true
+			xspd = (right_key - left_key) * (move_spd + 4);
+			yspd = (down_key - up_key) * (move_spd + 4);
+		} else
+		{
+			if global.temp_stamina == 0
+			{
+				global.sprint_lock = true
+			}
+			global.sprint = false
+			xspd = (right_key - left_key) * (move_spd + 1);
+			yspd = (down_key - up_key) * (move_spd + 1);
+			
+		}
+	}
+} else
+{
+	global.sprint = false
+	xspd = (right_key - left_key) * (move_spd + 1);
+	yspd = (down_key - up_key) * (move_spd + 1);
+}
 
 if place_meeting(x + xspd, y, obj_solid) || place_meeting(x + xspd, y, obj_window_wall) || place_meeting(x + xspd, y, obj_no_shadow_collide) || no_move == true || dead == true
 	{
@@ -204,3 +238,15 @@ if obj_item_manager.stats_open == true
 	}
 }
 
+if shot_at == true
+{
+	global.adrenaline = random_range(350, 500)
+	layer_set_visible("Effect_3", true)
+	disarray_timer += 1
+}
+if disarray_timer >= 5
+{
+	layer_set_visible("Effect_3", false)
+	shot_at = false
+	disarray_timer = 0
+}

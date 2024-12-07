@@ -7,6 +7,8 @@ player_stats = false
 
 scoped = false
 
+global.temp_stamina = 100
+
 function_list = array_create(7, 0)
 function_array = array_create(7, 0)
 
@@ -225,7 +227,7 @@ global.consioucness = 100
 global.consioucness_m = 100
 
 global.adrenaline = 20
-global.adrenaline_m = 2500
+global.adrenaline_m = 1000
 
 global.oxy = 96
 global.oxy_m = 100

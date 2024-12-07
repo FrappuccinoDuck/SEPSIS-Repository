@@ -1,5 +1,14 @@
 global.door_touch = false
 
+disarray_timer = 0
+shot_at = false
+
+global.sprint = false
+global.sprint_lock = false
+
+instance_create_depth(x, y, -9, obj_vicinity_view)
+
+
 part_threshold = array_create(0, 0)
 array_push(part_threshold, 3) // HEAD
 array_push(part_threshold, 6) // TORSO

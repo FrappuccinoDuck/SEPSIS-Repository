@@ -45,7 +45,7 @@ if timer <= fps
 	{
 		
 		global.bleed_volume += bleed_amount
-		global.bleed_amount += 1
+		//global.bleed_amount += 1
 		
 		/*var instance_blood = instance_create_depth(obj_player.x, obj_player.y, -9, obj_Particles)
 			instance_blood.set_depth(-9)
@@ -66,16 +66,19 @@ if timer <= fps
 		
 		if bleed_amount > 1
 		{
-			global.blood_levels -= random_range(blood_loss_arr[bleed_amount-2], blood_loss_arr[bleed_amount-1])
+			global.bleed_amounts[index] = random_range(blood_loss_arr[bleed_amount-2], blood_loss_arr[bleed_amount-1])
+			global.blood_levels -= global.bleed_amounts[index]
 			condition -= random_range(condition_degradation_arr[bleed_amount-2], condition_degradation_arr[bleed_amount-1])
 		} else
 		{
-			global.blood_levels -= random(blood_loss_arr[bleed_amount-1])
+			global.bleed_amounts[index] = random(blood_loss_arr[bleed_amount-1])
+			global.blood_levels -= global.bleed_amounts[index]
 			condition -= random(condition_degradation_arr[bleed_amount-1])
 		}
 	} else
 	{
 		bleed_timer = 0
+		global.bleed_amount[index] = 0
 	}
 	if infection == true
 	{		
